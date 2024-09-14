@@ -24,3 +24,16 @@ H:\Учёба\4\ПП\Labyrinth\Patterns\obj\Debug\net8.0\Patterns.dll
 H:\Учёба\4\ПП\Labyrinth\Patterns\obj\Debug\net8.0\refint\Patterns.dll
 H:\Учёба\4\ПП\Labyrinth\Patterns\obj\Debug\net8.0\Patterns.pdb
 H:\Учёба\4\ПП\Labyrinth\Patterns\obj\Debug\net8.0\ref\Patterns.dll
+H:\Учёба\4\ПП\Game\Patterns\bin\Debug\net8.0\Patterns.deps.json
+H:\Учёба\4\ПП\Game\Patterns\bin\Debug\net8.0\Patterns.dll
+H:\Учёба\4\ПП\Game\Patterns\bin\Debug\net8.0\Patterns.pdb
+H:\Учёба\4\ПП\Game\Patterns\obj\Debug\net8.0\Patterns.csproj.AssemblyReference.cache
+H:\Учёба\4\ПП\Game\Patterns\obj\Debug\net8.0\Patterns.GeneratedMSBuildEditorConfig.editorconfig
+H:\Учёба\4\ПП\Game\Patterns\obj\Debug\net8.0\Patterns.AssemblyInfoInputs.cache
+H:\Учёба\4\ПП\Game\Patterns\obj\Debug\net8.0\Patterns.AssemblyInfo.cs
+H:\Учёба\4\ПП\Game\Patterns\obj\Debug\net8.0\Patterns.csproj.CoreCompileInputs.cache
+H:\Учёба\4\ПП\Game\Patterns\obj\Debug\net8.0\Patterns.sourcelink.json
+H:\Учёба\4\ПП\Game\Patterns\obj\Debug\net8.0\Patterns.dll
+H:\Учёба\4\ПП\Game\Patterns\obj\Debug\net8.0\refint\Patterns.dll
+H:\Учёба\4\ПП\Game\Patterns\obj\Debug\net8.0\Patterns.pdb
+H:\Учёба\4\ПП\Game\Patterns\obj\Debug\net8.0\ref\Patterns.dll

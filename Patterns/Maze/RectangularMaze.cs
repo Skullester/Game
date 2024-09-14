@@ -8,7 +8,7 @@ public class RectangularMaze : IMaze
     public int Height { get; }
     public int Width { get; }
     private static RectangularMaze? maze;
-
+    private Point startPoint;
     public IMazeElement[,] Elements { get; private set; } = null!;
 
     private readonly RoomCreator[] fabric =
@@ -29,7 +29,7 @@ public class RectangularMaze : IMaze
     private void FindFurthestExit()
     {
         var furthest = Point.Empty;
-        for (var x = 1; x < Elements.GetLength(0); x++)
+        for (var x = 1; x < Height; x++)
         {
             if (Elements[x, Width - 2].Distance > Elements[furthest.X, furthest.Y].Distance)
                 furthest = new Point(x, Width - 2);
@@ -37,7 +37,7 @@ public class RectangularMaze : IMaze
                 furthest = new Point(x, 1);
         }
 
-        for (var y = 1; y < Elements.GetLength(1); y++)
+        for (var y = 1; y < Width; y++)
         {
             if (Elements[Height - 2, y].Distance > Elements[furthest.X, furthest.Y].Distance)
                 furthest = new Point(Height - 2, y);
@@ -80,7 +80,7 @@ public class RectangularMaze : IMaze
             new Point(1, Width - 2),
             new Point(Height - 2, Width - 2)
         ];
-        var startPoint = startPositions[rand.Next(startPositions.Length)];
+        startPoint = startPositions[rand.Next(startPositions.Length)];
         var currentPoint = startPoint;
         var stack = new Stack<Point>();
         do

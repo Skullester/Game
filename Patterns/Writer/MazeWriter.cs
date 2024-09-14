@@ -9,7 +9,6 @@ public abstract class MazeWriter : INaming
     protected readonly TextWriter writer;
     private readonly IMazeFormatter mazeFormatter;
 
-
     protected MazeWriter(IMaze maze, TextWriter writer, IMazeFormatter mazeFormatter)
     {
         this.maze = maze;

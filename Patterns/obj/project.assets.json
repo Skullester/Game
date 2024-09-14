@@ -134,11 +134,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Учёба\\4\\ПП\\Labyrinth\\Patterns\\Patterns.csproj",
+      "projectUniqueName": "H:\\Учёба\\4\\ПП\\Game\\Patterns\\Patterns.csproj",
       "projectName": "Patterns",
-      "projectPath": "H:\\Учёба\\4\\ПП\\Labyrinth\\Patterns\\Patterns.csproj",
+      "projectPath": "H:\\Учёба\\4\\ПП\\Game\\Patterns\\Patterns.csproj",
       "packagesPath": "C:\\Users\\mrsam\\.nuget\\packages\\",
-      "outputPath": "H:\\Учёба\\4\\ПП\\Labyrinth\\Patterns\\obj\\",
+      "outputPath": "H:\\Учёба\\4\\ПП\\Game\\Patterns\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
