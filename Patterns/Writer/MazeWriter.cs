@@ -1,26 +1,31 @@
-﻿using Patterns;
+﻿using Models;
+using Infrastructure;
 
-namespace MazePrinter;
+namespace UI;
 
 public abstract class MazeWriter : INaming
 {
-    private readonly IMaze maze;
     public abstract string Name { get; }
     protected readonly TextWriter writer;
-    private readonly IMazeFormatter mazeFormatter;
+    private readonly IEnumerable<char> mazeChars;
+    private readonly IMaze maze;
 
-    protected MazeWriter(IMaze maze, TextWriter writer, IMazeFormatter mazeFormatter)
+    protected MazeWriter(IEnumerable<char> mazeChars, TextWriter writer, IMaze maze)
     {
+        this.mazeChars = mazeChars;
         this.maze = maze;
         this.writer = writer;
-        this.mazeFormatter = mazeFormatter;
+    }
+
+    protected MazeWriter(TextWriter writer, IMazeFormatter mazeFormatter, IMaze maze) : this(
+        maze.ParseToChar(mazeFormatter), writer, maze)
+    {
     }
 
     public void Write()
     {
         var counter = 0;
-        var chars = maze.ParseToChar(mazeFormatter);
-        foreach (var item in chars)
+        foreach (var item in mazeChars)
         {
             Write(item);
             if (++counter % maze.Width == 0)

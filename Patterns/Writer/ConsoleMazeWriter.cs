@@ -1,12 +1,12 @@
-﻿using Patterns;
+﻿using Models;
 
-namespace MazePrinter;
+namespace UI;
 
 public class ConsoleMazeWriter : MazeWriter
 {
     private const double milliSeconds = 0.8;
 
-    public ConsoleMazeWriter(IMaze maze, TextWriter writer, IMazeFormatter formatter) : base(maze, writer, formatter)
+    public ConsoleMazeWriter(IMaze maze, TextWriter writer, IMazeFormatter formatter) : base(writer, formatter, maze)
     {
     }
 

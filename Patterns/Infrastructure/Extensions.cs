@@ -1,6 +1,7 @@
-﻿using Patterns;
+﻿using UI;
+using Models;
 
-namespace MazePrinter;
+namespace Infrastructure;
 
 public static class Extensions
 {

@@ -1,7 +1,6 @@
-﻿using MazePrinter;
-using Patterns;
+﻿using UI;
 
-namespace ConsoleApp1;
+namespace Models;
 
 public abstract class Player2 : INaming
 {

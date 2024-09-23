@@ -1,19 +1,18 @@
-﻿using Patterns;
-
-namespace ConsoleApp1.Player.Roles;
+﻿namespace Models;
 
 public class Berserker : Player2
 {
-    public int BreakableWallsCount { get; private set; }
+    public const int BreakableWallsCount = 4;
+    public int BreakableWalls { get; private set; }
     public override string Name => "Берсерк";
 
-    public Berserker(IMaze maze, int breakableWallsCount) : base(maze)
+    public Berserker(IMaze maze, int breakableWalls) : base(maze)
     {
-        BreakableWallsCount = breakableWallsCount;
+        BreakableWalls = breakableWalls;
     }
 
     public override void UseSkill()
     {
-        BreakableWallsCount--;
+        BreakableWalls--;
     }
 }

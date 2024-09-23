@@ -1,6 +1,6 @@
-﻿using MazePrinter;
+﻿using UI;
 
-namespace ConsoleApp1;
+namespace Game;
 
 public static class ConsoleHelper
 {

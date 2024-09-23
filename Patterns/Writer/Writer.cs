@@ -1,10 +1,10 @@
-﻿using Patterns;
+﻿using Models;
 
-namespace MazePrinter;
+namespace UI;
 
 public class Writer : MazeWriter //заглушка
 {
-    public Writer(IMaze maze, TextWriter writer, IMazeFormatter formatter) : base(maze, writer, formatter)
+    public Writer(IMaze maze, TextWriter writer, IMazeFormatter formatter) : base(writer, formatter, maze)
     {
     }
 

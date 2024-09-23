@@ -1,13 +1,13 @@
-﻿namespace ConsoleApp1;
+﻿namespace UI;
 
 public class Program
 {
     private static void Main()
     {
-        Console.Write(1);
+        /*Console.Write(1);
         Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-        Console.WriteLine(2);
-        // Artist.DrawMenu();
-        new GameExecutor().Start();
+        Console.WriteLine(2);*/
+
+        GameExecutor.Start(new PlayerArtist());
     }
 }

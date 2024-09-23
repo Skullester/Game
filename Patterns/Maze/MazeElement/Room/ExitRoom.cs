@@ -1,4 +1,4 @@
-﻿namespace Patterns;
+﻿namespace Models;
 
 public class ExitRoom : IRoom
 {

@@ -1,4 +1,4 @@
-﻿namespace MazePrinter;
+﻿namespace UI;
 
 public interface INaming
 {

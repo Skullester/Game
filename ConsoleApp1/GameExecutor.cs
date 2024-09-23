@@ -1,37 +1,64 @@
-﻿using ConsoleApp1.Player.Roles;
-using MazePrinter;
-using Patterns;
+﻿using Game;
+using Models;
+using Models.Fabric;
 
-namespace ConsoleApp1;
+namespace UI;
 
-class GameExecutor
+static class GameExecutor
 {
-    private MazeWriter mazeWriter = null!;
-    private IMazeFormatter[] formatters = null!;
-    private Player2[] players = null!;
-    private Difficulty[] difficulties = null!;
-    public void Start()
+    private static MazeWriter mazeWriter = null!;
+    private static IMazeFormatter[] formatters = null!;
+    private static IMaze maze = null!;
+    private static Player2[] players = null!;
+    private static readonly Difficulty[] difficulties = [new Easy(), new Medium(), new Hard(), new MADNESS()];
+    private static Difficulty difficulty = null!;
+    private static MazeBuilder[] mazeBuilders = null!;
+    private static GameManager gameManager = null!;
+
+    public static void Start(IUIArtist artist)
     {
-        GenerateMaze();
+        // Artist.Draw(new Menu());
+
+        gameManager = GameManager.GetManager();
+        SetGameOptions();
         StartGame();
+        Artist.Draw(new WriterToDrawingAdapter(mazeWriter));
         Console.ReadKey();
     }
 
-    private void StartGame()
+    private static void StartGame()
     {
-        ChoosePlayer();
+        var player = ChoosePlayer();
+        gameManager.Player2 = player;
+        gameManager.Start();
     }
 
-    private void ChoosePlayer()
+    private static Player2 ChoosePlayer()
     {
         PrintOffer("Выберите персонажа: ");
+        players = GetPlayers();
         Print(players);
+        return GetPlayer();
     }
 
-    private void GenerateMaze()
+    private static Difficulty GetDifficulty()
     {
-        var (height, width) = GetMazeParameters();
-        var maze = RectangularMaze.GetMaze(height, width);
+        return ConsoleHelper.FindNamingElementByInput(difficulties, "Выберите сложность из списка выше");
+    }
+
+    private static Player2 GetPlayer()
+    {
+        return ConsoleHelper.FindNamingElementByInput(players, "Выберите персонажа из списка выше");
+    }
+
+    private static void SetGameOptions()
+    {
+        PrintOffer("Выберите уровень сложности: ");
+        Print(difficulties);
+        mazeBuilders = GetMazeBuilders();
+        difficulty = GetDifficulty();
+        var mazeBuilder = GetMazeBuilder();
+        maze = gameManager.CreateMaze(mazeBuilder);
         formatters = GetFormatters();
         PrintOffer("Выберите способ вывода лабиринта: ");
         PrintFormatters();
@@ -39,17 +66,28 @@ class GameExecutor
         mazeWriter = new ConsoleMazeWriter(maze, Console.Out, formatter);
     }
 
-    private IMazeFormatter[] GetFormatters()
+    private static MazeBuilder GetMazeBuilder()
+    {
+        var name = difficulty.Name;
+        return mazeBuilders.FirstOrDefault(x => x.Name == name)!;
+    }
+
+    private static MazeBuilder[] GetMazeBuilders()
+    {
+        return [new EasyMazeBuilder(), new MediumMazeBuilder(), new HardMazeBuilder(), new MadnessMazeBuilder()];
+    }
+
+    private static IMazeFormatter[] GetFormatters()
     {
         return [new DefaultMazeFormatter(), new WeirdMazeFormatter()];
     }
 
-    private IMazeFormatter GetMazeFormatter()
+    private static IMazeFormatter GetMazeFormatter()
     {
-        return ConsoleHelper.FindNamingElementByInput(formatters, "Такого способа вывода не существует");
+        return ConsoleHelper.FindNamingElementByInput(formatters, "Выберите способ вывода из списка выше");
     }
 
-    private void PrintFormatters()
+    private static void PrintFormatters()
     {
         foreach (var format in formatters)
         {
@@ -59,48 +97,26 @@ class GameExecutor
         }
     }
 
-    private void PrintOffer(string message)
+    private static void PrintOffer(string message)
     {
         ConsoleHelper.PrintLineWithColor(message, ConsoleColor.White);
         ConsoleHelper.SetConsoleColor(ConsoleColor.Yellow);
     }
 
-    private void Print<T>(IEnumerable<T> collection) where T : INaming
+    private static void Print<T>(IEnumerable<T> collection) where T : INaming
     {
         var names = collection.Select(x => x.Name);
         ConsoleHelper.PrintLine(string.Join(" | ", names));
     }
 
-    private Player2[] GetPlayers(IMaze maze)
+    private static Player2[] GetPlayers()
     {
-        return [new Berserker(maze, "сложность"), new Mage(maze,), new Tracer(maze,)];
-    }
-
-    private static (int, int) GetMazeParameters()
-    {
-        var input = InputMazeParameters();
-        var sizes = input!.Select(int.Parse)
-            .ToArray();
-        return sizes.ParseArrayToTuple();
-    }
-
-    private static string[]? InputMazeParameters()
-    {
-        ConsoleHelper.PrintLineWithColor($"Введите высоту и ширину лабиринта: \nПример: 15 5", ConsoleColor.White);
-        ConsoleHelper.SetConsoleColor(ConsoleColor.Cyan);
-        string[]? input;
-        do
-        {
-            input = Console.ReadLine()?
-                .Split();
-        } while (CheckInput(input));
-
-        return input;
-    }
-
-    private static bool CheckInput(string[]? input)
-    {
-        var isIncorrect = string.IsNullOrWhiteSpace(input?[0]) || input.Length != 2;
-        return ConsoleHelper.CheckError(isIncorrect, "Ошибка! Введите данные по примеру");
+        var ratio = difficulty.SkillRatio;
+        return
+        [
+            new Berserker(maze, (int)(Berserker.BreakableWallsCount * ratio)),
+            new Mage(maze, (int)(Mage.HintsMovesCount * ratio)),
+            new Tracer(maze, (int)(Tracer.MaxTraces * ratio)),
+        ];
     }
 }

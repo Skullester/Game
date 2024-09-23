@@ -1,7 +1,12 @@
-﻿namespace ConsoleApp1;
+﻿namespace UI;
 
 public class Artist
 {
+    public static void Draw(IDrawing drawing)
+    {
+        drawing.Draw();
+    }
+
     public static void DrawMenu()
     {
         Console.ForegroundColor = ConsoleColor.Red;

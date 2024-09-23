@@ -1,6 +1,6 @@
-﻿using Patterns;
+﻿using Models;
 
-namespace MazePrinter;
+namespace UI;
 
 public class WeirdMazeFormatter : IMazeFormatter
 {
@@ -16,7 +16,7 @@ public class WeirdMazeFormatter : IMazeFormatter
             ExternalWall => '%',
             InternalWall => '@',
             ExitRoom => '=',
-            Player => '*',
+            Player=> '*',
             _ => '?',
         };
     }

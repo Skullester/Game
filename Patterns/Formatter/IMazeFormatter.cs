@@ -1,6 +1,6 @@
-﻿using Patterns;
+﻿using Models;
 
-namespace MazePrinter;
+namespace UI;
 
 public interface IMazeFormatter : INaming
 {

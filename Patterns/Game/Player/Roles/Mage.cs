@@ -1,21 +1,19 @@
-﻿using Patterns;
-
-namespace ConsoleApp1.Player.Roles;
-
+﻿namespace Models;
 public class Mage : Player2
 {
-    public int CountHintsMoves { get; private set; }
+    public const int HintsMovesCount = 5;
+
+    public int HintsMoves { get; private set; }
 
     public override string Name => "Маг";
 
     public Mage(IMaze maze, int countHintsMoves) : base(maze)
     {
-        CountHintsMoves = countHintsMoves;
+        HintsMoves = countHintsMoves;
     }
-
 
     public override void UseSkill()
     {
-        throw new NotImplementedException();
+        HintsMoves--;
     }
 }

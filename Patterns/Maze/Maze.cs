@@ -1,26 +1,32 @@
 ﻿using System.Collections;
 using System.Drawing;
 
-namespace Patterns;
+namespace Models;
 
-public class RectangularMaze : IMaze
+public class Maze : IMaze
 {
-    public int Height { get; }
-    public int Width { get; }
-    private static RectangularMaze? maze;
-    private Point startPoint;
+    public int Height { get; set; }
+    public int Width { get; set; }
+    public Point StartPoint { get; private set; }
+
     public IMazeElement[,] Elements { get; private set; } = null!;
 
-    private readonly RoomCreator[] fabric =
-    [
-        new DefaultRoomCreator(),
-        new ExitRoomCreator(),
-    ];
-
-    private RectangularMaze(int height, int width)
+    public Maze()
     {
+    }
+
+
+    /*public Maze(int height, int width)
+    {
+        InitializeExternalWalls();
+        InitializeObjects();
+        FindFurthestExit();
         Height = height;
         Width = width;
+
+    }*/
+    public void Generate()
+    {
         InitializeExternalWalls();
         InitializeObjects();
         FindFurthestExit();
@@ -50,7 +56,7 @@ public class RectangularMaze : IMaze
         else if (furthest.Y == 1) point = new Point(furthest.X, furthest.Y - 1);
         else if (furthest.X == Height - 2) point = new Point(furthest.X + 1, furthest.Y);
         else if (furthest.Y == Width - 2) point = new Point(furthest.X, furthest.Y + 1);
-        this[point.X, point.Y] = fabric[1].CreateRoom();
+        this[point.X, point.Y] = new ExitRoom();
     }
 
     private void InitializeExternalWalls()
@@ -80,8 +86,8 @@ public class RectangularMaze : IMaze
             new Point(1, Width - 2),
             new Point(Height - 2, Width - 2)
         ];
-        startPoint = startPositions[rand.Next(startPositions.Length)];
-        var currentPoint = startPoint;
+        StartPoint = startPositions[rand.Next(startPositions.Length)];
+        var currentPoint = StartPoint;
         var stack = new Stack<Point>();
         do
         {
@@ -89,7 +95,7 @@ public class RectangularMaze : IMaze
             var x = currentPoint.X;
             var y = currentPoint.Y;
             var distance = this[x, y].Distance;
-            this[x, y] = fabric[0].CreateRoom();
+            this[x, y] = new Room();
             this[x, y].Distance = distance;
             this[x, y].IsVisited = true;
             if (x > 2 && !Elements[x - 2, y].IsVisited) neighbours.Add(new Point(x - 2, y));
@@ -108,7 +114,7 @@ public class RectangularMaze : IMaze
             else currentPoint = stack.Pop();
         } while (stack.Count > 0);
 
-        Elements[startPoint.X, startPoint.Y] = new Player();
+        Elements[StartPoint.X, StartPoint.Y] = new Player();
     }
 
     private void RemoveWall(Point a, Point b)
@@ -119,14 +125,8 @@ public class RectangularMaze : IMaze
         else
             point = a.X < b.X ? new Point(a.X + 1, a.Y) : new Point(a.X - 1, a.Y);
 
-        this[point.X, point.Y] = fabric[0].CreateRoom();
+        this[point.X, point.Y] = new Room();
         this[point.X, point.Y].IsVisited = true;
-    }
-
-    public static RectangularMaze GetMaze(int height, int width)
-    {
-        maze ??= new RectangularMaze(height, width);
-        return maze;
     }
 
     public IMazeElement this[int i, int j]

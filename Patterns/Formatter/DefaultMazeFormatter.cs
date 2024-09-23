@@ -1,12 +1,12 @@
-﻿using Patterns;
+﻿using Models;
 
-namespace MazePrinter;
+namespace UI;
 
 public class DefaultMazeFormatter : IMazeFormatter
 {
     public string Name => "Стандартный";
     public IReadOnlyList<char> Symbols => symbolsArr.AsReadOnly();
-    private readonly char[] symbolsArr = [' ', '#', '*', 'Q', 'P'];
+    private readonly char[] symbolsArr = [' ', '#', '*', 'P'];
 
     public char Format(IMazeElement element)
     {
@@ -15,7 +15,6 @@ public class DefaultMazeFormatter : IMazeFormatter
             Room or ExitRoom => ' ',
             ExternalWall => '#',
             InternalWall => '*',
-            // ExitRoom => 'Q',
             Player => 'P',
             _ => '?',
         };

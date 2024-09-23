@@ -1,8 +1,12 @@
-﻿namespace Patterns;
+﻿using System.Drawing;
+
+namespace Models;
 
 public interface IMaze : IEnumerable<IMazeElement>
 {
     IMazeElement[,] Elements { get; }
-    public int Height { get; }
-    public int Width { get; }
+    int Height { get; set; }
+    int Width { get; set; }
+    Point StartPoint { get; }
+    void Generate();
 }

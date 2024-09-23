@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace Patterns;
+﻿namespace Models;
 
 public class Room : IRoom
 {
