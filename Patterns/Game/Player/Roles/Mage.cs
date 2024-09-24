@@ -1,5 +1,5 @@
 ﻿namespace Models;
-public class Mage : Player2
+public class Mage : Player
 {
     public const int HintsMovesCount = 5;
 

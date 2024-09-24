@@ -2,21 +2,14 @@
 
 namespace UI;
 
-public class DefaultMazeFormatter : IMazeFormatter
+public class DefaultMazeFormatter : MazeFormatter
 {
-    public string Name => "Стандартный";
-    public IReadOnlyList<char> Symbols => symbolsArr.AsReadOnly();
-    private readonly char[] symbolsArr = [' ', '#', '*', 'P'];
+    public override string Name => "Стандартный";
+    public override IReadOnlyDictionary<Type, char> Symbols => charMap.AsReadOnly();
 
-    public char Format(IMazeElement element)
+    private readonly Dictionary<Type, char> charMap = new()
     {
-        return element switch
-        {
-            Room or ExitRoom => ' ',
-            ExternalWall => '#',
-            InternalWall => '*',
-            Player => 'P',
-            _ => '?',
-        };
-    }
+        [typeof(Room)] = ' ', [typeof(ExitRoom)] = 'Q', [typeof(ExternalWall)] = '#', [typeof(InternalWall)] = '*',
+        [typeof(Berserker)] = 'B', [typeof(Mage)] = 'M', [typeof(Tracer)] = 'T'
+    };
 }

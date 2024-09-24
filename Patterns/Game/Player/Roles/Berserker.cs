@@ -1,6 +1,6 @@
 ﻿namespace Models;
 
-public class Berserker : Player2
+public class Berserker : Player
 {
     public const int BreakableWallsCount = 4;
     public int BreakableWalls { get; private set; }

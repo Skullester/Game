@@ -1,5 +1,6 @@
 ﻿using Models;
 using Infrastructure;
+using Patterns.Naming;
 
 namespace UI;
 
@@ -17,7 +18,7 @@ public abstract class MazeWriter : INaming
         this.writer = writer;
     }
 
-    protected MazeWriter(TextWriter writer, IMazeFormatter mazeFormatter, IMaze maze) : this(
+    protected MazeWriter(IMaze maze, TextWriter writer, MazeFormatter mazeFormatter) : this(
         maze.ParseToChar(mazeFormatter), writer, maze)
     {
     }

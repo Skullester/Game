@@ -7,7 +7,6 @@ public class Program
         /*Console.Write(1);
         Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
         Console.WriteLine(2);*/
-
-        GameExecutor.Start(new PlayerArtist());
+        GameExecutor.Start();
     }
 }

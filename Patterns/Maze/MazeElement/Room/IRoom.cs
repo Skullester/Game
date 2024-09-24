@@ -2,5 +2,5 @@
 
 public interface IRoom : IMazeElement
 {
-    
+    IRoom Clone();
 }

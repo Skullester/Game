@@ -8,69 +8,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ConsoleApp1/Console/IUIArtist.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleApp1/Drawing/IDrawing.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleApp1/Drawing/WriterToDrawingAdapter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patterns/Game/Difficulty/Easy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patterns/Game/Difficulty/Hard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patterns/Game/Difficulty/MADNESS.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patterns/Game/Difficulty/Medium.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patterns/Game/GameManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patterns/Maze/Fabric/EasyMazeBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patterns/Maze/Fabric/HardMazeBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patterns/Maze/Fabric/MadnessMazeBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patterns/Maze/Fabric/MazeBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patterns/Maze/Fabric/MediumMazeBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Game/Commands/Command.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Game/Commands/DownMoveCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Game/Commands/LeftMoveCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Game/Commands/RightMoveCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Game/Commands/UpMoveCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Game/GameArtist.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Game/GameState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Maze/Fabric/MazeFactoryDefault.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Maze/Fabric/MazeFactoryFire.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Maze/Fabric/RoomsWallsFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/FireRoom.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/DefaultWallType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/FireWallType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/IWallType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/State.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/Console/Artist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/Console/Artist.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/Console/Artist.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/Console/ConsoleHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/Console/ConsoleHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/Difficulty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Difficulty/Difficulty.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/Console/IUIArtist.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/Drawing/IDrawing.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp1/Drawing/WriterToDrawingAdapter.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/GameExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/GameExecutor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/ConsoleApp1.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net8.0/ConsoleApp1.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net8.0/ConsoleApp1.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net8.0/ConsoleApp1.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net8.0/ConsoleApp1.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Formatter/DefaultMazeFormatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Formatter/DefaultMazeFormatter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Formatter/IMazeFormatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Formatter/IMazeFormatter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Formatter/IMazeFormatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Formatter/MazeFormatter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Formatter/WeirdMazeFormatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Formatter/WeirdMazeFormatter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Game.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Game/Difficulty/Difficulty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Difficulty/Difficulty.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Game/Player/Interface/Player2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Player/Interface/Player2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Berserker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Berserker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Mage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Mage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Tracer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Tracer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Infrastructure/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Infrastructure/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Fabric/EasyMazeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/Builder/EasyMazeBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Fabric/HardMazeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/Builder/HardMazeBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Fabric/MadnessMazeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/Builder/MadnessMazeBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Fabric/MazeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/Builder/MazeBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Fabric/MediumMazeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/Builder/MediumMazeBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/IMaze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/IMaze.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/IMazeElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/IMazeElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/DefaultRoomCreator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Maze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/Maze.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/ExitRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/ExitRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/ExitRoomCreator.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/IRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/IRoom.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/Room.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/RoomCreator.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/ExternalWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/ExternalWall.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/IWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/IWall.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/InternalWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/InternalWall.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/RectangularMaze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/Maze.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Naming/INaming.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Naming/INaming.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Writer/ConsoleMazeWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Writer/ConsoleMazeWriter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Writer/FileMazeWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Writer/FileMazeWriter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Writer/MazeWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Writer/MazeWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Writer/Writer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Writer/Writer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Writer/Writer.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/Patterns.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/obj/Patterns.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/Patterns.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/obj/Patterns.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +73,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Enum.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Runtime/CompilerServices/RuntimeHelpers.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Console/src/System/Console.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Console/src/System/ConsoleKeyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Console/src/System/ConsolePal.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Drawing.Primitives/src/System/Drawing/Point.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/First.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/Select.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/CollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/HashSet.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Enum.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/IO/Stream.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/IO/StreamWriter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/IO/TextWriter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Threading/Volatile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9f4b1f5d664afdfc80e1508ab7ed099dff210fbd/src/coreclr/System.Private.CoreLib/src/System/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9f4b1f5d664afdfc80e1508ab7ed099dff210fbd/src/coreclr/System.Private.CoreLib/src/System/Collections/Generic/ArraySortHelper.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9f4b1f5d664afdfc80e1508ab7ed099dff210fbd/src/coreclr/System.Private.CoreLib/src/System/Collections/Generic/EqualityComparer.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
@@ -159,7 +165,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f9b9a1a402d044dabaa335900e81774b2200/54/8d295002/02000004pdb3Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15942e2cd79d410299cc25c0929581222a910/04/5beef1cd/ConsoleColor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15942e2cd79d410299cc25c0929581222a910/db/faed0778/ConsoleCancelEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/2b/e5f43cd8/FileMode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/56/6c6cb030/IReadOnlyDictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/95/89d84246/IComparer`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/99/bc94b612/IReadOnlySet`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/a8/8cc6083e/ISet`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/e3/c870dd4c/IDeserializationCallback.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fa134a4f7024c6a9faff12697fb4fb9c8e8a0/1d/2dadbc48/IEqualityComparer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fa134a4f7024c6a9faff12697fb4fb9c8e8a0/1e/0d0c0b05/IReadOnlyCollection`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fa134a4f7024c6a9faff12697fb4fb9c8e8a0/27/5c24f399/ICollection`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -175,10 +186,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fa134a4f7024c6a9faff12697fb4fb9c8e8a0/b2/57588f43/IEqualityComparer`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fa134a4f7024c6a9faff12697fb4fb9c8e8a0/c1/0b666346/IArraySortHelper`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fa134a4f7024c6a9faff12697fb4fb9c8e8a0/d7/50a89bb5/Comparison`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/decf5560667640dda7df34fdd0a01af02a8a0/60/142c6697/ConsoleKey.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/decf5560667640dda7df34fdd0a01af02a8a0/95/143f7d8c/Interop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ee803b43334273aa749e336ada25b3b942fb14996db550551458d5ede847cd/Graphics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleApp1/GameExecutor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/Patterns/Maze/Maze.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/Patterns/Maze/Maze.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Patterns/Maze/MazeElement/Wall/IWall.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Patterns/Maze/MazeElement/Wall/IWall.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Patterns/Maze/MazeElement/Wall/IWall.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -198,7 +212,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.ConsoleApp1.executor": "Debug",
+    ".NET Project.ConsoleApp1.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "XThreadsFramesViewSplitterKey": "0.050829876",
     "b0dcebb8-0256-4550-a8d6-cf767d69af55.executor": "Run",
@@ -297,7 +311,8 @@
       <workItem from="1726741205799" duration="2100000" />
       <workItem from="1726758441519" duration="334000" />
       <workItem from="1726759460387" duration="796000" />
-      <workItem from="1727046056662" duration="7762000" />
+      <workItem from="1727046056662" duration="8134000" />
+      <workItem from="1727124825151" duration="19109000" />
     </task>
     <servers />
   </component>
@@ -312,43 +327,30 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Patterns/Maze/Maze.cs</url>
-          <line>20</line>
-          <properties documentPath="H:\Учёба\4\ПП\Game\Patterns\Maze\RectangularMaze.cs" containingFunctionPresentation="Constructor 'RectangularMaze'">
+          <url>file://$PROJECT_DIR$/Patterns/Game/GameManager.cs</url>
+          <line>41</line>
+          <properties documentPath="H:\Учёба\4\ПП\Game\Patterns\Game\GameManager.cs" containingFunctionPresentation="Method 'Start'">
             <startOffsets>
-              <option value="465" />
+              <option value="971" />
             </startOffsets>
             <endOffsets>
-              <option value="481" />
+              <option value="1007" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ConsoleApp1/GameExecutor.cs</url>
-          <line>61</line>
-          <properties documentPath="H:\Учёба\4\ПП\Game\ConsoleApp1\GameExecutor.cs" containingFunctionPresentation="Method 'SetGameOptions'">
+          <url>file://$PROJECT_DIR$/Patterns/Game/Commands/Command.cs</url>
+          <line>30</line>
+          <properties documentPath="H:\Учёба\4\ПП\Game\Patterns\Game\Commands\Command.cs" containingFunctionPresentation="Method 'Execute'">
             <startOffsets>
-              <option value="1797" />
+              <option value="787" />
             </startOffsets>
             <endOffsets>
-              <option value="1826" />
+              <option value="867" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ConsoleApp1/GameExecutor.cs</url>
-          <line>21</line>
-          <properties documentPath="H:\Учёба\4\ПП\Game\ConsoleApp1\GameExecutor.cs" containingFunctionPresentation="Method 'Start'">
-            <startOffsets>
-              <option value="649" />
-            </startOffsets>
-            <endOffsets>
-              <option value="688" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

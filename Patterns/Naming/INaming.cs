@@ -1,4 +1,4 @@
-﻿namespace UI;
+﻿namespace Patterns.Naming;
 
 public interface INaming
 {

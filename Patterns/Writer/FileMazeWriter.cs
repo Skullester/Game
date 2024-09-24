@@ -4,11 +4,11 @@ namespace UI;
 
 public class FileMazeWriter : MazeWriter
 {
-    public FileMazeWriter(IMaze maze, TextWriter writer, IMazeFormatter formatter) : base(writer, formatter, maze)
+    public override string Name => "Файл";
+
+    public FileMazeWriter(IMaze maze, TextWriter writer, MazeFormatter formatter) : base(maze, writer, formatter)
     {
     }
-
-    public override string Name => "Файл";
 
     protected override void Write(char sym)
     {

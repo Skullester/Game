@@ -1,6 +1,6 @@
 ﻿namespace Models;
 
-public class Tracer : Player2
+public class Tracer : Player
 {
     public const int MaxTraces = 8;
     public int CurrentTraceCount { get; private set; }

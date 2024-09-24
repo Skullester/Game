@@ -2,22 +2,11 @@
 
 namespace UI;
 
-public class WeirdMazeFormatter : IMazeFormatter
+public class WeirdMazeFormatter : MazeFormatter
 {
-    public string Name => "Нестандартный";
-    public IReadOnlyList<char> Symbols => symbolsArr.AsReadOnly();
-    private readonly char[] symbolsArr = ['~', '%', '@', '=', '*'];
+    public override string Name => "Нестандартный";
+    public override IReadOnlyDictionary<Type, char> Symbols => charMap.AsReadOnly();
 
-    public char Format(IMazeElement element)
-    {
-        return element switch
-        {
-            Room => '~',
-            ExternalWall => '%',
-            InternalWall => '@',
-            ExitRoom => '=',
-            Player=> '*',
-            _ => '?',
-        };
-    }
+    private readonly Dictionary<Type, char> charMap = new()
+        { [typeof(Room)] = '~', [typeof(ExitRoom)] = '$', [typeof(ExternalWall)] = '%', [typeof(InternalWall)] = '@' };
 }

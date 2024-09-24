@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Drawing;
+using Models.Fabric;
 
 namespace Models;
 
@@ -7,24 +8,17 @@ public class Maze : IMaze
 {
     public int Height { get; set; }
     public int Width { get; set; }
-    public Point StartPoint { get; private set; }
-
+    public Point PlayerPoint { get; set; }
+    private readonly IRoom room;
+    public IWallType WallType { get; }
     public IMazeElement[,] Elements { get; private set; } = null!;
 
-    public Maze()
+    public Maze(MazeFactory factory)
     {
+        room = factory.GetRoom();
+        WallType = factory.GetWallType();
     }
 
-
-    /*public Maze(int height, int width)
-    {
-        InitializeExternalWalls();
-        InitializeObjects();
-        FindFurthestExit();
-        Height = height;
-        Width = width;
-
-    }*/
     public void Generate()
     {
         InitializeExternalWalls();
@@ -62,8 +56,8 @@ public class Maze : IMaze
     private void InitializeExternalWalls()
     {
         Elements = new IMazeElement[Height, Width];
-        var exWall = new ExternalWall();
-        var inWall = new InternalWall(100);
+        var exWall = new ExternalWall(WallType);
+        var inWall = new InternalWall(100, WallType);
         for (var i = 0; i < Height; i++)
         {
             for (var j = 0; j < Width; j++)
@@ -86,8 +80,8 @@ public class Maze : IMaze
             new Point(1, Width - 2),
             new Point(Height - 2, Width - 2)
         ];
-        StartPoint = startPositions[rand.Next(startPositions.Length)];
-        var currentPoint = StartPoint;
+        PlayerPoint = startPositions[rand.Next(startPositions.Length)];
+        var currentPoint = PlayerPoint;
         var stack = new Stack<Point>();
         do
         {
@@ -113,8 +107,6 @@ public class Maze : IMaze
             }
             else currentPoint = stack.Pop();
         } while (stack.Count > 0);
-
-        Elements[StartPoint.X, StartPoint.Y] = new Player();
     }
 
     private void RemoveWall(Point a, Point b)
@@ -129,10 +121,10 @@ public class Maze : IMaze
         this[point.X, point.Y].IsVisited = true;
     }
 
-    public IMazeElement this[int i, int j]
+    public IMazeElement this[int x, int y]
     {
-        get => Elements[i, j];
-        private set => Elements[i, j] = value;
+        get => Elements[x, y];
+        private set => Elements[x, y] = value;
     }
 
     public IEnumerator<IMazeElement> GetEnumerator()

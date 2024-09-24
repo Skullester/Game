@@ -2,13 +2,13 @@
 
 public class MediumMazeBuilder : MazeBuilder
 {
-    public MediumMazeBuilder() : base("Средний")
+    public MediumMazeBuilder(MazeFactory factory) : base("Средний",factory)
     {
     }
 
     public override MazeBuilder SetSize()
     {
-        Maze.Height = Maze.Width = 30;
+        Maze.Height = Maze.Width = 31;
         return this;
     }
 }

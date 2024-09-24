@@ -1,4 +1,4 @@
-﻿using UI;
+﻿using Patterns.Naming;
 
 namespace Game;
 

@@ -16,10 +16,12 @@ public class InternalWall : IWall
         }
     }
 
-    public InternalWall(float durability)
+    public InternalWall(float durability, IWallType type)
     {
         Durability = durability;
+        Type = type;
     }
 
-    public IWall Clone() => (MemberwiseClone() as InternalWall)!;
+    public IWallType Type { get; }
+    public IWall Clone() => (MemberwiseClone() as IWall)!;
 }

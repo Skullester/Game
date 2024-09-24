@@ -2,13 +2,13 @@
 
 public class MadnessMazeBuilder : MazeBuilder
 {
-    public MadnessMazeBuilder() : base("Безумный")
+    public MadnessMazeBuilder(MazeFactory factory) : base("Безумный",factory)
     {
     }
 
     public override MazeBuilder SetSize()
     {
-        Maze.Height = Maze.Width = 60;
+        Maze.Height = Maze.Width = 61;
         return this;
     }
 }
