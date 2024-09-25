@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v8.0": {
       "UI/1.0.0": {
         "dependencies": {
-          "Patterns": "1.0.0"
+          "Application": "1.0.0",
+          "Domain": "1.0.0"
         },
         "runtime": {
           "UI.dll": {}
@@ -41,12 +42,23 @@
           }
         }
       },
-      "Patterns/1.0.0": {
+      "Application/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "runtime": {
+          "Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Domain/1.0.0": {
         "dependencies": {
           "System.Drawing.Common": "8.0.5"
         },
         "runtime": {
-          "Patterns.dll": {
+          "Domain.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -74,7 +86,12 @@
       "path": "system.drawing.common/8.0.5",
       "hashPath": "system.drawing.common.8.0.5.nupkg.sha512"
     },
-    "Patterns/1.0.0": {
+    "Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

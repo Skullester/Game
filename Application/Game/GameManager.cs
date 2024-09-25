@@ -3,93 +3,51 @@ using Models.Fabric;
 
 namespace Game;
 
-public class GameManager
+public sealed class GameManager : IGameManager
 {
     private static GameManager? instance;
-    public event Action Perfomed;
-    public IReadOnlyCollection<Command> Commands => commands.AsReadOnly();
-    private Command[]? commands;
-    public GameState State { get; set; } = GameState.Play;
-    public Player Player { get; set; } = null!;
-    public GameArtist Artist { get; set; } = null!;
-    public IMaze? Maze { get; private set; }
+    public GameState State { get; set; }
+    public Player Player { get; }
+    public IMaze Maze { get; private set; } = null!;
+    public MazeBuilder Builder { get; }
 
-    public IMaze? CreateMaze(MazeBuilder builder)
+    private GameManager(Player player, MazeBuilder builder)
     {
-        builder.SetSize();
-        builder.GenerateMaze();
-        Maze = builder.Maze;
-        commands = GetCommands(Maze);
-        return Maze;
+        Player = player;
+        Builder = builder;
     }
 
-    private Command[] GetCommands(IMaze? maze) =>
-    [
-        new LeftMoveCommand(maze),
-        new RightMoveCommand(maze),
-        new UpMoveCommand(maze),
-        new DownMoveCommand(maze),
-        new SkillCommand(maze, Player),
-        new RestartCommand(maze)
-    ];
-
-    public static GameManager GetManager()
+    private void CreateMaze()
     {
-        instance ??= new GameManager();
+        Builder.SetSize();
+        Builder.GenerateMaze();
+        Maze = Builder.Maze;
+    }
+
+    public static GameManager GetManager(Player player, MazeBuilder mazeBuilder)
+    {
+        instance ??= new GameManager(player, mazeBuilder);
         return instance;
     }
 
-    public void Start()
+    public void Execute(Command command)
     {
+        command.Execute();
+        CheckTimePenalty();
+    }
+
+    public void Initialize()
+    {
+        CreateMaze();
         Player.Initialize();
-        Artist.StartGame();
-        while (State == GameState.Play)
-        {
-            // int i = 0;
-            while (Console.KeyAvailable)
-            {
-                // i++;
-                Console.ReadKey(true);
-            }
-
-            // Console.WriteLine(i);
-            var cmdChar = Console.ReadKey(true);
-            var command = commands!.FirstOrDefault(x => x.SymbolsMap.Contains(cmdChar.Key));
-            if (command is null) continue;
-            if (command is IMovingCommand)
-            {
-                Perfomed?.Invoke();
-            }
-
-            command.Execute();
-            Artist.UpdateGameState();
-        }
-
-        CheckState();
-    }
-
-    public void CheckState()
-    {
-        switch (State)
-        {
-            case GameState.Reset:
-                RestartGame();
-                break;
-            case GameState.Defeat:
-                Artist.DrawDefeat();
-                RestartGame();
-                break;
-            case GameState.Victory:
-                Artist.DrawVictory();
-                break;
-        }
-    }
-
-    public void RestartGame()
-    {
-        Maze.Generate();
-        Player.SetDefaultValues();
         State = GameState.Play;
-        Start();
+    }
+
+    public async Task CheckTimePenalty()
+    {
+        var mazePlayerPoint = Player.Location;
+        await Task.Delay(Maze.Room.StayTime);
+        if (Player.Location == mazePlayerPoint)
+            State = GameState.Defeat;
     }
 }

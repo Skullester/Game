@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using UI.Artist;
 
 namespace UI;
 
@@ -6,7 +7,8 @@ public class Program
 {
     private static void Main()
     {
-        Console.OutputEncoding = Encoding.Unicode;
-        GameExecutor.Start();
+        GameInitializer.Start();
+        IGameArtist gameArtist = ConsoleGameArtist.GetArtist(ConsoleColor.Blue);
+        gameArtist.Initialize();
     }
 }
