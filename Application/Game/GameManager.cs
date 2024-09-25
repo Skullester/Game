@@ -11,10 +11,10 @@ public class GameManager
     private Command[]? commands;
     public GameState State { get; set; } = GameState.Play;
     public Player Player { get; set; } = null!;
-    public GameArtist GameArtist { get; set; } = null!;
-    public IMaze Maze { get; private set; }
+    public GameArtist Artist { get; set; } = null!;
+    public IMaze? Maze { get; private set; }
 
-    public IMaze CreateMaze(MazeBuilder builder)
+    public IMaze? CreateMaze(MazeBuilder builder)
     {
         builder.SetSize();
         builder.GenerateMaze();
@@ -42,18 +42,27 @@ public class GameManager
     public void Start()
     {
         Player.Initialize();
-        GameArtist.StartGame();
+        Artist.StartGame();
         while (State == GameState.Play)
         {
+            // int i = 0;
+            while (Console.KeyAvailable)
+            {
+                // i++;
+                Console.ReadKey(true);
+            }
+
+            // Console.WriteLine(i);
             var cmdChar = Console.ReadKey(true);
             var command = commands!.FirstOrDefault(x => x.SymbolsMap.Contains(cmdChar.Key));
+            if (command is null) continue;
             if (command is IMovingCommand)
             {
                 Perfomed?.Invoke();
             }
 
-            command?.Execute();
-            GameArtist.UpdateGameState();
+            command.Execute();
+            Artist.UpdateGameState();
         }
 
         CheckState();
@@ -67,11 +76,11 @@ public class GameManager
                 RestartGame();
                 break;
             case GameState.Defeat:
-                GameArtist.DrawDefeat();
+                Artist.DrawDefeat();
                 RestartGame();
                 break;
             case GameState.Victory:
-                GameArtist.DrawVictory();
+                Artist.DrawVictory();
                 break;
         }
     }

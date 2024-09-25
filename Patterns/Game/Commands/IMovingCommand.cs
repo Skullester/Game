@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Game;
+﻿namespace Game;
 
 interface IMovingCommand
 {

@@ -3,5 +3,5 @@
 public interface IRoom : IMazeElement
 {
     IRoom Clone();
-    int Time { get; }
+    int StayTime { get; }
 }

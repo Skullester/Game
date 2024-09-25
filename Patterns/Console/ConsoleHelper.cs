@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using Patterns.Naming;
+﻿using Patterns.Naming;
 
 namespace Game;
 

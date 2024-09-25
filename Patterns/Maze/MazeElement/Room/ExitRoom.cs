@@ -4,6 +4,6 @@ public class ExitRoom : IRoom
 {
     public bool IsVisited { get; set; }
     public int Distance { get; set; }
-    public int Time => int.MaxValue;
+    public int StayTime => int.MaxValue;
     public IRoom Clone() => (MemberwiseClone() as IRoom)!;
 }

@@ -9,7 +9,7 @@ public static class GameExecutor
 {
     private static ConsoleMazeWriter mazeWriter = null!;
     private static readonly MazeFormatter[] formatters = [new DefaultMazeFormatter(), new WeirdMazeFormatter()];
-    private static IMaze? maze = null!;
+    private static IMaze? maze;
     private static Player[] players = null!;
     private static readonly Difficulty[] difficulties = [new Easy(), new Medium(), new Hard(), new MADNESS()];
     private static Difficulty difficulty = null!;
@@ -22,46 +22,34 @@ public static class GameExecutor
     {
         gameManager = GameManager.GetManager();
         SetGameOptions();
-        gameManager.GameArtist = GameArtist.GetArtist(mazeWriter);
+        gameManager.Artist = GameArtist.GetArtist(mazeWriter);
         gameManager.Start();
+    }
+
+    private static T PrintAndGetElement<T>(IEnumerable<T> collection, string offerMsg, string errorMsg)
+        where T : INaming
+    {
+        PrintOffer(offerMsg);
+        Print(collection);
+        return GetElement(collection, errorMsg);
     }
 
     private static void SetGameOptions()
     {
-        PrintOffer("Выберите уровень сложности: ");
-        Print(difficulties);
-        difficulty = GetDifficulty();
-        PrintOffer("Выберите тип лабиринта: ");
-        Print(factories);
-        var factory = GetFactory();
+        difficulty = PrintAndGetElement(difficulties, "Выберите уровень сложности:",
+            "Выберите сложность из списка выше");
+        var factory = PrintAndGetElement(factories, "Выберите тип лабиринта:", "Выберите тип лабиринта из списка выше");
         mazeBuilders = GetMazeBuilders(factory);
         var mazeBuilder = GetMazeBuilder();
         maze = mazeBuilder.Maze;
-        var player = ChoosePlayer();
+        players = GetPlayers();
+        var player = PrintAndGetElement(players, "Выберите персонажа:", "Выберите персонажа из списка выше");
         gameManager.Player = player;
-        maze = gameManager.CreateMaze(mazeBuilder);
+        gameManager.CreateMaze(mazeBuilder);
         PrintOffer("Выберите способ вывода лабиринта: ");
         PrintFormatters();
-        var formatter = GetMazeFormatter();
-        mazeWriter = new ConsoleMazeWriter(maze, formatter, 1);
-    }
-
-    private static MazeFactory GetFactory()
-    {
-        return ConsoleHelper.FindNamingElementByInput(factories, "Выберите тип лабиринта из списка выше");
-    }
-
-    private static Player ChoosePlayer()
-    {
-        PrintOffer("Выберите персонажа: ");
-        players = GetPlayers();
-        Print(players);
-        return GetPlayer();
-    }
-
-    private static Difficulty GetDifficulty()
-    {
-        return ConsoleHelper.FindNamingElementByInput(difficulties, "Выберите сложность из списка выше");
+        var formatter = GetElement(formatters, "Выберите способ вывода из списка выше");
+        mazeWriter = new ConsoleMazeWriter(maze, formatter);
     }
 
     private static MazeBuilder[] GetMazeBuilders(MazeFactory factory)
@@ -75,18 +63,10 @@ public static class GameExecutor
         ];
     }
 
-    private static Player GetPlayer()
-    {
-        return ConsoleHelper.FindNamingElementByInput(players, "Выберите персонажа из списка выше");
-    }
-
     private static MazeBuilder GetMazeBuilder() => mazeBuilders!.FirstOrDefault(x => x.Name == difficulty.Name)!;
 
-
-    private static MazeFormatter GetMazeFormatter()
-    {
-        return ConsoleHelper.FindNamingElementByInput(formatters, "Выберите способ вывода из списка выше");
-    }
+    private static T GetElement<T>(IEnumerable<T> collection, string errorMsg) where T : INaming =>
+        ConsoleHelper.FindNamingElementByInput(collection, errorMsg);
 
     private static void PrintFormatters()
     {

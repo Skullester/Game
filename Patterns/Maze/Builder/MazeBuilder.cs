@@ -3,7 +3,7 @@
 public abstract class MazeBuilder
 {
     public string Name { get; }
-    public IMaze Maze { get; }
+    public IMaze? Maze { get; }
 
     protected MazeBuilder(string name, MazeFactory factory)
     {

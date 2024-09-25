@@ -8,41 +8,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Patterns/Game/Artist/IGameArtist.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patterns/Game/Commands/RestartCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Patterns/Game/Commands/SkillCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/Console/ConsoleHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Console/ConsoleHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/GameExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/GameExecutor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net8.0/ConsoleApp1.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net8.0/ConsoleApp1.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net8.0/ConsoleApp1.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp1/obj/Debug/net8.0/ConsoleApp1.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Formatter/DefaultMazeFormatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Formatter/DefaultMazeFormatter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Formatter/WeirdMazeFormatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Formatter/WeirdMazeFormatter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/Command.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Commands/Command.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/DownMoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Commands/DownMoveCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/LeftMoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Commands/LeftMoveCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/RightMoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Commands/RightMoveCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/UpMoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Commands/UpMoveCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/GameArtist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Artist/GameArtist.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Console/ConsoleHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Console/ConsoleHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Game/Artist/GameArtist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Artist/GameArtist.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/IMovingCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Commands/IMovingCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Player/Interface/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Player/Interface/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Berserker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Berserker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Mage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Mage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Tracer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Tracer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Infrastructure/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Infrastructure/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/IMaze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/IMaze.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Builder/MazeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/Builder/MazeBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/Maze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/Maze.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/ExitRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/ExitRoom.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/FireRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/FireRoom.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/IRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/IRoom.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/Room.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/DefaultWallType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/DefaultWallType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/ExternalWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/ExternalWall.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/FireWallType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/FireWallType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/IWallType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/IWallType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/InternalWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/InternalWall.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/Writer/ConsoleMazeWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Writer/ConsoleMazeWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Writer/FileMazeWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Writer/FileMazeWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Writer/MazeWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/Writer/MazeWriter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.sourcelink.json" afterDir="false" />
     </list>
@@ -84,6 +69,9 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/IO/TextWriter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/AsyncVoidMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Text/Encoding.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Text/StringBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Text/UnicodeEncoding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Threading/Thread.Windows.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Threading/Thread.cs" root0="SKIP_HIGHLIGHTING" />
@@ -183,6 +171,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/39/5dadc21d/IList`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/56/6c6cb030/IReadOnlyDictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/65/8b95c264/IReadOnlyCollection`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/72/b258181b/ICloneable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/95/89d84246/IComparer`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/99/bc94b612/IReadOnlySet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/a8/8cc6083e/ISet`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -208,10 +197,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/decf5560667640dda7df34fdd0a01af02a8a0/95/143f7d8c/Interop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/decf5560667640dda7df34fdd0a01af02a8a0/f9/310eb16e/ConsoleColor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ee803b43334273aa749e336ada25b3b942fb14996db550551458d5ede847cd/Graphics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/ConsoleApp1/GameExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/ConsoleApp1/GameExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleApp1/GameExecutor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/Patterns/Game/Player/Roles/Berserker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/Patterns/Game/Player/Roles/Berserker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/Patterns/Game/Player/Roles/Berserker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/FireRoom.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -267,7 +255,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="1" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/ConsoleApp1/ConsoleApp1.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/UI/UI.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -337,7 +325,10 @@
       <workItem from="1727150625400" duration="50000" />
       <workItem from="1727150686341" duration="564000" />
       <workItem from="1727187342178" duration="29916000" />
-      <workItem from="1727267624281" duration="305000" />
+      <workItem from="1727267624281" duration="1115000" />
+      <workItem from="1727268758343" duration="368000" />
+      <workItem from="1727284750697" duration="1537000" />
+      <workItem from="1727286299714" duration="4191000" />
     </task>
     <servers />
   </component>

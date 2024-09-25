@@ -8,7 +8,7 @@ public class GameArtist : IGameArtist
     private readonly ConsoleMazeWriter mazeWriter;
     private static GameArtist? instance;
     private readonly GameManager gameManager;
-    private IMaze maze => gameManager.Maze;
+    private IMaze? maze => gameManager.Maze;
 
     public GameArtist(ConsoleMazeWriter mazeWriter)
     {
@@ -31,9 +31,10 @@ public class GameArtist : IGameArtist
         var foregroundColor = Console.ForegroundColor;
         ConsoleHelper.SetConsoleColor(ConsoleColor.Yellow);
         var i = 0;
+        var offset = 2;
         foreach (var cmd in gameManager.Commands)
         {
-            Console.SetCursorPosition(maze.Width + 2, i++);
+            Console.SetCursorPosition(maze.Width + offset, i++);
             Console.WriteLine($"\"{cmd.Symbol}\" - {cmd.Name}");
         }
 
@@ -61,7 +62,7 @@ public class GameArtist : IGameArtist
     public async Task CheckTimePenalty()
     {
         var mazePlayerPoint = maze.PlayerPoint;
-        await Task.Delay(maze.Room.Time);
+        await Task.Delay(maze.Room.StayTime);
         if (maze.PlayerPoint == mazePlayerPoint)
             gameManager.State = GameState.Defeat;
     }
@@ -85,8 +86,7 @@ public class GameArtist : IGameArtist
 
     private void DrawGameResult(string name, ConsoleColor color)
     {
-        Console.ForegroundColor = color;
-        Console.WriteLine(name);
+        ConsoleHelper.PrintWithColor(name, color);
         Thread.Sleep(1000);
     }
 

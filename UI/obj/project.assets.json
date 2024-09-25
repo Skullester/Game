@@ -151,11 +151,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Учёба\\4\\ПП\\Game\\ConsoleApp1\\ConsoleApp1.csproj",
-      "projectName": "ConsoleApp1",
-      "projectPath": "H:\\Учёба\\4\\ПП\\Game\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "H:\\Учёба\\4\\ПП\\Game\\UI\\UI.csproj",
+      "projectName": "UI",
+      "projectPath": "H:\\Учёба\\4\\ПП\\Game\\UI\\UI.csproj",
       "packagesPath": "C:\\Users\\mrsam\\.nuget\\packages\\",
-      "outputPath": "H:\\Учёба\\4\\ПП\\Game\\ConsoleApp1\\obj\\",
+      "outputPath": "H:\\Учёба\\4\\ПП\\Game\\UI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mrsam\\AppData\\Roaming\\NuGet\\NuGet.Config"

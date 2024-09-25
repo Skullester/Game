@@ -57,7 +57,7 @@ public class Maze : IMaze
     {
         Elements = new IMazeElement[Height, Width];
         var exWall = new ExternalWall(WallType);
-        var inWall = new InternalWall(100, WallType);
+        var inWall = new InternalWall(WallType);
         for (var i = 0; i < Height; i++)
         {
             for (var j = 0; j < Width; j++)
