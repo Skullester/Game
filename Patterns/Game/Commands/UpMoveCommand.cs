@@ -3,11 +3,11 @@ using Models;
 
 namespace Game;
 
-class UpMoveCommand : Command
+class UpMoveCommand : Command, IMovingCommand
 {
     public override string Name => "Вверх";
 
-    public UpMoveCommand(IMaze maze) : base(maze)
+    public UpMoveCommand(IMaze maze) : base(maze, '\u2191')
     {
     }
 

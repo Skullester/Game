@@ -1,4 +1,5 @@
-﻿using Patterns.Naming;
+﻿using System.Drawing;
+using Patterns.Naming;
 
 namespace Game;
 
@@ -8,16 +9,32 @@ public static class ConsoleHelper
 
     public static void PrintLineWithColor(string text, ConsoleColor newColor, bool saveOldColor = true)
     {
+        PrintWithColor(text + Environment.NewLine, newColor, saveOldColor);
+    }
+
+    public static void PrintWithColor(string text, ConsoleColor newColor, bool saveOldColor = true)
+    {
         var color = Console.ForegroundColor;
         SetConsoleColor(newColor);
-        PrintLine(text);
+        Print(text);
         if (saveOldColor)
             SetConsoleColor(color);
     }
 
-    public static T FindNamingElementByInput<T>(IEnumerable<T> collection, string errorMessage) where T : INaming
+    public static void PrintLine(string text)
     {
-        SetConsoleColor(ConsoleColor.Cyan);
+        Print(text + Environment.NewLine);
+    }
+
+    private static void Print(string text)
+    {
+        Console.Write(text);
+    }
+
+    public static T FindNamingElementByInput<T>(IEnumerable<T> collection, string errorMessage)
+        where T : INaming
+    {
+        Console.ForegroundColor = ConsoleColor.Cyan;
         T? element;
         bool isError;
         do
@@ -38,6 +55,5 @@ public static class ConsoleHelper
         return condition;
     }
 
-    public static void PrintLine(string text) => Console.WriteLine(text);
     public static void PrintError(string text) => PrintLineWithColor(text, ConsoleColor.Red);
 }

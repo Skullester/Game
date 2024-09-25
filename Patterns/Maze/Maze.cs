@@ -9,13 +9,13 @@ public class Maze : IMaze
     public int Height { get; set; }
     public int Width { get; set; }
     public Point PlayerPoint { get; set; }
-    private readonly IRoom room;
+    public IRoom Room { get; }
     public IWallType WallType { get; }
     public IMazeElement[,] Elements { get; private set; } = null!;
 
     public Maze(MazeFactory factory)
     {
-        room = factory.GetRoom();
+        Room = factory.GetRoom();
         WallType = factory.GetWallType();
     }
 
@@ -72,7 +72,6 @@ public class Maze : IMaze
     private void InitializeObjects()
     {
         var rand = new Random();
-
         Point[] startPositions =
         [
             new Point(1, 1),
@@ -89,7 +88,7 @@ public class Maze : IMaze
             var x = currentPoint.X;
             var y = currentPoint.Y;
             var distance = this[x, y].Distance;
-            this[x, y] = new Room();
+            this[x, y] = Room.Clone();
             this[x, y].Distance = distance;
             this[x, y].IsVisited = true;
             if (x > 2 && !Elements[x - 2, y].IsVisited) neighbours.Add(new Point(x - 2, y));
@@ -117,14 +116,14 @@ public class Maze : IMaze
         else
             point = a.X < b.X ? new Point(a.X + 1, a.Y) : new Point(a.X - 1, a.Y);
 
-        this[point.X, point.Y] = new Room();
+        this[point.X, point.Y] = Room.Clone();
         this[point.X, point.Y].IsVisited = true;
     }
 
     public IMazeElement this[int x, int y]
     {
         get => Elements[x, y];
-        private set => Elements[x, y] = value;
+        set => Elements[x, y] = value;
     }
 
     public IEnumerator<IMazeElement> GetEnumerator()

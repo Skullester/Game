@@ -1,4 +1,7 @@
-﻿namespace Models;
+﻿using System.Drawing;
+
+namespace Models;
+
 public class Mage : Player
 {
     public const int HintsMovesCount = 5;
@@ -7,13 +10,24 @@ public class Mage : Player
 
     public override string Name => "Маг";
 
-    public Mage(IMaze maze, int countHintsMoves) : base(maze)
+    public Mage(IMaze maze, int countHintsMoves) : base(maze, ConsoleColor.Blue)
     {
         HintsMoves = countHintsMoves;
     }
 
-    public override void UseSkill()
+    public override void SetDefaultValues()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override IEnumerable<Point> UseSkill()
     {
         HintsMoves--;
+        yield break;
+    }
+
+    public override void Initialize()
+    {
+        throw new NotImplementedException();
     }
 }

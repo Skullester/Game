@@ -3,11 +3,11 @@ using Models;
 
 namespace Game;
 
-class RightMoveCommand : Command
+class RightMoveCommand : Command, IMovingCommand
 {
     public override string Name => "Вправо";
 
-    public RightMoveCommand(IMaze maze) : base(maze)
+    public RightMoveCommand(IMaze maze) : base(maze, '\u2192')
     {
     }
 

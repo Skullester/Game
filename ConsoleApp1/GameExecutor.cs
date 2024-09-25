@@ -9,7 +9,7 @@ public static class GameExecutor
 {
     private static ConsoleMazeWriter mazeWriter = null!;
     private static readonly MazeFormatter[] formatters = [new DefaultMazeFormatter(), new WeirdMazeFormatter()];
-    private static IMaze maze = null!;
+    private static IMaze? maze = null!;
     private static Player[] players = null!;
     private static readonly Difficulty[] difficulties = [new Easy(), new Medium(), new Hard(), new MADNESS()];
     private static Difficulty difficulty = null!;
@@ -23,13 +23,6 @@ public static class GameExecutor
         gameManager = GameManager.GetManager();
         SetGameOptions();
         gameManager.GameArtist = GameArtist.GetArtist(mazeWriter);
-        StartGame();
-    }
-
-    private static void StartGame()
-    {
-        var player = ChoosePlayer();
-        gameManager.Player2 = player;
         gameManager.Start();
     }
 
@@ -43,11 +36,14 @@ public static class GameExecutor
         var factory = GetFactory();
         mazeBuilders = GetMazeBuilders(factory);
         var mazeBuilder = GetMazeBuilder();
+        maze = mazeBuilder.Maze;
+        var player = ChoosePlayer();
+        gameManager.Player = player;
         maze = gameManager.CreateMaze(mazeBuilder);
         PrintOffer("Выберите способ вывода лабиринта: ");
         PrintFormatters();
         var formatter = GetMazeFormatter();
-        mazeWriter = new ConsoleMazeWriter(maze, formatter, 0.5);
+        mazeWriter = new ConsoleMazeWriter(maze, formatter, 1);
     }
 
     private static MazeFactory GetFactory()
@@ -84,11 +80,7 @@ public static class GameExecutor
         return ConsoleHelper.FindNamingElementByInput(players, "Выберите персонажа из списка выше");
     }
 
-    private static MazeBuilder GetMazeBuilder()
-    {
-        var name = difficulty.Name;
-        return mazeBuilders!.FirstOrDefault(x => x.Name == name)!;
-    }
+    private static MazeBuilder GetMazeBuilder() => mazeBuilders!.FirstOrDefault(x => x.Name == difficulty.Name)!;
 
 
     private static MazeFormatter GetMazeFormatter()
@@ -123,9 +115,9 @@ public static class GameExecutor
         var ratio = difficulty.SkillRatio;
         return
         [
-            new Berserker(maze, (int)(Berserker.BreakableWallsCount * ratio)),
+            new Berserker(maze, (int)(Berserker.BreakableWallsConst * ratio)),
             new Mage(maze, (int)(Mage.HintsMovesCount * ratio)),
-            new Tracer(maze, (int)(Tracer.MaxTraces * ratio)),
+            new Tracer(maze, (int)(Tracer.TracesConst * ratio)),
         ];
     }
 }

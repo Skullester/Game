@@ -4,17 +4,20 @@ using Patterns.Naming;
 
 namespace Game;
 
-abstract class Command : INaming
+public abstract class Command : INaming
 {
-    protected readonly IMaze maze;
+    private readonly IMaze maze;
     protected readonly HashSet<ConsoleKey> symbolsMap = new();
     protected Point Player => maze.PlayerPoint;
     public IReadOnlySet<ConsoleKey> SymbolsMap => symbolsMap;
-    private byte step;
+    protected readonly GameManager manager;
+    public char Symbol { get; }
 
-    protected Command(IMaze maze)
+    protected Command(IMaze maze, char symbol)
     {
         this.maze = maze;
+        manager = GameManager.GetManager();
+        Symbol = symbol;
         // ReSharper disable once VirtualMemberCallInConstructor
         InitializeSymbols();
     }
@@ -28,6 +31,12 @@ abstract class Command : INaming
         var j = newPoint.Y + Player.Y;
         if (CheckBounds(i, j))
         {
+            if (maze[i, j] is ExitRoom)
+            {
+                maze[i, j] = new Room();
+                manager.State = GameState.Victory;
+            }
+
             (maze[i, j], maze[Player.X, Player.Y]) = (maze[Player.X, Player.Y], maze[i, j]);
             maze.PlayerPoint = new Point(i, j);
         }

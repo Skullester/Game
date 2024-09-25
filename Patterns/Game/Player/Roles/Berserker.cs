@@ -1,18 +1,49 @@
-﻿namespace Models;
+﻿using System.Drawing;
+
+namespace Models;
 
 public class Berserker : Player
 {
-    public const int BreakableWallsCount = 4;
-    public int BreakableWalls { get; private set; }
+    public const int BreakableWallsConst = 15;
+    public readonly int BreakableWallsCount;
+    public int CurrentBreakableWalls { get; private set; }
     public override string Name => "Берсерк";
+    private Random random;
 
-    public Berserker(IMaze maze, int breakableWalls) : base(maze)
+    public Berserker(IMaze maze, int breakableWalls) : base(maze, ConsoleColor.Red)
     {
-        BreakableWalls = breakableWalls;
+        BreakableWallsCount = breakableWalls;
+        CurrentBreakableWalls = breakableWalls;
     }
 
-    public override void UseSkill()
+    public override void SetDefaultValues()
     {
-        BreakableWalls--;
+        CurrentBreakableWalls = BreakableWallsCount;
+    }
+
+    public override IEnumerable<Point> UseSkill()
+    {
+        var startPoint = Location - new Size(1, 1);
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (CurrentBreakableWalls == 0) yield break;
+                var x = startPoint.X + i;
+                var y = startPoint.Y + j;
+                var isSuccess = random.Next(0, 2) == 0;
+                if (isSuccess && maze[x, y] is InternalWall)
+                {
+                    maze[x, y] = maze.Room.Clone();
+                    CurrentBreakableWalls--;
+                    yield return new Point(x, y);
+                }
+            }
+        }
+    }
+
+    public override void Initialize()
+    {
+        random = new();
     }
 }

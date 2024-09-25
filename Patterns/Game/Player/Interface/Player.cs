@@ -1,15 +1,22 @@
-﻿using Patterns.Naming;
+﻿using System.Drawing;
+using Patterns.Naming;
 
 namespace Models;
 
 public abstract class Player : INaming
 {
-    private IMaze maze;
+    protected IMaze maze;
+    public ConsoleColor Color { get; }
     public abstract string Name { get; }
+    public Point Location => maze.PlayerPoint;
 
-    public Player(IMaze maze)
+    public Player(IMaze maze, ConsoleColor color)
     {
+        Color = color;
+        this.maze = maze;
     }
 
-    public abstract void UseSkill();
+    public abstract void SetDefaultValues();
+    public abstract IEnumerable<Point> UseSkill();
+    public abstract void Initialize();
 }

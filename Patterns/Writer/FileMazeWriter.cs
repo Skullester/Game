@@ -6,7 +6,7 @@ public class FileMazeWriter : MazeWriter
 {
     public override string Name => "Файл";
 
-    public FileMazeWriter(IMaze maze, TextWriter writer, MazeFormatter formatter) : base(maze, writer, formatter)
+    public FileMazeWriter(IMaze? maze, TextWriter writer, MazeFormatter formatter) : base(maze, writer, formatter)
     {
     }
 

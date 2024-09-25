@@ -10,10 +10,6 @@ public interface IMaze : IEnumerable<IMazeElement>
     int Width { get; set; }
     Point PlayerPoint { get; set; }
     void Generate();
-
-    public IMazeElement this[int x, int y]
-    {
-        get => Elements[x, y];
-        set => Elements[x, y] = value;
-    }
+    IRoom Room { get; }
+    IMazeElement this[int x, int y] { get; set; }
 }

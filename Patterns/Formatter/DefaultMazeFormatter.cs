@@ -9,7 +9,7 @@ public class DefaultMazeFormatter : MazeFormatter
 
     private readonly Dictionary<Type, char> charMap = new()
     {
-        [typeof(Room)] = ' ', [typeof(ExitRoom)] = 'Q', [typeof(ExternalWall)] = '#', [typeof(InternalWall)] = '*',
-        [typeof(Berserker)] = 'B', [typeof(Mage)] = 'M', [typeof(Tracer)] = 'T'
+        [typeof(Room)] = ' ', [typeof(FireRoom)] = ' ', [typeof(ExitRoom)] = 'Q', [typeof(ExternalWall)] = '#',
+        [typeof(InternalWall)] = '*',
     };
 }

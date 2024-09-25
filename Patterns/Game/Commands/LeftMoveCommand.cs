@@ -3,11 +3,11 @@ using Models;
 
 namespace Game;
 
-class LeftMoveCommand : Command
+class LeftMoveCommand : Command, IMovingCommand
 {
     public override string Name => "Влево";
 
-    public LeftMoveCommand(IMaze maze) : base(maze)
+    public LeftMoveCommand(IMaze maze) : base(maze, '\u2190')
     {
     }
 
