@@ -5,6 +5,8 @@ using Models.Naming;
 using Models.Player;
 using UI.Displaying;
 
+// ReSharper disable PossibleMultipleEnumeration
+
 namespace UI;
 
 public static class GameInitializer
@@ -105,9 +107,9 @@ public static class GameInitializer
         var ratio = difficulty.SkillRatio;
         return
         [
-            new Berserker(maze, (int)(Berserker.BreakableWallsConst * ratio)),
-            new Mage(maze, (int)(Mage.HintsConst * ratio)),
-            new Tracer(maze, (int)(Tracer.TracesConst * ratio)),
+            new Berserker(maze, (int)(Berserker.BreakableWallsConst * ratio), TimeSpan.FromSeconds(1)),
+            new Mage(maze, (int)(Mage.HintsConst * ratio), TimeSpan.FromSeconds(2)),
+            new Tracer(maze, (int)(Tracer.TracesConst * ratio), TimeSpan.FromSeconds(2)),
         ];
     }
 }

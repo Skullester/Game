@@ -14,8 +14,8 @@ public class DownCommand : MoveCommand
 
     protected override void InitializeSymbols()
     {
-        symbolsMap.Add(ConsoleKey.S);
-        symbolsMap.Add(ConsoleKey.DownArrow);
+        keyMap.Add(ConsoleKey.S);
+        keyMap.Add(ConsoleKey.DownArrow);
     }
 
     public override bool Execute() => Execute(new Point(-1, 0));

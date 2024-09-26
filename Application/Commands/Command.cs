@@ -3,14 +3,16 @@ using Models.Maze;
 using Models.Naming;
 using Models.Player;
 
+// ReSharper disable VirtualMemberCallInConstructor
+
 namespace Game;
 
 public abstract class Command : INaming
 {
-    public IReadOnlySet<ConsoleKey> SymbolsMap => symbolsMap;
+    public IReadOnlySet<ConsoleKey> KeyMap => keyMap;
     public char Symbol { get; }
     protected readonly IMaze maze;
-    protected readonly HashSet<ConsoleKey> symbolsMap = new();
+    protected readonly HashSet<ConsoleKey> keyMap = new();
     public event Action<IEnumerable<Point>>? Perfomed;
     protected Point Location => player.Location;
     protected readonly IGameManager manager;
@@ -22,7 +24,6 @@ public abstract class Command : INaming
         Symbol = symbol;
         this.manager = manager;
         this.player = player;
-        // ReSharper disable once VirtualMemberCallInConstructor
         InitializeSymbols();
     }
 

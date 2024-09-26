@@ -14,8 +14,8 @@ public class UpCommand : MoveCommand
 
     protected override void InitializeSymbols()
     {
-        symbolsMap.Add(ConsoleKey.W);
-        symbolsMap.Add(ConsoleKey.UpArrow);
+        keyMap.Add(ConsoleKey.W);
+        keyMap.Add(ConsoleKey.UpArrow);
     }
 
     public override bool Execute() => Execute(new Point(1, 0));

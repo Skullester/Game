@@ -14,8 +14,8 @@ public class LeftCommand : MoveCommand
 
     protected override void InitializeSymbols()
     {
-        symbolsMap.Add(ConsoleKey.A);
-        symbolsMap.Add(ConsoleKey.LeftArrow);
+        keyMap.Add(ConsoleKey.A);
+        keyMap.Add(ConsoleKey.LeftArrow);
     }
 
     public override bool Execute() => Execute(new Point(0, -1));

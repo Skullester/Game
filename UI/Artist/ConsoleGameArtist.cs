@@ -5,6 +5,8 @@ using Models.Maze;
 using Models.Player;
 using UI.Displaying;
 
+// ReSharper disable UnusedMember.Local
+
 namespace UI.Artist;
 
 public class ConsoleGameArtist : IGameArtist
@@ -15,8 +17,8 @@ public class ConsoleGameArtist : IGameArtist
     public ConsoleColor PlayerColor { get; }
     private static ConsoleGameArtist? instance;
     private IMaze maze => GameManager.Maze;
-    private Player player => GameManager.Player;
 
+    private Player player => GameManager.Player;
 
     private ConsoleGameArtist(ConsoleColor playerColor)
     {
@@ -51,8 +53,7 @@ public class ConsoleGameArtist : IGameArtist
             }
 
             var cki = Console.ReadKey(true);
-            var cmd = Commands.FirstOrDefault(x => x.SymbolsMap.Contains(cki.Key));
-            // ReSharper disable once InvertIf
+            var cmd = Commands.FirstOrDefault(x => x.KeyMap.Contains(cki.Key));
             if (cmd != null && GameManager.Execute(cmd))
             {
                 UpdateGameState();
@@ -113,20 +114,19 @@ public class ConsoleGameArtist : IGameArtist
         ConsoleHelper.SetConsoleColor(foregroundColor);
     }
 
-    public void DrawPlayer(char playerChar, Point playerPoint)
+    private void DrawPlayer(char playerChar, Point playerPoint)
     {
         CursorPositionHelper.Save();
         DrawPoint(playerPoint, playerChar.ToString(), PlayerColor);
         CursorPositionHelper.Set();
     }
 
-    public void UpdateGameState()
+    private void UpdateGameState()
     {
         Console.Clear();
         Writer.Write();
         DrawInstructions();
         DrawPlayer(GameManager.Player.Name[0], player.Location);
-        // CheckTimePenalty();
     }
 
     public static ConsoleGameArtist GetArtist(ConsoleColor playerColor)
@@ -135,12 +135,12 @@ public class ConsoleGameArtist : IGameArtist
         return instance;
     }
 
-    public void DrawVictory()
+    private void DrawVictory()
     {
         DrawGameResult("Победа!", ConsoleColor.Green);
     }
 
-    public void DrawDefeat()
+    private void DrawDefeat()
     {
         DrawGameResult("Поражение!", ConsoleColor.White);
     }
@@ -151,16 +151,16 @@ public class ConsoleGameArtist : IGameArtist
         Thread.Sleep(1000);
     }
 
-    public void DrawSkillPoints(IEnumerable<Point> points)
+    private void DrawSkillPoints(IEnumerable<Point> points)
     {
-        foreach (var point in points)
+        foreach (var point in points.Where(x => x != player.Location))
         {
             DrawPoint(point, "x", player.Color);
-            Thread.Sleep(50);
+            Thread.Sleep(1);
         }
     }
 
-    public void DrawPoint(Point point, string text, ConsoleColor color)
+    private void DrawPoint(Point point, string text, ConsoleColor color)
     {
         Console.SetCursorPosition(point.Y, point.X);
         ConsoleHelper.PrintWithColor(text, color);

@@ -11,9 +11,10 @@ public class Mage : Player
     public int CurrentHintCount { get; private set; }
 
     public override string Name => "Маг";
-    private List<Point>? exitPoints;
+    private Point[] exitPoints = null!;
+    private Dictionary<Point, int> mapPointIndex = null!;
 
-    public Mage(IMaze maze, int countHintsCount) : base(maze, ConsoleColor.Blue)
+    public Mage(IMaze maze, int countHintsCount, TimeSpan coolDown) : base(maze, ConsoleColor.Blue, coolDown, false)
     {
         HintsCount = countHintsCount;
     }
@@ -26,15 +27,32 @@ public class Mage : Player
     public override IEnumerable<Point> GetSkillPoints()
     {
         CurrentHintCount--;
+        Span<Point> span = exitPoints;
+        if (mapPointIndex.TryGetValue(Location, out var index))
+        {
+            var slice = span.Slice(index).GetEnumerator();
+        }
+
+        //Span.Take(5), Dictionary<Point,int> where int - index, pointer;
         yield break;
+    }
+
+    public override void Move(Point point)
+    {
+        if (mapPointIndex.TryGetValue(Location, out var value))
+        {
+        }
+
+        base.Move(point);
     }
 
     public override void Initialize()
     {
-        exitPoints = new List<Point>();
+        var pointsList = new List<Point>();
+        mapPointIndex = new Dictionary<Point, int>();
         /*do
-        {
+        {mapPointIndex.add()
         } while (expression);*/
-        //Span.Take(5), Dictionary<Point,int> where int - index, pointer;
+        exitPoints = pointsList.ToArray();
     }
 }

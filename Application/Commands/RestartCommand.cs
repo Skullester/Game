@@ -13,12 +13,12 @@ public class RestartCommand : Command
 
     protected override void InitializeSymbols()
     {
-        symbolsMap.Add(ConsoleKey.R);
+        keyMap.Add(ConsoleKey.R);
     }
 
     public override bool Execute()
     {
         manager.State = GameState.Reset;
-        return true;
+        return false;
     }
 }

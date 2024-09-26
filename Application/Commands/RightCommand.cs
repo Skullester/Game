@@ -14,8 +14,8 @@ public class RightCommand : MoveCommand
 
     protected override void InitializeSymbols()
     {
-        symbolsMap.Add(ConsoleKey.D);
-        symbolsMap.Add(ConsoleKey.RightArrow);
+        keyMap.Add(ConsoleKey.D);
+        keyMap.Add(ConsoleKey.RightArrow);
     }
 
     public override bool Execute() => Execute(new Point(0, 1));

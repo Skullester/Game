@@ -11,7 +11,7 @@ public class Berserker : Player
     public override string Name => "Берсерк";
     private Random? random;
 
-    public Berserker(IMaze maze, int breakableWalls) : base(maze, ConsoleColor.Red)
+    public Berserker(IMaze maze, int breakableWalls, TimeSpan coolDown) : base(maze, ConsoleColor.Red, coolDown, true)
     {
         BreakableWallsCount = breakableWalls;
         CurrentBreakableWalls = breakableWalls;

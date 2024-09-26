@@ -46,10 +46,13 @@ public class RectangularMaze : IMaze
         }
 
         Point point = default;
-        if (furthest.X == 1) point = new Point(furthest.X - 1, furthest.Y);
-        else if (furthest.Y == 1) point = new Point(furthest.X, furthest.Y - 1);
-        else if (furthest.X == Height - 2) point = new Point(furthest.X + 1, furthest.Y);
-        else if (furthest.Y == Width - 2) point = new Point(furthest.X, furthest.Y + 1);
+        //самая дальная точка в 
+        if (furthest.X == 1) point = new Point(furthest.X - 1, furthest.Y); //в первой строке - ломаем вверх
+        else if (furthest.Y == 1) point = new Point(furthest.X, furthest.Y - 1); //в первом столбце - ломаем влево
+        else if (furthest.X == Height - 2)
+            point = new Point(furthest.X + 1, furthest.Y); //в последней строке - ломаем вниз
+        else if (furthest.Y == Width - 2)
+            point = new Point(furthest.X, furthest.Y + 1); //в последнем столбце - ломаем вправо
         this[point.X, point.Y] = new ExitRoom();
     }
 
@@ -87,10 +90,15 @@ public class RectangularMaze : IMaze
             var neighbours = new List<Point>();
             var x = currentPoint.X;
             var y = currentPoint.Y;
-            var distance = this[x, y].Distance;
-            this[x, y] = Room.Clone();
-            this[x, y].Distance = distance;
-            this[x, y].IsVisited = true;
+            ref var element = ref Elements[x, y];
+            var distance = element.Distance;
+            element = Room.Clone();
+            element.Distance = distance;
+            element.IsVisited = true;
+            //ломаем стенку через один
+            //P**
+            //012
+            //Если ломаем 2, 1 автоматом становится комнатой
             if (x > 2 && !Elements[x - 2, y].IsVisited) neighbours.Add(new Point(x - 2, y));
             if (y > 2 && !Elements[x, y - 2].IsVisited) neighbours.Add(new Point(x, y - 2));
             if (x < Height - 1 - 2 && !Elements[x + 2, y].IsVisited) neighbours.Add(new Point(x + 2, y));
@@ -98,9 +106,13 @@ public class RectangularMaze : IMaze
 
             if (neighbours.Count > 0)
             {
+                var currentMazeElement = this[currentPoint.X, currentPoint.Y];
                 var chosenPoint = neighbours[rand.Next(neighbours.Count)];
-                RemoveWall(currentPoint, chosenPoint);
-                this[chosenPoint.X, chosenPoint.Y].Distance = this[currentPoint.X, currentPoint.Y].Distance + 1;
+                var removedWall = RemoveWall(currentPoint, chosenPoint);
+                var removeWallElement = this[removedWall.X, removedWall.Y];
+                removeWallElement.IsVisited = true;
+                removeWallElement.Distance = currentMazeElement.Distance + 1;
+                this[chosenPoint.X, chosenPoint.Y].Distance = currentMazeElement.Distance + 2;
                 stack.Push(chosenPoint);
                 currentPoint = chosenPoint;
             }
@@ -108,16 +120,14 @@ public class RectangularMaze : IMaze
         } while (stack.Count > 0);
     }
 
-    private Point RemoveWall(Point a, Point b)
+    private Point RemoveWall(Point currentPoint, Point breakableWallPoint)
     {
         Point point;
-        if (a.X == b.X)
-            point = a.Y < b.Y ? new Point(a.X, a.Y + 1) : new Point(a.X, a.Y - 1);
+        if (currentPoint.X == breakableWallPoint.X) 
+            point = currentPoint.Y < breakableWallPoint.Y ? new Point(currentPoint.X, currentPoint.Y + 1) : new Point(currentPoint.X, currentPoint.Y - 1);
         else
-            point = a.X < b.X ? new Point(a.X + 1, a.Y) : new Point(a.X - 1, a.Y);
-
+            point = currentPoint.X < breakableWallPoint.X ? new Point(currentPoint.X + 1, currentPoint.Y) : new Point(currentPoint.X - 1, currentPoint.Y);
         this[point.X, point.Y] = Room.Clone();
-        this[point.X, point.Y].IsVisited = true;
         return point;
     }
 
