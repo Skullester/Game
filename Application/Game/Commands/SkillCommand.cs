@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Models.Maze;
+using Models.Player;
 
 namespace Game;
 
@@ -15,8 +16,9 @@ public class SkillCommand : Command
         symbolsMap.Add(ConsoleKey.E);
     }
 
-    public override void Execute()
+    public override bool Execute()
     {
         OnPerfomed(player.GetSkillPoints());
+        return false;
     }
 }

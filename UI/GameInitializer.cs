@@ -1,7 +1,9 @@
 ﻿using Game;
-using Models;
 using Models.Fabric;
-using Application.Naming;
+using Models.Maze;
+using Models.Naming;
+using Models.Player;
+using UI.Displaying;
 
 namespace UI;
 
@@ -9,9 +11,9 @@ public static class GameInitializer
 {
     public static ConsoleMazeWriter MazeWriter = null!;
     public static GameManager GameManager = null!;
-    public static Command[] Commands;
+    public static Command[] Commands = null!;
     private static readonly MazeFormatter[] formatters = [new DefaultMazeFormatter(), new WeirdMazeFormatter()];
-    private static IMaze? maze;
+    private static IMaze maze = null!;
     private static Player[] players = null!;
     private static readonly Difficulty[] difficulties = [new Easy(), new Medium(), new Hard(), new MADNESS()];
     private static Difficulty difficulty = null!;

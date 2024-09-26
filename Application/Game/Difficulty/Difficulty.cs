@@ -1,4 +1,4 @@
-﻿using Application.Naming;
+﻿using Models.Naming;
 
 namespace Game;
 
@@ -7,7 +7,7 @@ public abstract class Difficulty : INaming
     public abstract string Name { get; }
     public double SkillRatio { get; }
 
-    public Difficulty(double skillRatio)
+    protected Difficulty(double skillRatio)
     {
         SkillRatio = skillRatio;
     }

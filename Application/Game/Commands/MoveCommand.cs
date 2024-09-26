@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
-using Models;
+using Models.Maze;
+using Models.Player;
 
 namespace Game;
 
@@ -10,9 +11,9 @@ public abstract class MoveCommand : Command
     {
     }
 
-    protected void Execute(Point point)
+    protected bool Execute(Point point)
     {
-        if (!CheckBounds(point)) return;
+        if (!CheckBounds(point)) return false;
         player.Move(point);
         var loc = player.Location;
         if (maze[loc.X, loc.Y] is ExitRoom)
@@ -20,6 +21,8 @@ public abstract class MoveCommand : Command
             maze[loc.X, loc.Y] = new Room();
             manager.State = GameState.Victory;
         }
+
+        return true;
         // (maze[i, j], maze[Location.X, Location.Y]) = (maze[Location.X, Location.Y], maze[i, j]);
     }
 

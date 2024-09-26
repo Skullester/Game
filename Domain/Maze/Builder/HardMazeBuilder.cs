@@ -2,13 +2,14 @@
 
 public class HardMazeBuilder : MazeBuilder
 {
-    public HardMazeBuilder(MazeFactory factory) : base("Сложный",factory)
+    public HardMazeBuilder(MazeFactory factory) : base("Сложный", factory)
     {
     }
 
     public override MazeBuilder SetSize()
     {
-        Maze.Height = Maze.Width = 51;
+        Maze.Height = 27;
+        Maze.Width = 80;
         return this;
     }
 }

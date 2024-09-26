@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Models.Maze;
+using Models.Player;
 
 namespace Game;
 
@@ -15,8 +16,9 @@ public class RestartCommand : Command
         symbolsMap.Add(ConsoleKey.R);
     }
 
-    public override void Execute()
+    public override bool Execute()
     {
         manager.State = GameState.Reset;
+        return true;
     }
 }

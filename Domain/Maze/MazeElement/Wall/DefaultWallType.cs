@@ -1,7 +1,8 @@
-﻿namespace Models;
+﻿namespace Models.Maze;
 
-public class DefaultWallType : IWallType
+public class DefaultWallType : WallType
 {
-    public ConsoleColor Color { get; } = ConsoleColor.Cyan;
-    public State Effect => State.None;
+    public DefaultWallType(ConsoleColor color) : base(State.None, color)
+    {
+    }
 }

@@ -1,11 +1,10 @@
 ﻿using System.Drawing;
 
-namespace Models;
-
+namespace Models.Maze;
 public interface IMaze : IEnumerable<IMazeElement>
 {
     IMazeElement[,] Elements { get; }
-    IWallType WallType { get; }
+    WallType WallType { get; }
     int Height { get; set; }
     int Width { get; set; }
     Point StartPoint { get; }

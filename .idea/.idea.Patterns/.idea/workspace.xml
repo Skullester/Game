@@ -8,158 +8,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Game/Commands/Command.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/Commands/DownCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/Commands/LeftCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/Commands/MoveCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/Commands/RestartCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/Commands/RightCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/Commands/SkillCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/Commands/UpCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/Difficulty/Difficulty.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/Difficulty/Easy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/Difficulty/Hard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/Difficulty/MADNESS.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/Difficulty/Medium.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Game/IGameManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/Builder/EasyMazeBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/Builder/HardMazeBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/Builder/MadnessMazeBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/Builder/MazeBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/Builder/MediumMazeBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/Fabric/MazeFactoryDefault.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/Fabric/MazeFactoryFire.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/Fabric/RoomsWallsFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/IMaze.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/Maze.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/IMazeElement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Room/ExitRoom.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Room/FireRoom.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Room/IRoom.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Room/Room.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/DefaultWallType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/ExternalWall.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/FireWallType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/IWall.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/IWallType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/InternalWall.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/State.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Naming/INaming.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Player/Interface/Player.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Player/Roles/Berserker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Player/Roles/Mage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Player/Roles/Tracer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Patterns.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Patterns.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Patterns.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Patterns.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Patterns.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Patterns.sourcelink.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/Patterns.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/Patterns.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/Patterns.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/Artist/IGameArtist.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/Console/ConsoleHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/Formatter/DefaultMazeFormatter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/Formatter/MazeFormatter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/Formatter/WeirdMazeFormatter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/Infrastructure/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Class1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/Command.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/Commands/Command.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/DownCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/Commands/DownCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/LeftCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/Commands/LeftCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/MoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/Commands/MoveCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/RestartCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/Commands/RestartCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/RightCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/Commands/RightCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/SkillCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/Commands/SkillCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/UpCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/Commands/UpCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Game/Difficulty/Difficulty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/Difficulty/Difficulty.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Game/Difficulty/Easy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/Difficulty/Easy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Game/Difficulty/Hard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/Difficulty/Hard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Game/IGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Game/IGameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Console/ConsoleHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Formatter/DefaultMazeFormatter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Formatter/MazeFormatter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Formatter/WeirdMazeFormatter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Artist/GameArtist.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Artist/IGameArtist.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/Command.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/DownMoveCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/IMovingCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/LeftMoveCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/RestartCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/RightMoveCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/SkillCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Commands/UpMoveCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Difficulty/Difficulty.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Difficulty/Easy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Difficulty/Hard.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Difficulty/MADNESS.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Difficulty/Medium.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Player/Interface/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Berserker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Mage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Game/Player/Roles/Tracer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Infrastructure/Extensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Builder/EasyMazeBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Builder/HardMazeBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Builder/MadnessMazeBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Builder/MazeBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Builder/MediumMazeBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Fabric/MazeFactoryDefault.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Fabric/MazeFactoryFire.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Fabric/RoomsWallsFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/IMaze.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/Maze.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/IMazeElement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/ExitRoom.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/FireRoom.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/IRoom.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Room/Room.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/DefaultWallType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/ExternalWall.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/FireWallType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/IWall.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/IWallType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/InternalWall.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Maze/MazeElement/Wall/State.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Naming/INaming.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Patterns.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Writer/ConsoleMazeWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Writer/ConsoleMazeWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Writer/FileMazeWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Writer/FileMazeWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/Writer/MazeWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Writer/MazeWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/bin/Debug/net8.0/Patterns.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.GlobalUsings.g.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/Debug/net8.0/Patterns.sourcelink.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/Patterns.csproj.nuget.dgspec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/Patterns.csproj.nuget.g.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/Patterns.csproj.nuget.g.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/project.assets.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/project.packagespec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/rider.project.model.nuget.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patterns/obj/rider.project.restore.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/GameExecutor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/GameInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/Builder/EasyMazeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/Builder/EasyMazeBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/Builder/HardMazeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/Builder/HardMazeBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/Builder/MadnessMazeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/Builder/MadnessMazeBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/Builder/MazeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/Builder/MazeBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/Builder/MediumMazeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/Builder/MediumMazeBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/Fabric/MazeFactoryDefault.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/Fabric/MazeFactoryDefault.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/Fabric/MazeFactoryFire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/Fabric/MazeFactoryFire.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/Fabric/RoomsWallsFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/Fabric/RoomsWallsFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/IMaze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/IMaze.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/Maze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/RectangularMaze.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Room/ExitRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Room/ExitRoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Room/FireRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Room/FireRoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Room/IRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Room/IRoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Room/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Room/Room.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/DefaultWallType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/DefaultWallType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/ExternalWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/ExternalWall.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/FireWallType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/FireWallType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/IWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/IWall.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/IWallType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/WallType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/InternalWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/InternalWall.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Naming/INaming.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Naming/INaming.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Player/Interface/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Interface/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Player/Roles/Berserker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Roles/Berserker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Player/Roles/Mage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Roles/Mage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Player/Roles/Tracer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Roles/Tracer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Artist/IGameArtist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Artist/IGameArtist.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Console/ConsoleHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Console/ConsoleHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Formatter/DefaultMazeFormatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Formatter/DefaultMazeFormatter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Formatter/MazeFormatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Formatter/MazeFormatter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Formatter/WeirdMazeFormatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Formatter/WeirdMazeFormatter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/GameInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/GameInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Infrastructure/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Infrastructure/Extensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UI/UI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/bin/Debug/net8.0/UI.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/bin/Debug/net8.0/UI.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Writer/ConsoleMazeWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Writer/ConsoleMazeWriter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Writer/FileMazeWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Writer/FileMazeWriter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Writer/MazeWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Writer/MazeWriter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/obj/UI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/UI.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -354,7 +260,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.ConsoleApp1.executor": "Debug",
+    ".NET Project.ConsoleApp1.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "XThreadsFramesViewSplitterKey": "0.050829876",
@@ -464,7 +370,7 @@
       <workItem from="1727268758343" duration="368000" />
       <workItem from="1727284750697" duration="1537000" />
       <workItem from="1727286299714" duration="16581000" />
-      <workItem from="1727302913009" duration="3593000" />
+      <workItem from="1727302913009" duration="8346000" />
     </task>
     <servers />
   </component>
@@ -492,14 +398,14 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Domain/Maze/Maze.cs</url>
+          <url>file://$PROJECT_DIR$/Domain/Maze/RectangularMaze.cs</url>
           <line>23</line>
           <properties documentPath="H:\Учёба\4\ПП\Game\Domain\Maze\Maze.cs" containingFunctionPresentation="Method 'Generate'">
             <startOffsets>
-              <option value="543" />
+              <option value="569" />
             </startOffsets>
             <endOffsets>
-              <option value="569" />
+              <option value="595" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="34" />

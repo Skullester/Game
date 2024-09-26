@@ -1,7 +1,8 @@
 ﻿using System.Drawing;
-using Application.Naming;
+using Models.Maze;
+using Models.Naming;
 
-namespace Models;
+namespace Models.Player;
 
 public abstract class Player : INaming
 {

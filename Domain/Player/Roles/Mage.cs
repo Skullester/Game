@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
+using Models.Maze;
 
-namespace Models;
+namespace Models.Player;
 
 public class Mage : Player
 {
@@ -31,5 +32,9 @@ public class Mage : Player
     public override void Initialize()
     {
         exitPoints = new List<Point>();
+        /*do
+        {
+        } while (expression);*/
+        //Span.Take(5), Dictionary<Point,int> where int - index, pointer;
     }
 }

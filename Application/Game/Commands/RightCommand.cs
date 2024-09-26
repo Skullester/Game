@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
-using Models;
+using Models.Maze;
+using Models.Player;
 
 namespace Game;
 
@@ -17,5 +18,5 @@ public class RightCommand : MoveCommand
         symbolsMap.Add(ConsoleKey.RightArrow);
     }
 
-    public override void Execute() => Execute(new Point(0, 1));
+    public override bool Execute() => Execute(new Point(0, 1));
 }

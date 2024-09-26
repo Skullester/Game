@@ -1,12 +1,12 @@
-﻿using Models;
+﻿using Models.Maze;
 
-namespace UI;
+namespace UI.Displaying;
 
 public class FileMazeWriter : MazeWriter
 {
     public override string Name => "Файл";
 
-    public FileMazeWriter(IMaze? maze, TextWriter writer, MazeFormatter formatter, int delay) : base(maze, writer,
+    public FileMazeWriter(IMaze maze, TextWriter writer, MazeFormatter formatter, int delay) : base(maze, writer,
         formatter, delay)
     {
     }

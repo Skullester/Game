@@ -1,6 +1,6 @@
-﻿using Models;
+﻿using Models.Maze;
 
-namespace UI;
+namespace UI.Displaying;
 
 public class DefaultMazeFormatter : MazeFormatter
 {

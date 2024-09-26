@@ -1,18 +1,18 @@
-﻿using Models;
-using Infrastructure;
-using Application.Naming;
+﻿using Infrastructure;
+using Models.Maze;
+using Models.Naming;
 
-namespace UI;
+namespace UI.Displaying;
 
 public abstract class MazeWriter : INaming
 {
     public abstract string Name { get; }
     protected readonly TextWriter writer;
     private readonly IEnumerable<char> mazeChars;
-    private readonly IMaze? maze;
+    private readonly IMaze maze;
     public int Delay { get; }
 
-    protected MazeWriter(IEnumerable<char> mazeChars, TextWriter writer, IMaze? maze, int delay)
+    protected MazeWriter(IEnumerable<char> mazeChars, TextWriter writer, IMaze maze, int delay)
     {
         this.mazeChars = mazeChars;
         this.maze = maze;
@@ -20,7 +20,7 @@ public abstract class MazeWriter : INaming
         Delay = delay;
     }
 
-    protected MazeWriter(IMaze? maze, TextWriter writer, MazeFormatter mazeFormatter, int delay) : this(
+    protected MazeWriter(IMaze maze, TextWriter writer, MazeFormatter mazeFormatter, int delay) : this(
         maze.ParseToChar(mazeFormatter), writer, maze, delay)
     {
     }
@@ -32,7 +32,7 @@ public abstract class MazeWriter : INaming
         {
             Write(item);
             Thread.Sleep(Delay);
-            if (++counter % maze.Width == 0)
+            if (++counter % maze!.Width == 0)
                 Write('\n');
         }
 

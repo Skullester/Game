@@ -1,4 +1,6 @@
-﻿namespace Models.Fabric;
+﻿using Models.Maze;
+
+namespace Models.Fabric;
 
 public class MazeFactoryDefault : MazeFactory
 {
@@ -9,8 +11,8 @@ public class MazeFactoryDefault : MazeFactory
         return new Room();
     }
 
-    public override IWallType GetWallType()
+    public override WallType GetWallType()
     {
-        return new DefaultWallType();
+        return new DefaultWallType(ConsoleColor.DarkCyan);
     }
 }

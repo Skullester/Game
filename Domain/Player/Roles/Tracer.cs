@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
+using Models.Maze;
 
-namespace Models;
+namespace Models.Player;
 
 public class Tracer : Player
 {

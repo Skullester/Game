@@ -2,18 +2,18 @@
 using System.Drawing;
 using Models.Fabric;
 
-namespace Models;
+namespace Models.Maze;
 
-public class Maze : IMaze
+public class RectangularMaze : IMaze
 {
     public int Height { get; set; }
     public int Width { get; set; }
     public Point StartPoint { get; private set; }
     public IRoom Room { get; }
-    public IWallType WallType { get; }
+    public WallType WallType { get; }
     public IMazeElement[,] Elements { get; private set; } = null!;
 
-    public Maze(MazeFactory factory)
+    public RectangularMaze(MazeFactory factory)
     {
         Room = factory.GetRoom();
         WallType = factory.GetWallType();

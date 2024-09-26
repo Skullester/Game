@@ -1,4 +1,4 @@
-﻿namespace Models;
+﻿namespace Models.Maze;
 
 public interface IRoom : IMazeElement
 {

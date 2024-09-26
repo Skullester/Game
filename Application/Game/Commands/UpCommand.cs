@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
-using Models;
+using Models.Maze;
+using Models.Player;
 
 namespace Game;
 
@@ -17,5 +18,5 @@ public class UpCommand : MoveCommand
         symbolsMap.Add(ConsoleKey.UpArrow);
     }
 
-    public override void Execute() => Execute(new Point(1, 0));
+    public override bool Execute() => Execute(new Point(1, 0));
 }

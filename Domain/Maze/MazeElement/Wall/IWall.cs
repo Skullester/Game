@@ -1,7 +1,6 @@
-﻿namespace Models;
-
+﻿namespace Models.Maze;
 public interface IWall : IMazeElement
 {
-    IWallType Type { get; }
+    WallType Type { get; }
     IWall Clone();
 }

@@ -1,5 +1,6 @@
-﻿using Models;
-using Models.Fabric;
+﻿using Models.Fabric;
+using Models.Maze;
+using Models.Player;
 
 namespace Game;
 
@@ -30,10 +31,11 @@ public sealed class GameManager : IGameManager
         return instance;
     }
 
-    public void Execute(Command command)
+    public bool Execute(Command command)
     {
-        command.Execute();
+        var isExecuted = command.Execute();
         CheckTimePenalty();
+        return isExecuted;
     }
 
     public void Initialize()
@@ -43,7 +45,7 @@ public sealed class GameManager : IGameManager
         State = GameState.Play;
     }
 
-    public async Task CheckTimePenalty()
+    private async void CheckTimePenalty()
     {
         var mazePlayerPoint = Player.Location;
         await Task.Delay(Maze.Room.StayTime);

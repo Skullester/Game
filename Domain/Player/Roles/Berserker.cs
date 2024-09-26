@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
+using Models.Maze;
 
-namespace Models;
+namespace Models.Player;
 
 public class Berserker : Player
 {
@@ -37,7 +38,7 @@ public class Berserker : Player
                 if (CurrentBreakableWalls == 0) yield break;
                 var x = startPoint.X + i;
                 var y = startPoint.Y + j;
-                var isSuccess = random.Next(0, 2) == 0;
+                var isSuccess = random!.Next(0, 2) == 0;
                 if (isSuccess && maze[x, y] is InternalWall)
                 {
                     maze[x, y] = maze.Room.Clone();

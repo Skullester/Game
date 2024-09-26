@@ -1,4 +1,4 @@
-﻿namespace Application.Naming;
+﻿namespace Models.Naming;
 
 public interface INaming
 {

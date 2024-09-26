@@ -1,8 +1,7 @@
-﻿namespace Models;
-
-public class FireWallType : IWallType
+﻿namespace Models.Maze;
+public class FireWallType : WallType
 {
-    public ConsoleColor Color { get; } = ConsoleColor.Red;
-
-    public State Effect => State.Death;
+    public FireWallType() : base(State.Death, ConsoleColor.Red)
+    {
+    }
 }

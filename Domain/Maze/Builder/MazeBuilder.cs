@@ -1,4 +1,6 @@
-﻿namespace Models.Fabric;
+﻿using Models.Maze;
+
+namespace Models.Fabric;
 
 public abstract class MazeBuilder
 {
@@ -8,7 +10,7 @@ public abstract class MazeBuilder
     protected MazeBuilder(string name, MazeFactory factory)
     {
         Name = name;
-        Maze = new Maze(factory);
+        Maze = new RectangularMaze(factory);
     }
 
     public void GenerateMaze()

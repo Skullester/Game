@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
-using Models;
-using Application.Naming;
+using Models.Maze;
+using Models.Naming;
+using Models.Player;
 
 namespace Game;
 
@@ -26,7 +27,7 @@ public abstract class Command : INaming
     }
 
     protected abstract void InitializeSymbols();
-    public abstract void Execute();
+    public abstract bool Execute();
     public abstract string Name { get; }
 
     protected virtual void OnPerfomed(IEnumerable<Point> obj)

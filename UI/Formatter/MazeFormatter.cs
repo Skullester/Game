@@ -1,7 +1,7 @@
 ﻿using Models;
-using Application.Naming;
+using Models.Naming;
 
-namespace UI;
+namespace UI.Displaying;
 
 public abstract class MazeFormatter : INaming
 {

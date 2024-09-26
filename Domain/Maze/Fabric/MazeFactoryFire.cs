@@ -1,4 +1,6 @@
-﻿namespace Models.Fabric;
+﻿using Models.Maze;
+
+namespace Models.Fabric;
 
 public class MazeFactoryFire : MazeFactory
 {
@@ -9,7 +11,7 @@ public class MazeFactoryFire : MazeFactory
         return new FireRoom();
     }
 
-    public override IWallType GetWallType()
+    public override WallType GetWallType()
     {
         return new FireWallType();
     }

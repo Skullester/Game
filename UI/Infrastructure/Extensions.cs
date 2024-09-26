@@ -1,5 +1,5 @@
 ﻿using Models;
-using UI;
+using UI.Displaying;
 
 namespace Infrastructure;
 

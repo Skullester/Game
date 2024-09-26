@@ -1,5 +1,5 @@
 ﻿using Game;
-using Models;
+using UI.Displaying;
 
 namespace UI.Artist;
 

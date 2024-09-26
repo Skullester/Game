@@ -1,7 +1,9 @@
 ﻿using System.Drawing;
 using System.Text;
 using Game;
-using Models;
+using Models.Maze;
+using Models.Player;
+using UI.Displaying;
 
 namespace UI.Artist;
 
@@ -51,9 +53,8 @@ public class ConsoleGameArtist : IGameArtist
             var cki = Console.ReadKey(true);
             var cmd = Commands.FirstOrDefault(x => x.SymbolsMap.Contains(cki.Key));
             // ReSharper disable once InvertIf
-            if (cmd != null)
+            if (cmd != null && GameManager.Execute(cmd))
             {
-                GameManager.Execute(cmd);
                 UpdateGameState();
             }
         }

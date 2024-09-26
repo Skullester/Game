@@ -1,4 +1,4 @@
-﻿using Application.Naming;
+﻿using Models.Naming;
 
 namespace Game;
 

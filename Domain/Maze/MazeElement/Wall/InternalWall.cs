@@ -1,13 +1,12 @@
-﻿namespace Models;
-
+﻿namespace Models.Maze;
 public class InternalWall : IWall
 {
     public bool IsVisited { get; set; }
     public int Distance { get; set; }
 
-    public IWallType Type { get; }
+    public WallType Type { get; }
 
-    public InternalWall(IWallType type)
+    public InternalWall(WallType type)
     {
         Type = type;
     }

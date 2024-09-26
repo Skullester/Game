@@ -1,5 +1,4 @@
-﻿using System.Text;
-using UI.Artist;
+﻿using UI.Artist;
 
 namespace UI;
 
@@ -8,7 +7,9 @@ public class Program
     private static void Main()
     {
         GameInitializer.Start();
-        IGameArtist gameArtist = ConsoleGameArtist.GetArtist(ConsoleColor.Blue);
+        IGameArtist gameArtist = ConsoleGameArtist.GetArtist(ConsoleColor.Yellow);
         gameArtist.Initialize();
+        var totalMemory = GC.GetTotalMemory(true);
+        Console.WriteLine(totalMemory);
     }
 }

@@ -1,5 +1,6 @@
-﻿using Models;
-using Models.Fabric;
+﻿using Models.Fabric;
+using Models.Maze;
+using Models.Player;
 
 namespace Game;
 
@@ -9,6 +10,6 @@ public interface IGameManager
     Player Player { get; }
     IMaze Maze { get; }
     MazeBuilder Builder { get; }
-    void Execute(Command command);
+    bool Execute(Command command);
     void Initialize();
 }
