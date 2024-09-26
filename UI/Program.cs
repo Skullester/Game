@@ -9,7 +9,5 @@ public class Program
         GameInitializer.Start();
         IGameArtist gameArtist = ConsoleGameArtist.GetArtist(ConsoleColor.Yellow);
         gameArtist.Initialize();
-        var totalMemory = GC.GetTotalMemory(true);
-        Console.WriteLine(totalMemory);
     }
 }
