@@ -20,12 +20,12 @@ public class ConsoleGameArtist : IGameArtist
 
     private Player player => GameManager.Player;
 
-    private ConsoleGameArtist(ConsoleColor playerColor)
+    private ConsoleGameArtist()
     {
-        PlayerColor = playerColor;
-        Writer = GameInitializer.MazeWriter;
         GameManager = GameInitializer.GameManager;
+        Writer = GameInitializer.MazeWriter;
         Commands = GameInitializer.Commands;
+        PlayerColor = player.Color;
     }
 
     public void Initialize()
@@ -81,7 +81,7 @@ public class ConsoleGameArtist : IGameArtist
     }
 
 
-    private static class CursorPositionHelper
+    private static class CursorPositionContainer
     {
         private static int left;
         private static int top;
@@ -94,12 +94,15 @@ public class ConsoleGameArtist : IGameArtist
 
         public static (int, int) Get() => (left, top);
 
-        public static void Set() => Console.SetCursorPosition(left, top);
+        public static void Set()
+        {
+            Console.SetCursorPosition(left, top);
+        }
     }
 
     private void DrawInstructions()
     {
-        CursorPositionHelper.Save();
+        CursorPositionContainer.Save();
         var foregroundColor = Console.ForegroundColor;
         ConsoleHelper.SetConsoleColor(ConsoleColor.Yellow);
         var i = 0;
@@ -110,15 +113,15 @@ public class ConsoleGameArtist : IGameArtist
             Console.WriteLine($"\"{cmd.Symbol}\" - {cmd.Name}");
         }
 
-        CursorPositionHelper.Set();
+        CursorPositionContainer.Set();
         ConsoleHelper.SetConsoleColor(foregroundColor);
     }
 
     private void DrawPlayer(char playerChar, Point playerPoint)
     {
-        CursorPositionHelper.Save();
+        CursorPositionContainer.Save();
         DrawPoint(playerPoint, playerChar.ToString(), PlayerColor);
-        CursorPositionHelper.Set();
+        CursorPositionContainer.Set();
     }
 
     private void UpdateGameState()
@@ -129,9 +132,9 @@ public class ConsoleGameArtist : IGameArtist
         DrawPlayer(GameManager.Player.Name[0], player.Location);
     }
 
-    public static ConsoleGameArtist GetArtist(ConsoleColor playerColor)
+    public static ConsoleGameArtist GetArtist()
     {
-        instance ??= new ConsoleGameArtist(playerColor);
+        instance ??= new ConsoleGameArtist();
         return instance;
     }
 

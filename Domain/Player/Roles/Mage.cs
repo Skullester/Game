@@ -6,7 +6,7 @@ namespace Models.Player;
 public class Mage : Player
 {
     public const int HintsConst = 5;
-    public const int HintLength = 5;
+    public const int HintLength = 10;
     public readonly int HintsCount;
     public int CurrentHintCount { get; private set; }
 
@@ -14,7 +14,7 @@ public class Mage : Player
     private Point[] exitPoints = null!;
     private Dictionary<Point, int> mapPointIndex = null!;
 
-    public Mage(IMaze maze, int countHintsCount, TimeSpan coolDown) : base(maze, ConsoleColor.Blue, coolDown, false)
+    public Mage(IMaze maze, int countHintsCount, TimeSpan coolDown) : base(maze, ConsoleColor.DarkBlue, coolDown)
     {
         HintsCount = countHintsCount;
     }
@@ -22,19 +22,22 @@ public class Mage : Player
     protected override void SetDefaultValues()
     {
         CurrentHintCount = HintsCount;
+        mapPointIndex = new Dictionary<Point, int>();
     }
 
     public override IEnumerable<Point> GetSkillPoints()
     {
+        if (CurrentHintCount == 0) return [];
         CurrentHintCount--;
         Span<Point> span = exitPoints;
         if (mapPointIndex.TryGetValue(Location, out var index))
         {
-            var slice = span.Slice(index).GetEnumerator();
         }
 
+        // var slice = span.Slice(index, HintLength);
+
+        return exitPoints;
         //Span.Take(5), Dictionary<Point,int> where int - index, pointer;
-        yield break;
     }
 
     public override void Move(Point point)
@@ -48,11 +51,12 @@ public class Mage : Player
 
     public override void Initialize()
     {
-        var pointsList = new List<Point>();
-        mapPointIndex = new Dictionary<Point, int>();
-        /*do
-        {mapPointIndex.add()
-        } while (expression);*/
-        exitPoints = pointsList.ToArray();
+        base.Initialize();
+        exitPoints = maze.GetPathList()
+            .ToArray();
+        for (var i = 0; i < exitPoints.Length; i++)
+        {
+            mapPointIndex.Add(exitPoints[i], i);
+        }
     }
 }

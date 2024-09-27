@@ -11,13 +11,11 @@ public abstract class Player : INaming
     public abstract string Name { get; }
     public Point Location { get; private set; }
     public TimeSpan CoolDownTime { get; }
-    public bool IsSkillComplex { get; }
 
-    protected Player(IMaze maze, ConsoleColor color, TimeSpan coolDownTime, bool isSkillComplex)
+    protected Player(IMaze maze, ConsoleColor color, TimeSpan coolDownTime)
     {
         Color = color;
         CoolDownTime = coolDownTime;
-        IsSkillComplex = isSkillComplex;
         this.maze = maze;
     }
 

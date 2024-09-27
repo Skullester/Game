@@ -5,25 +5,19 @@ namespace Models.Player;
 
 public class Tracer : Player
 {
-    public const int TracesConst = 30;
+    public const int TracesConst = 50;
 
     public readonly int MaxTraces;
 
     // private Queue<Point> tracesQueue = null!;
     private LinkedList<Point> linkedList = null!;
+    private HashSet<Point> map = null!;
 
     public override string Name => "Трейсер";
 
-    public Tracer(IMaze maze, int maxTraces, TimeSpan coolDown) : base(maze, ConsoleColor.DarkMagenta, coolDown, false)
+    public Tracer(IMaze maze, int maxTraces, TimeSpan coolDown) : base(maze, ConsoleColor.Magenta, coolDown)
     {
         MaxTraces = maxTraces;
-    }
-
-    public override void Initialize()
-    {
-        // tracesQueue = new Queue<Point>();
-        linkedList = new LinkedList<Point>();
-        base.Initialize();
     }
 
     public override void Move(Point point)
@@ -34,16 +28,18 @@ public class Tracer : Player
 
     private void AddMoveToList()
     {
-        if (linkedList.Contains(Location)) return;
+        if (!map.Add(Location)) return;
         linkedList.AddLast(Location);
         if (linkedList.Count > MaxTraces)
         {
+            map.Remove(linkedList.First!.Value);
             linkedList.RemoveFirst();
-            LinkedListNode<Point> first = linkedList.First!;
+            var first = linkedList.First!;
             while (first != linkedList.Last)
             {
                 if (!IsNextPointClose(first))
                 {
+                    map.Remove(linkedList.First.Value);
                     linkedList.RemoveFirst();
                     first = linkedList.First;
                 }
@@ -70,7 +66,8 @@ public class Tracer : Player
 
     protected override void SetDefaultValues()
     {
-        linkedList.Clear();
+        linkedList = new LinkedList<Point>();
+        map = new HashSet<Point>();
     }
 
     public override IEnumerable<Point> GetSkillPoints() => linkedList;

@@ -9,9 +9,9 @@ public class Berserker : Player
     public readonly int BreakableWallsCount;
     public int CurrentBreakableWalls { get; private set; }
     public override string Name => "Берсерк";
-    private Random? random;
+    private Random random = null!;
 
-    public Berserker(IMaze maze, int breakableWalls, TimeSpan coolDown) : base(maze, ConsoleColor.Red, coolDown, true)
+    public Berserker(IMaze maze, int breakableWalls, TimeSpan coolDown) : base(maze, ConsoleColor.Red, coolDown)
     {
         BreakableWallsCount = breakableWalls;
         CurrentBreakableWalls = breakableWalls;
@@ -20,11 +20,6 @@ public class Berserker : Player
     protected override void SetDefaultValues()
     {
         CurrentBreakableWalls = BreakableWallsCount;
-    }
-
-    public override void Initialize()
-    {
-        base.Initialize();
         random = new Random();
     }
 
@@ -38,7 +33,7 @@ public class Berserker : Player
                 if (CurrentBreakableWalls == 0) yield break;
                 var x = startPoint.X + i;
                 var y = startPoint.Y + j;
-                var isSuccess = random!.Next(0, 2) == 0;
+                var isSuccess = random.Next(0, 2) == 0;
                 if (isSuccess && maze[x, y] is InternalWall)
                 {
                     maze[x, y] = maze.Room.Clone();

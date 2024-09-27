@@ -9,24 +9,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/Command.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/Command.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/DownCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/DownCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/LeftCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/LeftCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/MoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/MoveCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/RestartCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/RestartCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/RightCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/RightCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/SkillCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/SkillCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Commands/UpCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/UpCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Difficulty/Difficulty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Difficulty/Difficulty.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Difficulty/Easy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Difficulty/Easy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Difficulty/Hard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Difficulty/Hard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Difficulty/MADNESS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Difficulty/MADNESS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/Difficulty/Medium.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Difficulty/Medium.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/GameState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Game/IGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/IGameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Difficulty/Hard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Difficulty/Hard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/IMaze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/IMaze.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/FireWallType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/FireWallType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Maze/RectangularMaze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/RectangularMaze.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Player/Interface/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Interface/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Player/Roles/Berserker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Roles/Berserker.cs" afterDir="false" />
@@ -35,11 +22,7 @@
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/Artist/IGameArtist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Artist/IGameArtist.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/Formatter/DefaultMazeFormatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Formatter/DefaultMazeFormatter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/Formatter/MazeFormatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Formatter/MazeFormatter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/Formatter/WeirdMazeFormatter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Formatter/WeirdMazeFormatter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/GameInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/GameInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.sourcelink.json" afterDir="false" />
     </list>
@@ -61,6 +44,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Object.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Runtime/CompilerServices/RuntimeHelpers.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Runtime/InteropServices/Marshal.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Runtime/InteropServices/MemoryMarshal.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Collections/src/System/Collections/Generic/LinkedList.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Console/src/System/Console.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Console/src/System/ConsoleKeyInfo.cs" root0="SKIP_HIGHLIGHTING" />
@@ -158,6 +142,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/21aedb66021c4a74afbd56e9400f4f083e00/a6/b5ef8ccf/02000012pdb7Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/21aedb66021c4a74afbd56e9400f4f083e00/be/ac87424d/02000010pdb5Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/21aedb66021c4a74afbd56e9400f4f083e00/f4/088c1082/0200000Fpdb4Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/235e666186444b6c98fe91d7f17d94c34e00/c8/52718a55/02000014pdb22Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/24372012c6c94138bf3f496e104366ffc8f918/83/4f53031c/020003E2pdb661Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/24372012c6c94138bf3f496e104366ffc8f918/8b/36707087/0200031Fpdb1252Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/29bc6aad9c4e4a59b4b6e6fa292d39567400/36/18502b8b/02000007pdb22Low.cs" root0="SKIP_HIGHLIGHTING" />
@@ -173,6 +158,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/a076897a804b406b80c6871abbc45c3e2200/f7/f85f462d/02000006pdb5Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/a312004959f24d64867f632c5579924d3e00/38/68739a6e/02000006pdb18Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/b992b8c75be24f88abdaf7658ddc17c42800/15/95b3dbd0/02000005pdb4Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ca6bf72c27214e9bbbce02bd09f96e2e848a0/d9/1bc69490/0200000Bpdb53Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/d0331af4e533442098e73e56527443382800/11/9b750584/02000007pdb6Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/db7dcf49a69a40c58fb8be83ec4568412400/81/591b6f22/02000002pdb1Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ddeceba143da430bb1e8a97a402d456e2200/a5/7759f409/02000002pdb1Low.cs" root0="SKIP_HIGHLIGHTING" />
@@ -190,6 +176,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ee3fbba3b6b34faba429904d2abda6627600/9e/5d226abc/0200002Apdb10Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ee3fbba3b6b34faba429904d2abda6627600/b3/59216bf6/02000027pdb7Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ee3fbba3b6b34faba429904d2abda6627600/cb/8f872931/02000007pdb22Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/effb7940cf714835a4647773e7f9c3604c00/fd/698c8ea1/02000005pdb26Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/f9b9a1a402d044dabaa335900e81774b2200/54/8d295002/02000004pdb3Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15942e2cd79d410299cc25c0929581222a910/04/5beef1cd/ConsoleColor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15942e2cd79d410299cc25c0929581222a910/db/faed0778/ConsoleCancelEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
@@ -230,25 +217,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/decf5560667640dda7df34fdd0a01af02a8a0/f9/310eb16e/ConsoleColor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ee803b43334273aa749e336ada25b3b942fb14996db550551458d5ede847cd/Graphics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Maze/MazeElement/Room/FireRoom.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Maze/RectangularMaze.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Maze/RectangularMaze.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Naming/INaming.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Player/Roles/Tracer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Player/Roles/Tracer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Player/Roles/Tracer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Player/Roles/Tracer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Formatter/DefaultMazeFormatter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Formatter/DefaultMazeFormatter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/GameInitializer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -285,7 +255,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "rider.code.cleanup.on.save.profile": "Built-in: Reformat Code",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "settings.editor.selected.configurable": "Inspections-C#",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -380,7 +350,10 @@
       <workItem from="1727284750697" duration="1537000" />
       <workItem from="1727286299714" duration="16581000" />
       <workItem from="1727302913009" duration="9002000" />
-      <workItem from="1727350450599" duration="24885000" />
+      <workItem from="1727350450599" duration="32947000" />
+      <workItem from="1727392195548" duration="1350000" />
+      <workItem from="1727393558019" duration="149000" />
+      <workItem from="1727393785536" duration="5164000" />
     </task>
     <servers />
   </component>
@@ -406,32 +379,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Application/Commands/SkillCommand.cs</url>
-          <line>38</line>
-          <properties documentPath="H:\Учёба\4\ПП\Game\Application\Commands\SkillCommand.cs" containingFunctionPresentation="Method 'VerifySkillCoolDown'">
-            <startOffsets>
-              <option value="883" />
-            </startOffsets>
-            <endOffsets>
-              <option value="911" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Domain/Maze/RectangularMaze.cs</url>
-          <line>30</line>
-          <properties documentPath="H:\Учёба\4\ПП\Game\Domain\Maze\RectangularMaze.cs" containingFunctionPresentation="Method 'FindFurthestExit'">
-            <startOffsets>
-              <option value="710" />
-            </startOffsets>
-            <endOffsets>
-              <option value="736" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="57" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

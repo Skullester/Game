@@ -9,9 +9,14 @@ public class RectangularMaze : IMaze
     public int Height { get; set; }
     public int Width { get; set; }
     public Point StartPoint { get; private set; }
+
     public IRoom Room { get; }
+
     public WallType WallType { get; }
+
     public IMazeElement[,] Elements { get; private set; } = null!;
+
+    public Point ExitPoint { get; private set; }
 
     public RectangularMaze(MazeFactory factory)
     {
@@ -21,7 +26,7 @@ public class RectangularMaze : IMaze
 
     public void Generate()
     {
-        InitializeExternalWalls();
+        InitializeWalls();
         InitializeObjects();
         FindFurthestExit();
     }
@@ -46,7 +51,7 @@ public class RectangularMaze : IMaze
         }
 
         Point point = default;
-        //самая дальная точка в 
+        //самая дальная точка...
         if (furthest.X == 1) point = new Point(furthest.X - 1, furthest.Y); //в первой строке - ломаем вверх
         else if (furthest.Y == 1) point = new Point(furthest.X, furthest.Y - 1); //в первом столбце - ломаем влево
         else if (furthest.X == Height - 2)
@@ -54,9 +59,10 @@ public class RectangularMaze : IMaze
         else if (furthest.Y == Width - 2)
             point = new Point(furthest.X, furthest.Y + 1); //в последнем столбце - ломаем вправо
         this[point.X, point.Y] = new ExitRoom();
+        ExitPoint = point;
     }
 
-    private void InitializeExternalWalls()
+    private void InitializeWalls()
     {
         Elements = new IMazeElement[Height, Width];
         var exWall = new ExternalWall(WallType);
@@ -87,48 +93,108 @@ public class RectangularMaze : IMaze
         var stack = new Stack<Point>();
         do
         {
-            var neighbours = new List<Point>();
-            var x = currentPoint.X;
-            var y = currentPoint.Y;
-            ref var element = ref Elements[x, y];
+            var neighbours = GetNeighbours(currentPoint);
+            ref var element = ref Elements[currentPoint.X, currentPoint.Y];
             var distance = element.Distance;
             element = Room.Clone();
             element.Distance = distance;
             element.IsVisited = true;
-            //ломаем стенку через один
-            //P**
-            //012
-            //Если ломаем 2, 1 автоматом становится комнатой
-            if (x > 2 && !Elements[x - 2, y].IsVisited) neighbours.Add(new Point(x - 2, y));
-            if (y > 2 && !Elements[x, y - 2].IsVisited) neighbours.Add(new Point(x, y - 2));
-            if (x < Height - 1 - 2 && !Elements[x + 2, y].IsVisited) neighbours.Add(new Point(x + 2, y));
-            if (y < Width - 1 - 2 && !Elements[x, y + 2].IsVisited) neighbours.Add(new Point(x, y + 2));
 
             if (neighbours.Count > 0)
             {
                 var currentMazeElement = this[currentPoint.X, currentPoint.Y];
                 var chosenPoint = neighbours[rand.Next(neighbours.Count)];
-                var removedWall = RemoveWall(currentPoint, chosenPoint);
-                var removeWallElement = this[removedWall.X, removedWall.Y];
+                var removedWallPoint = RemoveWall(currentPoint, chosenPoint);
+                var removeWallElement = this[removedWallPoint.X, removedWallPoint.Y];
                 removeWallElement.IsVisited = true;
                 removeWallElement.Distance = currentMazeElement.Distance + 1;
                 this[chosenPoint.X, chosenPoint.Y].Distance = currentMazeElement.Distance + 2;
                 stack.Push(chosenPoint);
                 currentPoint = chosenPoint;
             }
-            else currentPoint = stack.Pop();
+            else
+            {
+                currentPoint = stack.Pop();
+            }
         } while (stack.Count > 0);
     }
 
     private Point RemoveWall(Point currentPoint, Point breakableWallPoint)
     {
         Point point;
-        if (currentPoint.X == breakableWallPoint.X) 
-            point = currentPoint.Y < breakableWallPoint.Y ? new Point(currentPoint.X, currentPoint.Y + 1) : new Point(currentPoint.X, currentPoint.Y - 1);
+        if (currentPoint.X == breakableWallPoint.X)
+            point = currentPoint.Y < breakableWallPoint.Y
+                ? new Point(currentPoint.X, currentPoint.Y + 1)
+                : new Point(currentPoint.X, currentPoint.Y - 1);
         else
-            point = currentPoint.X < breakableWallPoint.X ? new Point(currentPoint.X + 1, currentPoint.Y) : new Point(currentPoint.X - 1, currentPoint.Y);
+            point = currentPoint.X < breakableWallPoint.X
+                ? new Point(currentPoint.X + 1, currentPoint.Y)
+                : new Point(currentPoint.X - 1, currentPoint.Y);
         this[point.X, point.Y] = Room.Clone();
         return point;
+    }
+
+    /*public List<Point> GetPathList()
+    {
+        var resultList = new List<Point>();
+        var stack = new Stack<Point>();
+        var visitedMap = new HashSet<Point>();
+        var startPoint = StartPoint;
+        stack.Push(startPoint);
+        do
+        {
+            var point = stack.Pop();
+            var x = point.X;
+            var y = point.Y;
+            if (!visitedMap.Add(point))
+            {
+                resultList.Remove(point);
+                continue;
+            }
+
+            resultList.Add(point);
+            if (point == ExitPoint)
+            {
+                return resultList;
+            }
+
+            var neighbours = new List<Point>();
+            if (x > 0 && Elements[x - 1, y] is not IWall) neighbours.Add(new Point(x - 1, y));
+            if (x < Height - 1 && Elements[x + 1, y] is not IWall) neighbours.Add(new Point(x + 1, y));
+            if (y > 0 && Elements[x, y - 1] is not IWall) neighbours.Add(new Point(x, y - 1));
+            if (y < Width - 1 && Elements[x, y + 1] is not IWall) neighbours.Add(new Point(x, y + 1));
+            foreach (var neighbour in neighbours)
+            {
+                if (!visitedMap.Contains(neighbour))
+                {
+                    stack.Push(neighbour);
+                }
+            }
+        } while (stack.Count > 0);
+
+        return [];
+    }
+*/
+
+    private List<Point> GetNeighbours(Point point)
+    {
+        var neighbours = new List<Point>();
+        var x = point.X;
+        var y = point.Y;
+        if (x > 2 && !Elements[x - 2, y].IsVisited) neighbours.Add(new Point(x - 2, y));
+        if (y > 2 && !Elements[x, y - 2].IsVisited) neighbours.Add(new Point(x, y - 2));
+        if (x < Height - 1 - 2 && !Elements[x + 2, y].IsVisited) neighbours.Add(new Point(x + 2, y));
+        if (y < Width - 1 - 2 && !Elements[x, y + 2].IsVisited) neighbours.Add(new Point(x, y + 2));
+        return neighbours;
+        //ломаем стенку через один
+        //P**
+        //012
+        //Если ломаем 2, 1 автоматом становится комнатой
+    }
+
+    public List<Point> GetPathList()
+    {
+        throw new NotImplementedException();
     }
 
     public IMazeElement this[int x, int y]
