@@ -1,8 +1,4 @@
-﻿using System.Drawing;
-using Models.Maze;
-using Models.Player;
-
-namespace Game;
+﻿namespace Game;
 
 public class LeftCommand : MoveCommand
 {

@@ -1,6 +1,4 @@
-﻿using Models.Naming;
-
-namespace Game;
+﻿namespace Game;
 
 public abstract class Difficulty : INaming
 {

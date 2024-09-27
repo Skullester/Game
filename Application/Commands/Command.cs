@@ -1,10 +1,4 @@
-﻿using System.Drawing;
-using Models.Maze;
-using Models.Naming;
-using Models.Player;
-
-// ReSharper disable VirtualMemberCallInConstructor
-
+﻿// ReSharper disable VirtualMemberCallInConstructor
 namespace Game;
 
 public abstract class Command : INaming

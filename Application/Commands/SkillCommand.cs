@@ -1,6 +1,4 @@
 ﻿using System.Diagnostics;
-using Models.Maze;
-using Models.Player;
 
 namespace Game;
 

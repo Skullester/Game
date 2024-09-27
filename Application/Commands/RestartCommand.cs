@@ -1,7 +1,4 @@
-﻿using Models.Maze;
-using Models.Player;
-
-namespace Game;
+﻿namespace Game;
 
 public class RestartCommand : Command
 {

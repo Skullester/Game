@@ -1,6 +1,4 @@
 ﻿using Models.Fabric;
-using Models.Maze;
-using Models.Player;
 
 namespace Game;
 

@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using Models.Fabric;
 
 namespace Models.Maze;
