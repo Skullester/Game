@@ -1,4 +1,5 @@
-﻿using Models.Fabric;
+﻿using System.Diagnostics;
+using Models.Fabric;
 using Models.Maze;
 using Models.Player;
 
@@ -11,6 +12,7 @@ public sealed class GameManager : IGameManager
     public Player Player { get; }
     public IMaze Maze { get; private set; } = null!;
     public MazeBuilder Builder { get; }
+    private Stopwatch stopwatch = null!;
 
     private GameManager(Player player, MazeBuilder builder)
     {
@@ -33,8 +35,8 @@ public sealed class GameManager : IGameManager
 
     public bool Execute(Command command)
     {
+        if (!CheckTimePenalty()) return false;
         var isExecuted = command.Execute();
-        CheckTimePenalty();
         return isExecuted;
     }
 
@@ -43,13 +45,23 @@ public sealed class GameManager : IGameManager
         CreateMaze();
         Player.Initialize();
         State = GameState.Play;
+        stopwatch = new Stopwatch();
     }
 
-    private async void CheckTimePenalty()
+    private bool CheckTimePenalty()
     {
-        var mazePlayerPoint = Player.Location;
-        await Task.Delay(Maze.Room.StayTime);
-        if (Player.Location == mazePlayerPoint)
+        if (!stopwatch.IsRunning)
+        {
+            stopwatch.Start();
+            return true;
+        }
+
+        if (stopwatch.Elapsed > Maze.Room.StayTime)
+        {
             State = GameState.Defeat;
+            return false;
+        }
+
+        return true;
     }
 }

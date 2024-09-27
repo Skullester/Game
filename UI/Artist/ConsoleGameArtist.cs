@@ -53,6 +53,7 @@ public class ConsoleGameArtist : IGameArtist
             }
 
             var cki = Console.ReadKey(true);
+
             var cmd = Commands.FirstOrDefault(x => x.KeyMap.Contains(cki.Key));
             if (cmd != null && GameManager.Execute(cmd))
             {
