@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Game.Extensions;
 
 namespace Game;
 
@@ -6,11 +7,11 @@ public class SkillCommand : Command
 {
     public override string Name => "Умение";
 
+    private readonly Stopwatch cdWatch = new();
+
     public SkillCommand(IMaze maze, IGameManager gameManager, Player player) : base(maze, 'E', gameManager, player)
     {
     }
-
-    private readonly Stopwatch coolDownStopwatch = new();
 
     protected override void InitializeSymbols()
     {
@@ -24,17 +25,6 @@ public class SkillCommand : Command
         return false;
     }
 
-    private bool VerifySkillCoolDown()
-    {
-        if (!coolDownStopwatch.IsRunning)
-        {
-            coolDownStopwatch.Start();
-            return true;
-        }
-
-        if (coolDownStopwatch.Elapsed < player.CoolDownTime)
-            return false;
-        coolDownStopwatch.Restart();
-        return true;
-    }
+    private bool VerifySkillCoolDown() =>
+        cdWatch.VerifyCondition(cdWatch.Elapsed < player.CoolDownTime);
 }

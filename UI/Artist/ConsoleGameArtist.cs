@@ -29,6 +29,7 @@ public class ConsoleGameArtist : IGameArtist
     public void Initialize()
     {
         Console.OutputEncoding = Encoding.Unicode;
+        Console.CursorVisible = false;
         playerCharInStr = player.Name[0].ToString();
         foreach (var command in Commands)
         {
@@ -41,8 +42,7 @@ public class ConsoleGameArtist : IGameArtist
     private void StartGame()
     {
         GameManager.Initialize();
-        ConsoleHelper.SetConsoleColor(maze.WallType.Color);
-        Console.CursorVisible = false;
+        ConsoleHelper.SetColor(maze.WallType.Color);
         UpdateGameState();
         while (GameManager.State == GameState.Play)
         {
@@ -104,7 +104,7 @@ public class ConsoleGameArtist : IGameArtist
     {
         CursorPositionContainer.Save();
         var foregroundColor = Console.ForegroundColor;
-        ConsoleHelper.SetConsoleColor(ConsoleColor.Yellow);
+        ConsoleHelper.SetColor(ConsoleColor.Yellow);
         var i = 0;
         var offset = 2;
         foreach (var cmd in Commands)
@@ -114,7 +114,7 @@ public class ConsoleGameArtist : IGameArtist
         }
 
         CursorPositionContainer.Set();
-        ConsoleHelper.SetConsoleColor(foregroundColor);
+        ConsoleHelper.SetColor(foregroundColor);
     }
 
     private void DrawPlayer()

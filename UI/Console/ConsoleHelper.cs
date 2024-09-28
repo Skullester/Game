@@ -2,7 +2,7 @@
 
 public static class ConsoleHelper
 {
-    public static void SetConsoleColor(ConsoleColor color) => Console.ForegroundColor = color;
+    public static void SetColor(ConsoleColor color) => Console.ForegroundColor = color;
 
     public static void PrintLineWithColor(string text, ConsoleColor newColor, bool saveOldColor = true)
     {
@@ -12,10 +12,10 @@ public static class ConsoleHelper
     public static void PrintWithColor(string text, ConsoleColor newColor, bool saveOldColor = true)
     {
         var color = Console.ForegroundColor;
-        SetConsoleColor(newColor);
+        SetColor(newColor);
         Print(text);
         if (saveOldColor)
-            SetConsoleColor(color);
+            SetColor(color);
     }
 
     public static void PrintLine(string text)

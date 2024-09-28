@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Game.Extensions;
 using Models.Fabric;
 
 namespace Game;
@@ -48,19 +49,9 @@ public sealed class GameManager : IGameManager
 
     private bool CheckTimePenalty()
     {
-        if (!stopwatch.IsRunning)
-        {
-            stopwatch.Start();
-            return true;
-        }
-
-        if (stopwatch.Elapsed > Maze.Room.StayTime)
-        {
+        var isVerified = stopwatch.VerifyCondition(stopwatch.Elapsed > Maze.Room.StayTime);
+        if (!isVerified)
             State = GameState.Defeat;
-            return false;
-        }
-
-        stopwatch.Restart();
-        return true;
+        return isVerified;
     }
 }

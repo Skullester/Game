@@ -24,7 +24,7 @@ public abstract class MoveCommand : Command
 
     private bool CheckBounds(Point point)
     {
-        var i = Math.Abs(Location.X - point.X);
+        var i = Location.X - point.X;
         var j = point.Y + Location.Y;
         var inBounds = true;
         if (maze[i, j] is IWall)

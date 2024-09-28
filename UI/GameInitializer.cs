@@ -89,7 +89,7 @@ public static class GameInitializer
     private static void PrintOffer(string message)
     {
         ConsoleHelper.PrintLineWithColor(message, ConsoleColor.White);
-        ConsoleHelper.SetConsoleColor(ConsoleColor.Yellow);
+        ConsoleHelper.SetColor(ConsoleColor.Yellow);
     }
 
     private static void Print<T>(IEnumerable<T> collection) where T : INaming
