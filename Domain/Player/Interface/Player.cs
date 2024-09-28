@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
-using Models.Maze;
+﻿using Models.Maze;
 using Models.Naming;
 
 namespace Models.Player;

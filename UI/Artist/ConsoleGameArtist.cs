@@ -1,9 +1,6 @@
 ﻿using System.Drawing;
 using System.Text;
-using Game;
-using Models.Maze;
 using Models.Player;
-using UI.Displaying;
 
 // ReSharper disable UnusedMember.Local
 
@@ -121,7 +118,7 @@ public class ConsoleGameArtist : IGameArtist
     private void DrawPlayer(char playerChar, Point playerPoint)
     {
         CursorPositionContainer.Save();
-        DrawPoint(playerPoint, playerChar.ToString(), PlayerColor);
+        DrawPoint(playerPoint, playerChar, PlayerColor);
         CursorPositionContainer.Set();
     }
 
@@ -159,14 +156,14 @@ public class ConsoleGameArtist : IGameArtist
     {
         foreach (var point in points.Where(x => x != player.Location))
         {
-            DrawPoint(point, "x", player.Color);
+            DrawPoint(point, 'x', player.Color);
             Thread.Sleep(1);
         }
     }
 
-    private void DrawPoint(Point point, string text, ConsoleColor color)
+    private void DrawPoint(Point point, char text, ConsoleColor color)
     {
         Console.SetCursorPosition(point.Y, point.X);
-        ConsoleHelper.PrintWithColor(text, color);
+        ConsoleHelper.PrintWithColor(string.Intern(text.ToString()), color);
     }
 }

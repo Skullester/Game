@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
-using Models.Maze;
+﻿using Models.Maze;
 
 namespace Models.Player;
 
@@ -10,8 +8,8 @@ public class Tracer : Player
 
     public readonly int MaxTraces;
 
-    // private Queue<Point> tracesQueue = null!;
-    private LinkedList<Point> linkedList = null!;
+    private Queue<Point> tracesQueue = null!;
+    // private LinkedList<Point> linkedList = null!;
     private HashSet<Point> map = null!;
 
     public override string Name => "Трейсер";
@@ -29,8 +27,15 @@ public class Tracer : Player
 
     private void AddMoveToList()
     {
-        if (!map.Add(Location)) return;
-        linkedList.AddLast(Location);
+        if (!map.Add(Location))
+            return;
+        tracesQueue.Enqueue(Location);
+        if (tracesQueue.Count > MaxTraces)
+        {
+            var dequeue = tracesQueue.Dequeue();
+            map.Remove(dequeue);
+        }
+        /*linkedList.AddLast(Location);
         if (linkedList.Count > MaxTraces)
         {
             map.Remove(linkedList.First!.Value);
@@ -47,29 +52,22 @@ public class Tracer : Player
                 else
                     first = first.Next!;
             }
-        }
+        }*/
 
-        static bool IsNextPointClose(LinkedListNode<Point> list)
+        /*static bool IsNextPointClose(LinkedListNode<Point> list)
         {
             var prevValue = list.Next!.Value;
             var lastValue = list.Value;
             return !(Math.Abs(lastValue.X - prevValue.X) > 1 || Math.Abs(prevValue.Y - lastValue.Y) > 1);
-        }
-
-        /*
-        if (tracesQueue.Contains(Location)) return;
-        tracesQueue.Enqueue(Location);
-        if (tracesQueue.Count > MaxTraces)
-        {
-            tracesQueue.Dequeue();
         }*/
     }
 
     protected override void SetDefaultValues()
     {
-        linkedList = new LinkedList<Point>();
+        // linkedList = new LinkedList<Point>();
+        tracesQueue = new Queue<Point>();
         map = new HashSet<Point>();
     }
 
-    public override IEnumerable<Point> GetSkillPoints() => linkedList;
+    public override IEnumerable<Point> GetSkillPoints() => tracesQueue;
 }

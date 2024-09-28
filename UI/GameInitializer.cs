@@ -1,9 +1,5 @@
-﻿using Game;
-using Models.Fabric;
-using Models.Maze;
-using Models.Naming;
+﻿using Models.Fabric;
 using Models.Player;
-using UI.Displaying;
 
 // ReSharper disable PossibleMultipleEnumeration
 

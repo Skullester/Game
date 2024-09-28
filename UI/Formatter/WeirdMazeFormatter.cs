@@ -1,6 +1,4 @@
-﻿using Models.Maze;
-
-namespace UI.Displaying;
+﻿namespace UI.Displaying;
 
 public class WeirdMazeFormatter : MazeFormatter
 {

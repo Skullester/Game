@@ -1,7 +1,4 @@
-﻿using Game;
-using UI.Displaying;
-
-namespace UI.Artist;
+﻿namespace UI.Artist;
 
 public interface IGameArtist
 {

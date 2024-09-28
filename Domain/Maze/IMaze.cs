@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
-
-namespace Models.Maze;
+﻿namespace Models.Maze;
 
 public interface IMaze : IEnumerable<IMazeElement>
 {

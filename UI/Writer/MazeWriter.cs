@@ -1,6 +1,4 @@
 ﻿using Infrastructure;
-using Models.Maze;
-using Models.Naming;
 
 namespace UI.Displaying;
 
@@ -32,12 +30,15 @@ public abstract class MazeWriter : INaming
         {
             Write(item);
             Thread.Sleep(Delay);
-            if (++counter % maze!.Width == 0)
+            if (++counter % maze.Width == 0)
                 Write('\n');
         }
 
         writer.Close();
     }
 
-    protected abstract void Write(char sym);
+    protected virtual void Write(char sym)
+    {
+        writer.Write(sym);
+    }
 }

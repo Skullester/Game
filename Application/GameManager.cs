@@ -60,6 +60,7 @@ public sealed class GameManager : IGameManager
             return false;
         }
 
+        stopwatch.Restart();
         return true;
     }
 }
