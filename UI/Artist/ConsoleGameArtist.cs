@@ -16,6 +16,7 @@ public class ConsoleGameArtist : IGameArtist
     private IMaze maze => GameManager.Maze;
 
     private Player player => GameManager.Player;
+    private string playerCharInStr = null!;
 
     private ConsoleGameArtist()
     {
@@ -28,6 +29,7 @@ public class ConsoleGameArtist : IGameArtist
     public void Initialize()
     {
         Console.OutputEncoding = Encoding.Unicode;
+        playerCharInStr = player.Name[0].ToString();
         foreach (var command in Commands)
         {
             command.Perfomed += DrawSkillPoints;
@@ -108,17 +110,17 @@ public class ConsoleGameArtist : IGameArtist
         foreach (var cmd in Commands)
         {
             Console.SetCursorPosition(maze.Width + offset, i++);
-            Console.WriteLine($"\"{cmd.Symbol}\" - {cmd.Name}");
+            ConsoleHelper.PrintLine(($"\"{cmd.Symbol}\" - {cmd.Name}"));
         }
 
         CursorPositionContainer.Set();
         ConsoleHelper.SetConsoleColor(foregroundColor);
     }
 
-    private void DrawPlayer(char playerChar, Point playerPoint)
+    private void DrawPlayer()
     {
         CursorPositionContainer.Save();
-        DrawPoint(playerPoint, playerChar, PlayerColor);
+        DrawPoint(player.Location, playerCharInStr, PlayerColor);
         CursorPositionContainer.Set();
     }
 
@@ -127,7 +129,7 @@ public class ConsoleGameArtist : IGameArtist
         Console.Clear();
         Writer.Write();
         DrawInstructions();
-        DrawPlayer(GameManager.Player.Name[0], player.Location);
+        DrawPlayer();
     }
 
     public static ConsoleGameArtist GetArtist()
@@ -156,14 +158,14 @@ public class ConsoleGameArtist : IGameArtist
     {
         foreach (var point in points.Where(x => x != player.Location))
         {
-            DrawPoint(point, 'x', player.Color);
+            DrawPoint(point, "x", player.Color);
             Thread.Sleep(1);
         }
     }
 
-    private void DrawPoint(Point point, char text, ConsoleColor color)
+    private void DrawPoint(Point point, string text, ConsoleColor color)
     {
         Console.SetCursorPosition(point.Y, point.X);
-        ConsoleHelper.PrintWithColor(string.Intern(text.ToString()), color);
+        ConsoleHelper.PrintWithColor(text, color);
     }
 }
