@@ -12,10 +12,10 @@ public static class SWExtensions
         return true;
     }
 
-    private static bool IsRunning(Stopwatch sw, bool run)
+    private static bool IsRunning(Stopwatch sw, bool runIfNot)
     {
         if (sw.IsRunning) return true;
-        if (run)
+        if (runIfNot)
             sw.Start();
         return false;
     }
