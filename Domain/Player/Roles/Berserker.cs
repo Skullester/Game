@@ -25,9 +25,9 @@ public class Berserker : Player
     public override IEnumerable<Point> GetSkillPoints()
     {
         var startPoint = Location - new Size(1, 1);
-        for (int i = 0; i < 3; i++)
+        for (var i = 0; i < 3; i++)
         {
-            for (int j = 0; j < 3; j++)
+            for (var j = 0; j < 3; j++)
             {
                 if (CurrentBreakableWalls == 0) yield break;
                 var x = startPoint.X + i;

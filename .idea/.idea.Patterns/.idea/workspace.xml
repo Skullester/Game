@@ -9,22 +9,31 @@
   <component name="ChangeListManager">
     <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Commands/Command.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/Command.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Commands/MoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/MoveCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Commands/SkillCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/SkillCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Commands/UpCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/UpCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Release/net8.0/Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Release/net8.0/Application.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Release/net8.0/Application.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Release/net8.0/Application.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Player/Roles/Berserker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Roles/Berserker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Domain.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Release/net8.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Release/net8.0/Domain.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/Console/ConsoleHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Console/ConsoleHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/GameInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/GameInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Release/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Release/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/UI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/UI.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/UI.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/UI.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +46,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Skullester"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Skullester/Game.git",
+    "accountId": "33691c4b-6bbb-4e10-abbe-52d551c7afe7"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Enum.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
@@ -270,7 +291,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "XThreadsFramesViewSplitterKey": "0.050829876",
     "b0dcebb8-0256-4550-a8d6-cf767d69af55.executor": "Run",
-    "git-widget-placeholder": "DecoratorPattern",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "P:/",
     "node.js.detected.package.eslint": "true",
@@ -281,7 +302,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "rider.code.cleanup.on.save.profile": "Built-in: Reformat Code",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "editor.preferences.appearance",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -382,6 +403,7 @@
       <workItem from="1727393785536" duration="5164000" />
       <workItem from="1727464596460" duration="3687000" />
       <workItem from="1727520929648" duration="1688000" />
+      <workItem from="1728948774281" duration="291000" />
     </task>
     <servers />
   </component>
@@ -390,26 +412,8 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Console/src/System/ConsolePal.Windows.cs</url>
-          <line>790</line>
-          <properties documentPath="C:\Users\mrsam\AppData\Local\Symbols\src\dotnet\runtime\08338fcaa5c9b9a8190abb99222fed12aaba956c\src\libraries\System.Console\src\System\ConsolePal.Windows.cs" containingFunctionPresentation="Method 'SetCursorPosition'">
-            <startOffsets>
-              <option value="36685" />
-            </startOffsets>
-            <endOffsets>
-              <option value="36731" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

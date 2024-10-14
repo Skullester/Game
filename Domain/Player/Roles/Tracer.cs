@@ -9,6 +9,7 @@ public class Tracer : Player
     public readonly int MaxTraces;
 
     private Queue<Point> tracesQueue = null!;
+
     // private LinkedList<Point> linkedList = null!;
     private HashSet<Point> map = null!;
 

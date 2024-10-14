@@ -9,7 +9,7 @@ public abstract class Command : INaming
     public char Symbol { get; }
     public abstract string Name { get; }
     protected readonly IMaze maze;
-    protected readonly HashSet<ConsoleKey> keyMap = new();
+    protected readonly HashSet<ConsoleKey> keyMap = new HashSet<ConsoleKey>();
     protected Point Location => player.Location;
     protected readonly IGameManager manager;
     protected readonly Player player;

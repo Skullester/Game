@@ -1,4 +1,5 @@
 ﻿namespace Models.Maze;
+
 public enum State
 {
     None,

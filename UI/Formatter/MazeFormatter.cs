@@ -9,7 +9,7 @@ public abstract class MazeFormatter : INaming
     public abstract string Name { get; }
     public IReadOnlyDictionary<Type, char> Symbols => charMap.AsReadOnly();
 
-    protected Dictionary<Type, char> charMap=null!;
+    protected Dictionary<Type, char> charMap = null!;
     protected abstract void InitializeCharMap();
 
     protected MazeFormatter()

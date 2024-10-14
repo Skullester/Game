@@ -8,8 +8,8 @@ public class MadnessMazeBuilder : MazeBuilder
 
     public override MazeBuilder SetSize()
     {
-        Maze.Height =29;
-        Maze.Width =101;
+        Maze.Height = 29;
+        Maze.Width = 101;
         return this;
     }
 }

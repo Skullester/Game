@@ -6,7 +6,7 @@ public class DefaultMazeFormatter : MazeFormatter
 
     protected override void InitializeCharMap()
     {
-        charMap = new()
+        charMap = new Dictionary<Type, char>
         {
             [typeof(Room)] = ' ', [typeof(FireRoom)] = ' ', [typeof(ExitRoom)] = 'Q', [typeof(ExternalWall)] = '#',
             [typeof(InternalWall)] = '*',

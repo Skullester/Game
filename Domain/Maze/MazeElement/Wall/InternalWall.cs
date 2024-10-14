@@ -1,4 +1,5 @@
 ﻿namespace Models.Maze;
+
 public class InternalWall : IWall
 {
     public WallType Type { get; }

@@ -7,7 +7,7 @@ public class SkillCommand : Command
 {
     public override string Name => "Умение";
 
-    private readonly Stopwatch cdWatch = new();
+    private readonly Stopwatch cdWatch = new Stopwatch();
 
     public SkillCommand(IMaze maze, IGameManager gameManager, Player player) : base(maze, 'E', gameManager, player)
     {
