@@ -5,6 +5,7 @@ namespace Game;
 public abstract class Command : INaming
 {
     public event Action<IEnumerable<Point>>? Perfomed;
+    public bool IsGameShouldUpdated { get; }
     public IReadOnlySet<ConsoleKey> KeyMap => keyMap;
     public char Symbol { get; }
     public abstract string Name { get; }
@@ -15,17 +16,18 @@ public abstract class Command : INaming
     protected readonly Player player;
 
 
-    protected Command(IMaze maze, char symbol, IGameManager manager, Player player)
+    protected Command(IMaze maze, char symbol, IGameManager manager, Player player, bool isGameShouldUpdated)
     {
         this.maze = maze;
         Symbol = symbol;
         this.manager = manager;
         this.player = player;
+        IsGameShouldUpdated = isGameShouldUpdated;
         InitializeSymbols();
     }
 
     protected abstract void InitializeSymbols();
-    public abstract bool Execute();
+    public abstract void Execute();
 
     protected virtual void OnPerfomed(IEnumerable<Point> obj)
     {

@@ -32,11 +32,11 @@ public sealed class GameManager : IGameManager
         return instance;
     }
 
-    public bool Execute(Command command)
+    public bool Execute(Command? command)
     {
-        if (!CheckTimePenalty()) return false;
-        var isExecuted = command.Execute();
-        return isExecuted;
+        if (command is null || !VerifyTimePenalty()) return false;
+        command.Execute();
+        return true;
     }
 
     public void Initialize()
@@ -47,7 +47,7 @@ public sealed class GameManager : IGameManager
         stopwatch = new Stopwatch();
     }
 
-    private bool CheckTimePenalty()
+    private bool VerifyTimePenalty()
     {
         var isVerified = stopwatch.VerifyCondition(stopwatch.Elapsed > Maze.Room.StayTime);
         if (!isVerified)

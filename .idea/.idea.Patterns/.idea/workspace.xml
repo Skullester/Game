@@ -7,8 +7,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Application/Extensions/SWExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Extensions/SWExtensions.cs" afterDir="false" />
+    <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="refactor swex">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/Command.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/Command.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/DownCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/DownCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/LeftCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/LeftCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/MoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/MoveCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/RestartCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/RestartCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/RightCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/RightCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/SkillCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/SkillCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/UpCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/UpCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Difficulty/Hard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Difficulty/Hard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Difficulty/MADNESS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Difficulty/MADNESS.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Difficulty/Medium.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Difficulty/Medium.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/IGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/IGameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Release/net8.0/Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Release/net8.0/Application.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Release/net8.0/Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Release/net8.0/Application.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Release/net8.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Release/net8.0/Domain.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Release/net8.0/Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Release/net8.0/Domain.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.sourcelink.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,6 +266,7 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -378,17 +399,29 @@
       <workItem from="1727393785536" duration="5164000" />
       <workItem from="1727464596460" duration="3687000" />
       <workItem from="1727520929648" duration="1688000" />
-      <workItem from="1728948774281" duration="499000" />
+      <workItem from="1728948774281" duration="1920000" />
     </task>
+    <task id="LOCAL-00001" summary="refactor swex">
+      <option name="closed" value="true" />
+      <created>1728949297976</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728949297976</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="refactor swex" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor swex" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

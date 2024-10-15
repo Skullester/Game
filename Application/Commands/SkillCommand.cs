@@ -9,7 +9,8 @@ public class SkillCommand : Command
 
     private readonly Stopwatch cdWatch = new Stopwatch();
 
-    public SkillCommand(IMaze maze, IGameManager gameManager, Player player) : base(maze, 'E', gameManager, player)
+    public SkillCommand(IMaze maze, IGameManager gameManager, Player player) : base(maze, 'E', gameManager, player,
+        true)
     {
     }
 
@@ -18,11 +19,10 @@ public class SkillCommand : Command
         keyMap.Add(ConsoleKey.E);
     }
 
-    public override bool Execute()
+    public override void Execute()
     {
-        if (!VerifySkillCoolDown()) return false;
+        if (!VerifySkillCoolDown()) return;
         OnPerfomed(player.GetSkillPoints());
-        return false;
     }
 
     private bool VerifySkillCoolDown() =>

@@ -14,5 +14,5 @@ public class UpCommand : MoveCommand
         keyMap.Add(ConsoleKey.UpArrow);
     }
 
-    public override bool Execute() => Execute(new Point(1, 0));
+    public override void Execute() => Execute(new Point(1, 0));
 }

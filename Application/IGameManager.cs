@@ -8,6 +8,6 @@ public interface IGameManager
     Player Player { get; }
     IMaze Maze { get; }
     MazeBuilder Builder { get; }
-    bool Execute(Command command);
+    bool Execute(Command? command);
     void Initialize();
 }

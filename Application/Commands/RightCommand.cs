@@ -14,5 +14,5 @@ public class RightCommand : MoveCommand
         keyMap.Add(ConsoleKey.RightArrow);
     }
 
-    public override bool Execute() => Execute(new Point(0, 1));
+    public override void Execute() => Execute(new Point(0, 1));
 }

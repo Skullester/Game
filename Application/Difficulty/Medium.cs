@@ -4,7 +4,7 @@ public class Medium : Difficulty
 {
     public override string Name => "Средний";
 
-    public Medium() : base(0.5)
+    public Medium() : base(0.7)
     {
     }
 }

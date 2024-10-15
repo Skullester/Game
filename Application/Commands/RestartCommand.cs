@@ -4,7 +4,8 @@ public class RestartCommand : Command
 {
     public override string Name => "Перезапуск";
 
-    public RestartCommand(IMaze maze, IGameManager gameManager, Player player) : base(maze, 'R', gameManager, player)
+    public RestartCommand(IMaze maze, IGameManager gameManager, Player player) : base(maze, 'R', gameManager, player,
+        true)
     {
     }
 
@@ -13,9 +14,8 @@ public class RestartCommand : Command
         keyMap.Add(ConsoleKey.R);
     }
 
-    public override bool Execute()
+    public override void Execute()
     {
         manager.State = GameState.Reset;
-        return false;
     }
 }
