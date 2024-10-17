@@ -17,6 +17,7 @@ public class ConsoleGameArtist : IGameArtist
 
     private Player player => GameManager.Player;
     private string playerCharInStr = null!;
+    private const int gameResultTimeout = 1000;
 
     private ConsoleGameArtist()
     {
@@ -107,7 +108,7 @@ public class ConsoleGameArtist : IGameArtist
         var foregroundColor = Console.ForegroundColor;
         ConsoleHelper.SetColor(ConsoleColor.Yellow);
         var i = 0;
-        var offset = 2;
+        const int offset = 2;
         foreach (var cmd in Commands)
         {
             Console.SetCursorPosition(maze.Width + offset, i++);
@@ -152,7 +153,7 @@ public class ConsoleGameArtist : IGameArtist
     private void DrawGameResult(string name, ConsoleColor color)
     {
         ConsoleHelper.PrintWithColor(name, color);
-        Thread.Sleep(1000);
+        Thread.Sleep(gameResultTimeout);
     }
 
     private void DrawSkillPoints(IEnumerable<Point> points)

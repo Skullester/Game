@@ -23,7 +23,7 @@ public abstract class Player : INaming
 
     public virtual void Move(Point point)
     {
-        var x = Math.Abs(Location.X - point.X);
+        var x = Location.X - point.X;
         var y = point.Y + Location.Y;
         Location = new Point(x, y);
     }

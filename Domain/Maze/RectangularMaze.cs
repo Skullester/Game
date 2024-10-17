@@ -189,10 +189,9 @@ public class RectangularMaze : IMaze
         //Если ломаем 2, 1 автоматом становится комнатой
     }
 
-    public List<Point> GetPathList()
+    /*public List<Point> GetPathList()
     {
-        throw new NotImplementedException();
-    }
+    }*/
 
     public IMazeElement this[int x, int y]
     {

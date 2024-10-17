@@ -7,7 +7,7 @@ public class Program
     private static void Main()
     {
         GameInitializer.Start();
-        IGameArtist gameArtist = ConsoleGameArtist.GetArtist();
+        var gameArtist = ConsoleGameArtist.GetArtist();
         gameArtist.Initialize();
     }
 }

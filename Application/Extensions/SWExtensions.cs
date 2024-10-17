@@ -7,7 +7,7 @@ public static class SWExtensions
     public static bool VerifyCondition(this Stopwatch sw, bool condition)
     {
         if (!IsRunning(sw, true)) return true;
-        if (condition) return false;
+        if (!condition) return false;
         sw.Restart();
         return true;
     }

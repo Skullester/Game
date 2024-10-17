@@ -7,28 +7,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="refactor swex">
+    <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Commands/Command.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/Command.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Commands/DownCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/DownCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Commands/LeftCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/LeftCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Commands/MoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/MoveCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Commands/RestartCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/RestartCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Commands/RightCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/RightCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Commands/SkillCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/SkillCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Commands/UpCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/UpCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Difficulty/Hard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Difficulty/Hard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Difficulty/MADNESS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Difficulty/MADNESS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Difficulty/Medium.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Difficulty/Medium.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Extensions/SWExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Extensions/SWExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/IGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/IGameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Release/net8.0/Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Release/net8.0/Application.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Release/net8.0/Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Release/net8.0/Application.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/IMaze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/IMaze.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/RectangularMaze.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/RectangularMaze.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Player/Interface/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Interface/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Player/Roles/Mage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Roles/Mage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Release/net8.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Release/net8.0/Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Release/net8.0/Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Release/net8.0/Domain.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,23 +41,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Skullester"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Skullester&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Skullester/Game.git",
-    "accountId": "33691c4b-6bbb-4e10-abbe-52d551c7afe7"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Skullester/Game.git&quot;,
+    &quot;accountId&quot;: &quot;33691c4b-6bbb-4e10-abbe-52d551c7afe7&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Enum.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/GC.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Object.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Object.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Runtime/CompilerServices/RuntimeHelpers.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Runtime/InteropServices/Marshal.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Runtime/InteropServices/MemoryMarshal.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
@@ -68,7 +68,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Console/src/System/ConsoleKeyInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Console/src/System/ConsolePal.Windows.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Drawing.Primitives/src/System/Drawing/Color.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Drawing.Primitives/src/System/Drawing/Point.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Drawing.Primitives/src/System/Drawing/Point.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Drawing.Primitives/src/System/Drawing/Size.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/Average.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/Chunk.cs" root0="SKIP_HIGHLIGHTING" />
@@ -90,7 +90,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Collections/ObjectModel/ReadOnlyCollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Collections/ObjectModel/ReadOnlyDictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Diagnostics/Stopwatch.Windows.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Diagnostics/Stopwatch.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Diagnostics/Stopwatch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Enum.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/IO/Stream.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/IO/StreamWriter.cs" root0="SKIP_HIGHLIGHTING" />
@@ -115,7 +115,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Threading/Volatile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/Threading/WaitHandle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/TimeSpan.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Private.CoreLib/src/System/TimeSpan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9f4b1f5d664afdfc80e1508ab7ed099dff210fbd/src/coreclr/System.Private.CoreLib/src/System/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9f4b1f5d664afdfc80e1508ab7ed099dff210fbd/src/coreclr/System.Private.CoreLib/src/System/Collections/Generic/ArraySortHelper.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/9f4b1f5d664afdfc80e1508ab7ed099dff210fbd/src/coreclr/System.Private.CoreLib/src/System/Collections/Generic/EqualityComparer.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
@@ -268,7 +268,7 @@
 }</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="SWEA" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -298,15 +298,8 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "rider.code.cleanup.on.save.profile": "Built-in: Reformat Code",
-    "settings.editor.selected.configurable": "editor.preferences.appearance",
+    "settings.editor.selected.configurable": "CodeCleanupOptionsPage",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\mrsam\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\mrsam\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\mrsam\\AppData\\Local\\Symbols\\src"
-    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -399,7 +392,8 @@
       <workItem from="1727393785536" duration="5164000" />
       <workItem from="1727464596460" duration="3687000" />
       <workItem from="1727520929648" duration="1688000" />
-      <workItem from="1728948774281" duration="1920000" />
+      <workItem from="1728948774281" duration="2074000" />
+      <workItem from="1729199114606" duration="4476000" />
     </task>
     <task id="LOCAL-00001" summary="refactor swex">
       <option name="closed" value="true" />
@@ -409,7 +403,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728949297976</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="change update game state behaviour">
+      <option name="closed" value="true" />
+      <created>1728950799714</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728950799714</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +423,27 @@
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="refactor swex" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor swex" />
+    <MESSAGE value="change update game state behaviour" />
+    <option name="LAST_COMMIT_MESSAGE" value="change update game state behaviour" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Commands/SkillCommand.cs</url>
+          <line>28</line>
+          <properties documentPath="H:\Учёба\4\ПП\Game\Application\Commands\SkillCommand.cs" containingFunctionPresentation="Method 'VerifySkillCoolDown'">
+            <startOffsets>
+              <option value="635" />
+            </startOffsets>
+            <endOffsets>
+              <option value="698" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

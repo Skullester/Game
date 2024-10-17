@@ -17,7 +17,6 @@ public abstract class MoveCommand : Command
             maze[loc.X, loc.Y] = new Room();
             manager.State = GameState.Victory;
         }
-        // (maze[i, j], maze[Location.X, Location.Y]) = (maze[Location.X, Location.Y], maze[i, j]);
     }
 
     private bool CheckBounds(Point point)

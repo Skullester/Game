@@ -51,11 +51,11 @@ public class Mage : Player
     public override void Initialize()
     {
         base.Initialize();
-        exitPoints = maze.GetPathList()
+        /*exitPoints = maze.GetPathList()
             .ToArray();
         for (var i = 0; i < exitPoints.Length; i++)
         {
             mapPointIndex.Add(exitPoints[i], i);
-        }
+        }*/
     }
 }

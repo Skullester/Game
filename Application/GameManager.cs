@@ -49,7 +49,7 @@ public sealed class GameManager : IGameManager
 
     private bool VerifyTimePenalty()
     {
-        var isVerified = stopwatch.VerifyCondition(stopwatch.Elapsed > Maze.Room.StayTime);
+        var isVerified = stopwatch.VerifyCondition(stopwatch.Elapsed <= Maze.Room.StayTime);
         if (!isVerified)
             State = GameState.Defeat;
         return isVerified;

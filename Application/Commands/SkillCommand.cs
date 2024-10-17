@@ -26,5 +26,5 @@ public class SkillCommand : Command
     }
 
     private bool VerifySkillCoolDown() =>
-        cdWatch.VerifyCondition(cdWatch.Elapsed < player.CoolDownTime);
+        cdWatch.VerifyCondition(cdWatch.Elapsed >= player.CoolDownTime);
 }
