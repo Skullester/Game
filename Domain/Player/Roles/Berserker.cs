@@ -4,16 +4,16 @@ namespace Models.Player;
 
 public class Berserker : Player
 {
-    public const int BreakableWallsConst = 10;
+    private const int breakableWallsConst = 10;
     public readonly int BreakableWallsCount;
     public int CurrentBreakableWalls { get; private set; }
     public override string Name => "Берсерк";
     private Random random = null!;
 
-    public Berserker(IMaze maze, int breakableWalls, TimeSpan coolDown) : base(maze, ConsoleColor.Red, coolDown)
+    public Berserker(IMaze maze, double ratio, TimeSpan coolDown) : base(maze, ConsoleColor.Red, coolDown)
     {
-        BreakableWallsCount = breakableWalls;
-        CurrentBreakableWalls = breakableWalls;
+        BreakableWallsCount = (int)(ratio * breakableWallsConst);
+        CurrentBreakableWalls = breakableWallsConst;
     }
 
     protected override void SetDefaultValues()

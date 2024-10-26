@@ -3,7 +3,11 @@ using Models.Naming;
 
 namespace Models.Player;
 
-public abstract class Player : INaming
+public abstract class A
+{
+}
+
+public abstract class Player : A, INaming
 {
     protected readonly IMaze maze;
     public ConsoleColor Color { get; }

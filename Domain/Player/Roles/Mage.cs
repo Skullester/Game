@@ -4,7 +4,7 @@ namespace Models.Player;
 
 public class Mage : Player
 {
-    public const int HintsConst = 5;
+    private const int hintsConst = 5;
     public const int HintLength = 10;
     public readonly int HintsCount;
     public int CurrentHintCount { get; private set; }
@@ -13,9 +13,9 @@ public class Mage : Player
     private Point[] exitPoints = null!;
     private Dictionary<Point, int> mapPointIndex = null!;
 
-    public Mage(IMaze maze, int countHintsCount, TimeSpan coolDown) : base(maze, ConsoleColor.DarkBlue, coolDown)
+    public Mage(IMaze maze, double ratio, TimeSpan coolDown) : base(maze, ConsoleColor.DarkBlue, coolDown)
     {
-        HintsCount = countHintsCount;
+        HintsCount = (int)(ratio * hintsConst);
     }
 
     protected override void SetDefaultValues()

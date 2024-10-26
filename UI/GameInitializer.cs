@@ -1,84 +1,75 @@
-﻿using Models.Fabric;
+﻿using Infrastructure;
+using Models.Fabric;
 using Models.Player;
+using Ninject;
+using Ninject.Extensions.Conventions;
 
 // ReSharper disable PossibleMultipleEnumeration
 
 namespace UI;
 
-public static class GameInitializer
+public class GameInitializer
 {
-    public static ConsoleMazeWriter MazeWriter = null!;
-    public static GameManager GameManager = null!;
-    public static Command[] Commands = null!;
-    private static readonly MazeFormatter[] formatters = [new DefaultMazeFormatter(), new WeirdMazeFormatter()];
-    private static IMaze maze = null!;
-    private static Player[] players = null!;
-    private static readonly Difficulty[] difficulties = [new Easy(), new Medium(), new Hard(), new MADNESS()];
-    private static Difficulty difficulty = null!;
-    private static readonly MazeFactory[] factories = [new MazeFactoryDefault(), new MazeFactoryFire()];
-    private static MazeBuilder[]? mazeBuilders;
+    public IKernel Kernel { get; }
+    private static GameInitializer? instance;
 
+    private GameInitializer(IKernel kernel)
+    {
+        Kernel = kernel;
+    }
 
-    public static void Start()
+    public static GameInitializer GetInstance(IKernel kernel) => instance ??= new GameInitializer(kernel);
+
+    public void Start()
     {
         SetGameOptions();
     }
 
-    private static void SetGameOptions()
+    private void SetGameOptions()
     {
-        difficulty = PrintAndGetElement(difficulties, "Выберите уровень сложности:",
+        var difficulties = Kernel.GetAll<Difficulty>();
+        var factories = Kernel.GetAll<MazeFactory>();
+        var difficulty = PrintAndGetElement(difficulties, "Выберите уровень сложности:",
             "Выберите сложность из списка выше");
+        Kernel.RebindToConstant(difficulty);
         var factory = PrintAndGetElement(factories, "Выберите тип лабиринта:", "Выберите тип лабиринта из списка выше");
-        mazeBuilders = GetMazeBuilders(factory);
-        var mazeBuilder = GetMazeBuilder();
-        maze = mazeBuilder.Maze;
-        players = GetPlayers();
+        Kernel.RebindToConstant(factory);
+        Kernel.Bind(x => x.FromAssemblyContaining<MazeBuilder>()
+            .SelectAllClasses()
+            .InheritedFrom<MazeBuilder>()
+            .BindAllBaseClasses()
+        );
+        var mazeBuilder = GetMazeBuilder(Kernel.GetAll<MazeBuilder>());
+        Kernel.RebindToConstant(mazeBuilder);
+        Kernel.Bind<IMaze>()
+            .ToConstant(Kernel.Get<MazeBuilder>().Maze);
+        BindPlayers();
+        var players = Kernel.GetAll<Player>();
         var player = PrintAndGetElement(players, "Выберите персонажа:", "Выберите персонажа из списка выше");
-        PrintOffer("Выберите способ вывода лабиринта: ");
+        Kernel.RebindToConstant(player);
+        ConsoleHelper.PrintOffer("Выберите способ вывода лабиринта: ");
         PrintFormatters();
-        var formatter = GetElement(formatters, "Выберите способ вывода из списка выше");
-        MazeWriter = new ConsoleMazeWriter(maze, formatter);
-        GameManager = GameManager.GetManager(player, mazeBuilder);
-        Commands = GetCommands(player, GameManager);
+        var formatter = GetElement(Kernel.GetAll<MazeFormatter>(), "Выберите способ вывода из списка выше");
+        Kernel.RebindToConstant(formatter);
     }
 
     private static T PrintAndGetElement<T>(IEnumerable<T> collection, string offerMsg, string errorMsg)
         where T : INaming
     {
-        PrintOffer(offerMsg);
-        Print(collection);
+        ConsoleHelper.PrintOffer(offerMsg);
+        ConsoleHelper.Print(collection);
         return GetElement(collection, errorMsg);
     }
 
-    private static Command[] GetCommands(Player player, IGameManager gameManager) =>
-    [
-        new LeftCommand(maze, gameManager, player),
-        new RightCommand(maze, gameManager, player),
-        new UpCommand(maze, gameManager, player),
-        new DownCommand(maze, gameManager, player),
-        new SkillCommand(maze, gameManager, player),
-        new RestartCommand(maze, gameManager, player)
-    ];
-
-    private static MazeBuilder[] GetMazeBuilders(MazeFactory factory)
-    {
-        return
-        [
-            new EasyMazeBuilder(factory),
-            new MediumMazeBuilder(factory),
-            new HardMazeBuilder(factory),
-            new MadnessMazeBuilder(factory)
-        ];
-    }
-
-    private static MazeBuilder GetMazeBuilder() => mazeBuilders!.FirstOrDefault(x => x.Name == difficulty.Name)!;
+    private MazeBuilder GetMazeBuilder(IEnumerable<MazeBuilder> builders) =>
+        builders.FirstOrDefault(x => x.Name == Kernel.Get<Difficulty>().Name)!;
 
     private static T GetElement<T>(IEnumerable<T> collection, string errorMsg) where T : INaming =>
         ConsoleHelper.FindNamingElementByInput(collection, errorMsg);
 
-    private static void PrintFormatters()
+    private void PrintFormatters()
     {
-        foreach (var format in formatters)
+        foreach (var format in Kernel.GetAll<MazeFormatter>())
         {
             var newSymbols = format.Symbols.Select(x => $"'{x.Value}'");
             var symbols = string.Join(" | ", newSymbols);
@@ -86,26 +77,12 @@ public static class GameInitializer
         }
     }
 
-    private static void PrintOffer(string message)
+    private void BindPlayers()
     {
-        ConsoleHelper.PrintLineWithColor(message, ConsoleColor.White);
-        ConsoleHelper.SetColor(ConsoleColor.Yellow);
-    }
-
-    private static void Print<T>(IEnumerable<T> collection) where T : INaming
-    {
-        var names = collection.Select(x => x.Name);
-        ConsoleHelper.PrintLine(string.Join(" | ", names));
-    }
-
-    private static Player[] GetPlayers()
-    {
-        var ratio = difficulty.SkillRatio;
-        return
-        [
-            new Berserker(maze, (int)(Berserker.BreakableWallsConst * ratio), TimeSpan.FromSeconds(1)),
-            new Mage(maze, (int)(Mage.HintsConst * ratio), TimeSpan.FromSeconds(2)),
-            new Tracer(maze, (int)(Tracer.TracesConst * ratio), TimeSpan.FromSeconds(2)),
-        ];
+        var ratio = Kernel.Get<Difficulty>().SkillRatio;
+        var maze = Kernel.Get<IMaze>();
+        Kernel.Bind<Player>().ToConstant(new Berserker(maze, ratio, TimeSpan.FromSeconds(1)));
+        Kernel.Bind<Player>().ToConstant(new Tracer(maze, ratio, TimeSpan.FromSeconds(2)));
+        Kernel.Bind<Player>().ToConstant(new Mage(maze, ratio, TimeSpan.FromSeconds(2)));
     }
 }

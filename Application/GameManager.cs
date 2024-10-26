@@ -26,17 +26,14 @@ public sealed class GameManager : IGameManager
         Maze = Builder.Maze;
     }
 
-    public static GameManager GetManager(Player player, MazeBuilder mazeBuilder)
-    {
-        instance ??= new GameManager(player, mazeBuilder);
-        return instance;
-    }
+    public static GameManager GetManager(Player player, MazeBuilder mazeBuilder) => instance ??= new GameManager(player, mazeBuilder);
 
     public bool Execute(Command? command)
     {
         if (command is null || !VerifyTimePenalty()) return false;
         command.Execute();
         return true;
+        
     }
 
     public void Initialize()

@@ -22,3 +22,7 @@ H:\Учёба\4\ПП\Game\UI\obj\Release\net8.0\refint\UI.dll
 H:\Учёба\4\ПП\Game\UI\obj\Release\net8.0\UI.pdb
 H:\Учёба\4\ПП\Game\UI\obj\Release\net8.0\UI.genruntimeconfig.cache
 H:\Учёба\4\ПП\Game\UI\obj\Release\net8.0\ref\UI.dll
+H:\Учёба\4\ПП\Game\UI\bin\Release\net8.0\Castle.Core.dll
+H:\Учёба\4\ПП\Game\UI\bin\Release\net8.0\Ninject.dll
+H:\Учёба\4\ПП\Game\UI\bin\Release\net8.0\Ninject.Extensions.Conventions.dll
+H:\Учёба\4\ПП\Game\UI\bin\Release\net8.0\Ninject.Extensions.Factory.dll

@@ -2,6 +2,25 @@
 
 public static class ConsoleHelper
 {
+    public static class CursorPositionContainer
+    {
+        private static int left;
+        private static int top;
+
+        public static void Save()
+        {
+            left = Console.CursorLeft;
+            top = Console.CursorTop;
+        }
+
+        public static (int, int) Get() => (left, top);
+
+        public static void Set()
+        {
+            Console.SetCursorPosition(left, top);
+        }
+    }
+
     public static void SetColor(ConsoleColor color) => Console.ForegroundColor = color;
 
     public static void PrintLineWithColor(string text, ConsoleColor newColor, bool saveOldColor = true)
@@ -50,6 +69,18 @@ public static class ConsoleHelper
     {
         if (condition) PrintError(errorMessage);
         return condition;
+    }
+
+    public static void PrintOffer(string message)
+    {
+        PrintLineWithColor(message, ConsoleColor.White);
+        SetColor(ConsoleColor.Yellow);
+    }
+
+    public static void Print<T>(IEnumerable<T> collection) where T : INaming
+    {
+        var names = collection.Select(x => x.Name);
+        PrintLine(string.Join(" | ", names));
     }
 
     public static void PrintError(string text) => PrintLineWithColor(text, ConsoleColor.Red);

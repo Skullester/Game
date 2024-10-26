@@ -4,7 +4,7 @@ namespace Models.Player;
 
 public class Tracer : Player
 {
-    public const int TracesConst = 50;
+    private const int TracesConst = 50;
 
     public readonly int MaxTraces;
 
@@ -15,9 +15,9 @@ public class Tracer : Player
 
     public override string Name => "Трейсер";
 
-    public Tracer(IMaze maze, int maxTraces, TimeSpan coolDown) : base(maze, ConsoleColor.Magenta, coolDown)
+    public Tracer(IMaze maze, double ratio, TimeSpan coolDown) : base(maze, ConsoleColor.Magenta, coolDown)
     {
-        MaxTraces = maxTraces;
+        MaxTraces = (int)(TracesConst * ratio);
     }
 
     public override void Move(Point point)

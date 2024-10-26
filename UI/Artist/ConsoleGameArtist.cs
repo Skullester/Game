@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Text;
 using Models.Player;
+using static Game.ConsoleHelper;
 
 // ReSharper disable UnusedMember.Local
 
@@ -11,20 +12,17 @@ public class ConsoleGameArtist : IGameArtist
     public MazeWriter Writer { get; }
     public IGameManager GameManager { get; }
     public IEnumerable<Command> Commands { get; }
-    public ConsoleColor PlayerColor { get; }
-    private static ConsoleGameArtist? instance;
+    private ConsoleColor playerColor => player.Color;
     private IMaze maze => GameManager.Maze;
-
     private Player player => GameManager.Player;
     private string playerCharInStr = null!;
     private const int gameResultTimeout = 1000;
 
-    private ConsoleGameArtist()
+    public ConsoleGameArtist(IGameManager manager, MazeWriter writer, IEnumerable<Command> commands)
     {
-        GameManager = GameInitializer.GameManager;
-        Writer = GameInitializer.MazeWriter;
-        Commands = GameInitializer.Commands;
-        PlayerColor = player.Color;
+        Writer = writer;
+        Commands = commands.ToArray();
+        GameManager = manager;
     }
 
     public void Initialize()
@@ -43,7 +41,7 @@ public class ConsoleGameArtist : IGameArtist
     private void StartGame()
     {
         GameManager.Initialize();
-        ConsoleHelper.SetColor(maze.WallType.Color);
+        SetColor(maze.WallType.Color);
         UpdateGameState();
         while (GameManager.State == GameState.Play)
         {
@@ -56,7 +54,7 @@ public class ConsoleGameArtist : IGameArtist
 
             var cmd = Commands.FirstOrDefault(x => x.KeyMap.Contains(cki.Key));
 
-            if (GameManager.Execute(cmd) && cmd!.IsGameShouldUpdated)
+            if (GameManager.Execute(cmd) && cmd!.ShouldGameBeUpdated)
             {
                 UpdateGameState();
             }
@@ -82,47 +80,27 @@ public class ConsoleGameArtist : IGameArtist
         }
     }
 
-
-    private static class CursorPositionContainer
-    {
-        private static int left;
-        private static int top;
-
-        public static void Save()
-        {
-            left = Console.CursorLeft;
-            top = Console.CursorTop;
-        }
-
-        public static (int, int) Get() => (left, top);
-
-        public static void Set()
-        {
-            Console.SetCursorPosition(left, top);
-        }
-    }
-
     private void DrawInstructions()
     {
         CursorPositionContainer.Save();
         var foregroundColor = Console.ForegroundColor;
-        ConsoleHelper.SetColor(ConsoleColor.Yellow);
+        SetColor(ConsoleColor.Yellow);
         var i = 0;
         const int offset = 2;
         foreach (var cmd in Commands)
         {
             Console.SetCursorPosition(maze.Width + offset, i++);
-            ConsoleHelper.PrintLine(($"\"{cmd.Symbol}\" - {cmd.Name}"));
+            PrintLine(($"\"{cmd.Symbol}\" - {cmd.Name}"));
         }
 
         CursorPositionContainer.Set();
-        ConsoleHelper.SetColor(foregroundColor);
+        SetColor(foregroundColor);
     }
 
     private void DrawPlayer()
     {
         CursorPositionContainer.Save();
-        DrawPoint(player.Location, playerCharInStr, PlayerColor);
+        DrawPoint(player.Location, playerCharInStr, playerColor);
         CursorPositionContainer.Set();
     }
 
@@ -132,12 +110,6 @@ public class ConsoleGameArtist : IGameArtist
         Writer.Write();
         DrawInstructions();
         DrawPlayer();
-    }
-
-    public static ConsoleGameArtist GetArtist()
-    {
-        instance ??= new ConsoleGameArtist();
-        return instance;
     }
 
     private void DrawVictory()
@@ -152,7 +124,7 @@ public class ConsoleGameArtist : IGameArtist
 
     private void DrawGameResult(string name, ConsoleColor color)
     {
-        ConsoleHelper.PrintWithColor(name, color);
+        PrintWithColor(name, color);
         Thread.Sleep(gameResultTimeout);
     }
 
@@ -168,6 +140,6 @@ public class ConsoleGameArtist : IGameArtist
     private void DrawPoint(Point point, string text, ConsoleColor color)
     {
         Console.SetCursorPosition(point.Y, point.X);
-        ConsoleHelper.PrintWithColor(text, color);
+        PrintWithColor(text, color);
     }
 }

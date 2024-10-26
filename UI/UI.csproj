@@ -13,4 +13,10 @@
         <ProjectReference Include="..\Domain\Domain.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Ninject" Version="3.3.6" />
+      <PackageReference Include="Ninject.Extensions.Conventions" Version="3.3.0" />
+      <PackageReference Include="Ninject.Mono.Extensions.Factory" Version="2.1.0.15" />
+    </ItemGroup>
+
 </Project>

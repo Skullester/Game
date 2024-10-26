@@ -22,3 +22,7 @@ H:\Учёба\4\ПП\Game\UI\bin\Debug\net8.0\Application.dll
 H:\Учёба\4\ПП\Game\UI\bin\Debug\net8.0\Domain.dll
 H:\Учёба\4\ПП\Game\UI\bin\Debug\net8.0\Application.pdb
 H:\Учёба\4\ПП\Game\UI\bin\Debug\net8.0\Domain.pdb
+H:\Учёба\4\ПП\Game\UI\bin\Debug\net8.0\Castle.Core.dll
+H:\Учёба\4\ПП\Game\UI\bin\Debug\net8.0\Ninject.dll
+H:\Учёба\4\ПП\Game\UI\bin\Debug\net8.0\Ninject.Extensions.Conventions.dll
+H:\Учёба\4\ПП\Game\UI\bin\Debug\net8.0\Ninject.Extensions.Factory.dll
