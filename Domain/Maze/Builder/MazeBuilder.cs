@@ -13,9 +13,11 @@ public abstract class MazeBuilder
         Maze = new RectangularMaze(factory);
     }
 
-    public void GenerateMaze()
+
+    public IMaze GenerateMaze()
     {
         Maze.Generate();
+        return Maze;
     }
 
     public abstract MazeBuilder SetSize();

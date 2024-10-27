@@ -1,9 +1,7 @@
 ﻿using Models.Fabric;
-using Models.Player;
 using Ninject;
 using Ninject.Extensions.Conventions;
 using Ninject.Modules;
-using Ninject.Syntax;
 using UI.Artist;
 
 namespace UI;
@@ -45,8 +43,11 @@ public class Program
             .To<ConsoleGameArtist>()
             .InSingletonScope();
         kernel.Bind<IGameManager>()
-            .ToMethod(x => GameManager.GetManager(x.Kernel.Get<Player>(), x.Kernel.Get<MazeBuilder>()));
-        kernel.Bind<MazeWriter>().To<ConsoleMazeWriter>();
+            .To<GameManager>()
+            .InSingletonScope();
+        kernel.Bind<MazeWriter>()
+            .To<ConsoleMazeWriter>()
+            .InSingletonScope();
         return kernel;
     }
 }

@@ -10,7 +10,7 @@ public class Berserker : Player
     public override string Name => "Берсерк";
     private Random random = null!;
 
-    public Berserker(IMaze maze, double ratio, TimeSpan coolDown) : base(maze, ConsoleColor.Red, coolDown)
+    public Berserker(IMaze maze, double ratio, TimeSpan coolDown) : base(maze, ConsoleColor.Magenta, coolDown)
     {
         BreakableWallsCount = (int)(ratio * breakableWallsConst);
         CurrentBreakableWalls = breakableWallsConst;
