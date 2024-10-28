@@ -7,6 +7,10 @@ public abstract class MoveCommand : Command
     {
     }
 
+    public override void Execute() => Execute(GetDirection());
+
+    protected abstract Point GetDirection();
+
     protected void Execute(Point point)
     {
         if (!CheckBounds(point)) return;
@@ -31,29 +35,5 @@ public abstract class MoveCommand : Command
         }
 
         return inBounds;
-    }
-}
-
-class MoveCommandDecorator : MoveCommand
-{
-    private MoveCommand decoratedCommand;
-
-    public MoveCommandDecorator(IMaze maze, char symbol, IGameManager manager, Player player,
-        MoveCommand decoratedCommand, string name) : base(maze, symbol, manager, player)
-    {
-        this.decoratedCommand = decoratedCommand;
-        Name = name;
-    }
-
-    public override string Name { get; }
-
-    protected override void InitializeSymbols()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void Execute()
-    {
-        throw new NotImplementedException();
     }
 }

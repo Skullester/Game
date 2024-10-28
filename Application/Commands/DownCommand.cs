@@ -14,5 +14,5 @@ public class DownCommand : MoveCommand
         keyMap.Add(ConsoleKey.DownArrow);
     }
 
-    public override void Execute() => Execute(new Point(1, 0));
+    protected override Point GetDirection() => new Point(1, 0);
 }

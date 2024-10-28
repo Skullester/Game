@@ -14,5 +14,5 @@ public class LeftCommand : MoveCommand
         keyMap.Add(ConsoleKey.LeftArrow);
     }
 
-    public override void Execute() => Execute(new Point(0, -1));
+    protected override Point GetDirection() => new Point(0, -1);
 }
