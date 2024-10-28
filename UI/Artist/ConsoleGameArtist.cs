@@ -130,7 +130,7 @@ public class ConsoleGameArtist : IGameArtist
 
     private void DrawSkillPoints(IEnumerable<Point> points)
     {
-        foreach (var point in points.Where(x => x != player.Location))
+        foreach (var point in points.Where(p => p != player.Location))
         {
             DrawPoint(point, "x", player.Color);
             Thread.Sleep(1);

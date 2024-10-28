@@ -4,6 +4,7 @@ public class InternalWall : IWall
 {
     public WallType Type { get; }
 
+
     public InternalWall(WallType type)
     {
         Type = type;

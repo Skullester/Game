@@ -1,74 +1,23 @@
-﻿using Models.Maze;
+﻿using System.Diagnostics;
+using Models.Maze;
 
 namespace Models.Player;
 
 public class Tracer : Player
 {
-    private const int TracesConst = 50;
-
-    public readonly int MaxTraces;
-
-    private Queue<Point> tracesQueue = null!;
-
-    // private LinkedList<Point> linkedList = null!;
-    private HashSet<Point> map = null!;
-
     public override string Name => "Трейсер";
 
-    public Tracer(IMaze maze, double ratio, TimeSpan coolDown) : base(maze, ConsoleColor.Magenta, coolDown)
+    public Tracer(IMaze maze, double ratio, TimeSpan coolDown) : base(maze, ConsoleColor.Magenta,
+        coolDown)
     {
-        MaxTraces = (int)(TracesConst * ratio);
+        skill = new TracerSkill(ratio, this);
     }
 
     public override void Move(Point point)
     {
-        AddMoveToList();
+        skill.Use();
         base.Move(point);
     }
 
-    private void AddMoveToList()
-    {
-        if (!map.Add(Location))
-            return;
-        tracesQueue.Enqueue(Location);
-        if (tracesQueue.Count > MaxTraces)
-        {
-            var dequeue = tracesQueue.Dequeue();
-            map.Remove(dequeue);
-        }
-        /*linkedList.AddLast(Location);
-        if (linkedList.Count > MaxTraces)
-        {
-            map.Remove(linkedList.First!.Value);
-            linkedList.RemoveFirst();
-            var first = linkedList.First!;
-            while (first != linkedList.Last)
-            {
-                if (!IsNextPointClose(first))
-                {
-                    map.Remove(linkedList.First.Value);
-                    linkedList.RemoveFirst();
-                    first = linkedList.First;
-                }
-                else
-                    first = first.Next!;
-            }
-        }*/
-
-        /*static bool IsNextPointClose(LinkedListNode<Point> list)
-        {
-            var prevValue = list.Next!.Value;
-            var lastValue = list.Value;
-            return !(Math.Abs(lastValue.X - prevValue.X) > 1 || Math.Abs(prevValue.Y - lastValue.Y) > 1);
-        }*/
-    }
-
-    protected override void SetDefaultValues()
-    {
-        // linkedList = new LinkedList<Point>();
-        tracesQueue = new Queue<Point>();
-        map = new HashSet<Point>();
-    }
-
-    public override IEnumerable<Point> GetSkillPoints() => tracesQueue;
+    // public override IEnumerable<Point> GetSkillPoints() => tracesQueue;
 }

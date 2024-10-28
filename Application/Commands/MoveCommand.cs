@@ -21,10 +21,9 @@ public abstract class MoveCommand : Command
 
     private bool CheckBounds(Point point)
     {
-        var i = Location.X - point.X;
-        var j = point.Y + Location.Y;
+        var newPoint = Location + new Size(point);
         var inBounds = true;
-        if (maze[i, j] is IWall)
+        if (maze[newPoint.X, newPoint.Y] is IWall)
         {
             inBounds = false;
             if (maze.WallType.Effect == State.Death)
@@ -32,5 +31,29 @@ public abstract class MoveCommand : Command
         }
 
         return inBounds;
+    }
+}
+
+class MoveCommandDecorator : MoveCommand
+{
+    private MoveCommand decoratedCommand;
+
+    public MoveCommandDecorator(IMaze maze, char symbol, IGameManager manager, Player player,
+        MoveCommand decoratedCommand, string name) : base(maze, symbol, manager, player)
+    {
+        this.decoratedCommand = decoratedCommand;
+        Name = name;
+    }
+
+    public override string Name { get; }
+
+    protected override void InitializeSymbols()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void Execute()
+    {
+        throw new NotImplementedException();
     }
 }

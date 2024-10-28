@@ -77,8 +77,10 @@ public class GameInitializer
     {
         var ratio = Kernel.Get<Difficulty>().SkillRatio;
         var maze = Kernel.Get<IMaze>();
-        Kernel.Bind<Player>().ToConstant(new Berserker(maze, ratio, TimeSpan.FromSeconds(1)));
-        Kernel.Bind<Player>().ToConstant(new Tracer(maze, ratio, TimeSpan.FromSeconds(2)));
-        Kernel.Bind<Player>().ToConstant(new Mage(maze, ratio, TimeSpan.FromSeconds(2)));
+        Kernel.BindToConstant<Player>(
+            new Berserker(maze, ratio, TimeSpan.FromSeconds(1)),
+            new Tracer(maze, ratio, TimeSpan.FromSeconds(2)),
+            new Mage(maze, ratio, TimeSpan.FromSeconds(2))
+        );
     }
 }

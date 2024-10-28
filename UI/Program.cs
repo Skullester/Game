@@ -1,7 +1,6 @@
 ﻿using Infrastructure;
 using Models.Fabric;
 using Ninject;
-using Ninject.Extensions.Conventions;
 using Ninject.Modules;
 using UI.Artist;
 

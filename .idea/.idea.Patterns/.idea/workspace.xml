@@ -8,23 +8,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="">
+    <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="added extensions for IKernel, deleted ToArray() from ConsoleGameArtist.cs ctor">
+      <change afterPath="$PROJECT_DIR$/Domain/Player/Skill/BerserkerSkill.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Player/Skill/MageSkill.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Player/Skill/Skill.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Player/Skill/TracerSkill.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/DownCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/DownCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/MoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/MoveCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/SkillCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/SkillCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/UpCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/UpCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/ExternalWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/ExternalWall.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/InternalWall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Maze/MazeElement/Wall/InternalWall.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Player/Interface/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Interface/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Player/Roles/Berserker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Roles/Berserker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Player/Roles/Mage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Roles/Mage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Player/Roles/Tracer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Player/Roles/Tracer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Artist/IGameArtist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Artist/IGameArtist.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/GameInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/GameInitializer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/Infrastructure/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Infrastructure/Extensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Release/net8.0/UI.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +66,17 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Enum.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/GC.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
@@ -71,12 +92,12 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Console/src/System/ConsolePal.Windows.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Drawing.Primitives/src/System/Drawing/Color.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Drawing.Primitives/src/System/Drawing/Point.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Drawing.Primitives/src/System/Drawing/Size.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Drawing.Primitives/src/System/Drawing/Size.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/Average.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/Cast.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/Chunk.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/First.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/First.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/Select.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/Single.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/libraries/System.Linq/src/System/Linq/Skip.cs" root0="SKIP_HIGHLIGHTING" />
@@ -181,6 +202,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/24372012c6c94138bf3f496e104366ffc8f918/83/4f53031c/020003E2pdb661Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/24372012c6c94138bf3f496e104366ffc8f918/8b/36707087/0200031Fpdb1252Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/29bc6aad9c4e4a59b4b6e6fa292d39567400/36/18502b8b/02000007pdb22Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/45b3e218306c44138c5f6ffd812423193c00/9b/5c3d388b/02000003pdb25.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/45b3e218306c44138c5f6ffd812423193c00/9b/5c3d388b/02000003pdb25Low.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/64ea94eabc85484c8160e626db67fe8b2200/58/c1ec314b/02000006pdb5Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/64ea94eabc85484c8160e626db67fe8b2200/7c/82e4a4d3/02000002pdb1Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/6fbf26ce0b604a2e9fc694fff9040d256000/4a/c9fe040f/02000027pdb7Low.cs" root0="SKIP_HIGHLIGHTING" />
@@ -215,6 +238,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/df2e94a5d7e045318447c63cb2ad7c442400/44/57df0877/0200000Epdb13Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/df2e94a5d7e045318447c63cb2ad7c442400/9a/d22052d4/0200000Cpdb11Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/df2e94a5d7e045318447c63cb2ad7c442400/f3/a0e29af2/0200000Bpdb10Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/df6454da95ec4b4faf7c6c51d0147f3020910/d4/7a34ccb8/02000007pdb2Low.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e263c89ba76c4c568315a34b3433cc403e00/d2/3cdedae4/0200000Cpdb1Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e28ecf8e66c3453da7d5959871735a561400/b5/86ff347c/02000005pdb4Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e7a34cf42fbc48ef87f387f8f059ab677400/16/063c0b9e/02000034pdb20Low.cs" root0="SKIP_HIGHLIGHTING" />
@@ -233,8 +257,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/15942e2cd79d410299cc25c0929581222a910/db/faed0778/ConsoleCancelEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1e9eda733cd44fc894689c0ee003727617a848/54/bd32bf62/EmptyEnumerable`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1e9eda733cd44fc894689c0ee003727617a848/ce/a22368e6/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/00/c48596c9/IReadOnlySet`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/11/ad652128/IEnumerable`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/23/8db2735b/ICollection`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/24/2823a635/IReadOnlyCollection`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/25/acbea868/IAsyncResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/2b/e5f43cd8/FileMode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24372012c6c94138bf3f496e104366ffc8f918/37/59e98b7b/ICollection.cs" root0="SKIP_HIGHLIGHTING" />
@@ -344,11 +370,18 @@
     <setting file="file://$PROJECT_DIR$/Application/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Maze/MazeElement/Room/FireRoom.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Naming/INaming.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Player/Interface/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Player/Interface/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Player/Interface/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Player/Interface/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Player/Roles/Tracer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/GameInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/UI/GameInitializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Infrastructure/Extensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -370,7 +403,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.ConsoleApp1.executor": "Run",
+    ".NET Project.ConsoleApp1.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "XThreadsFramesViewSplitterKey": "0.5035651",
@@ -386,7 +419,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "rider.code.cleanup.on.save.profile": "Built-in: Reformat Code",
-    "settings.editor.selected.configurable": "configurable.group.build",
+    "settings.editor.selected.configurable": "CppIncludesOrderConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -510,7 +543,7 @@
       <workItem from="1729984433395" duration="535000" />
       <workItem from="1730045277680" duration="9107000" />
       <workItem from="1730125073861" duration="45000" />
-      <workItem from="1730125132367" duration="4044000" />
+      <workItem from="1730125132367" duration="16684000" />
     </task>
     <task id="LOCAL-00001" summary="refactor swex">
       <option name="closed" value="true" />
@@ -560,7 +593,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729990688957</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added extensions for IKernel, deleted ToArray() from ConsoleGameArtist.cs ctor">
+      <option name="closed" value="true" />
+      <created>1730129294088</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730129294088</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,36 +629,24 @@
     <MESSAGE value="delete infrastructure folder" />
     <MESSAGE value="Add DI-Container" />
     <MESSAGE value="delete singleton from gm" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete singleton from gm" />
+    <MESSAGE value="added extensions for IKernel, deleted ToArray() from ConsoleGameArtist.cs ctor" />
+    <option name="LAST_COMMIT_MESSAGE" value="added extensions for IKernel, deleted ToArray() from ConsoleGameArtist.cs ctor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs</url>
-          <line>33</line>
-          <properties documentPath="H:\Учёба\4\ПП\Game\UI\Artist\ConsoleGameArtist.cs" containingFunctionPresentation="Method 'Initialize'">
-            <startOffsets>
-              <option value="1006" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1007" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/UI/Program.cs</url>
-          <line>27</line>
-          <properties documentPath="H:\Учёба\4\ПП\Game\UI\Program.cs" containingFunctionPresentation="Method 'Main'">
+          <line>18</line>
+          <properties documentPath="H:\Учёба\4\ПП\Game\UI\Program.cs" containingFunctionPresentation="Method 'Load'">
             <startOffsets>
-              <option value="745" />
+              <option value="513" />
             </startOffsets>
             <endOffsets>
-              <option value="784" />
+              <option value="610" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -626,6 +655,15 @@
         <PinnedItemInfo parentTag="Type#Ninject.Extensions.Conventions.BindingBuilder.ConventionSyntax" memberName="typeFilter" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="DotNetProject">
+        <watch expression="var a = 2;" language="C#" />
+        <watch expression="Kernel.GetAll&lt;Command&gt;()" language="C#" />
+        <watch expression="Kernel.GetBindings(typeof(Command));" language="C#" />
+        <watch expression="Kernel.GetAll&lt;Command&gt;()" language="C#" />
+        <watch expression="Kernel.GetBindings(typeof(MoveCommand))" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

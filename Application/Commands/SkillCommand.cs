@@ -22,7 +22,7 @@ public class SkillCommand : Command
     public override void Execute()
     {
         if (!VerifySkillCoolDown()) return;
-        OnPerfomed(player.GetSkillPoints());
+        // OnPerfomed(player.GetSkillPoints());
     }
 
     private bool VerifySkillCoolDown() =>

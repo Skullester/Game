@@ -13,7 +13,8 @@ public class Mage : Player
     private Point[] exitPoints = null!;
     private Dictionary<Point, int> mapPointIndex = null!;
 
-    public Mage(IMaze maze, double ratio, TimeSpan coolDown) : base(maze, ConsoleColor.DarkBlue, coolDown)
+    public Mage(IMaze maze, double ratio, TimeSpan coolDown) : base(maze, ConsoleColor.DarkBlue,
+        coolDown)
     {
         HintsCount = (int)(ratio * hintsConst);
     }
@@ -24,7 +25,7 @@ public class Mage : Player
         mapPointIndex = new Dictionary<Point, int>();
     }
 
-    public override IEnumerable<Point> GetSkillPoints()
+    /*public override IEnumerable<Point> GetSkillPoints()
     {
         if (CurrentHintCount == 0) return [];
         CurrentHintCount--;
@@ -37,7 +38,7 @@ public class Mage : Player
 
         return exitPoints;
         //Span.Take(5), Dictionary<Point,int> where int - index, pointer;
-    }
+    }*/
 
     public override void Move(Point point)
     {
