@@ -34,11 +34,7 @@ public class GameInitializer
         Kernel.RebindToConstant(difficulty);
         var factory = PrintAndGetElement(factories, "Выберите тип лабиринта:", "Выберите тип лабиринта из списка выше");
         Kernel.RebindToConstant(factory);
-        Kernel.Bind(x => x.FromAssemblyContaining<MazeBuilder>()
-            .SelectAllClasses()
-            .InheritedFrom<MazeBuilder>()
-            .BindAllBaseClasses()
-        );
+        Kernel.BindAllBaseClassesFromTo<MazeBuilder, MazeBuilder>();
         var mazeBuilder = GetMazeBuilder(Kernel.GetAll<MazeBuilder>());
         Kernel.RebindToConstant(mazeBuilder);
         Kernel.Bind<IMaze>()

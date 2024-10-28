@@ -1,4 +1,5 @@
-﻿using Models.Fabric;
+﻿using Infrastructure;
+using Models.Fabric;
 using Ninject;
 using Ninject.Extensions.Conventions;
 using Ninject.Modules;
@@ -12,31 +13,25 @@ public class Program
     {
         public override void Load()
         {
-            Kernel.Bind(x =>
-                x.FromAssemblyContaining<Difficulty>().Select(typeof(Difficulty).IsAssignableFrom)
-                    .BindAllBaseClasses());
-            Kernel.Bind(x =>
-                x.FromThisAssembly().Select(typeof(MazeFormatter).IsAssignableFrom).BindAllBaseClasses());
-            Kernel.Bind(x =>
-                x.FromAssemblyContaining<MazeFactory>().Select(typeof(MazeFactory).IsAssignableFrom)
-                    .BindAllBaseClasses());
-            Kernel.Bind(x =>
-                x.FromAssemblyContaining<Command>().Select(typeof(Command).IsAssignableFrom)
-                    .BindAllBaseClasses());
+            Kernel.BindAllBaseClassesFromTo<Difficulty, Difficulty>();
+            Kernel.BindAllBaseClassesTo<MazeFormatter>();
+            Kernel.BindAllBaseClassesFromTo<MazeFactory, MazeFactory>();
+            Kernel.BindAllBaseClassesFromTo<Command, Command>();
+            Kernel!.Bind<GameInitializer>()
+                .ToConstant(GameInitializer.GetInstance(Kernel));
         }
     }
 
     private static void Main()
     {
-        var kernel = InitializeKernel();
+        var kernel = GetKernel();
         kernel.Get<IGameArtist>().Initialize();
     }
 
-    private static IKernel InitializeKernel()
+    private static IKernel GetKernel()
     {
         var kernel = new StandardKernel(new GameModule());
-        kernel.Bind<GameInitializer>()
-            .ToConstant(GameInitializer.GetInstance(kernel));
+
         kernel.Get<GameInitializer>()
             .Start();
         kernel.Bind<IGameArtist>()

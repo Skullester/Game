@@ -21,7 +21,7 @@ public class ConsoleGameArtist : IGameArtist
     public ConsoleGameArtist(IGameManager manager, MazeWriter writer, IEnumerable<Command> commands)
     {
         Writer = writer;
-        Commands = commands.ToArray();
+        Commands = commands;
         GameManager = manager;
     }
 
