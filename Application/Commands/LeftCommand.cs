@@ -1,10 +1,10 @@
 ﻿namespace Game;
 
-public class LeftCommand : MoveCommand
+public class LeftCommand : DirectionCommand
 {
     public override string Name => "Влево";
 
-    public LeftCommand(IMaze maze, IGameManager gameManager, Player player) : base(maze, '\u2190', gameManager, player)
+    public LeftCommand(MoveCommand moveCommand) : base('\u2190', moveCommand)
     {
     }
 

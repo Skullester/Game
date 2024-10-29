@@ -1,21 +1,22 @@
 ﻿namespace Game;
 
-public abstract class MoveCommand : Command
+public class MoveCommand
 {
-    protected MoveCommand(IMaze maze, char symbol, IGameManager manager, Player player) : base(maze, symbol, manager,
-        player, true)
+    private IMaze maze => manager.Maze;
+    private readonly IGameManager manager;
+    private Point Location => player.Location;
+    private Player player => manager.Player;
+
+    public MoveCommand(IGameManager manager)
     {
+        this.manager = manager;
     }
 
-    public override void Execute() => Execute(GetDirection());
-
-    protected abstract Point GetDirection();
-
-    protected void Execute(Point point)
+    public void Execute(Point point)
     {
         if (!CheckBounds(point)) return;
         player.Move(point);
-        var loc = player.Location;
+        var loc = Location;
         if (maze[loc.X, loc.Y] is ExitRoom)
         {
             maze[loc.X, loc.Y] = new Room();

@@ -8,13 +8,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="added extensions for IKernel, deleted ToArray() from ConsoleGameArtist.cs ctor">
+    <list default="true" id="a88c4893-3548-45ae-8733-d367d5e8564c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Application/Commands/Interfaces/DirectionCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/Command.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/Interfaces/Command.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Commands/DownCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/DownCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Commands/LeftCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/LeftCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Commands/MoveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/MoveCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/RestartCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/RestartCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Commands/RightCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/RightCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Commands/SkillCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/SkillCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Commands/UpCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Commands/UpCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/Debug/net8.0/UI.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/UI/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,17 +60,6 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Array.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/Enum.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/08338fcaa5c9b9a8190abb99222fed12aaba956c/src/coreclr/System.Private.CoreLib/src/System/GC.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
@@ -186,6 +189,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/45b3e218306c44138c5f6ffd812423193c00/9b/5c3d388b/02000003pdb25Low.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/64ea94eabc85484c8160e626db67fe8b2200/58/c1ec314b/02000006pdb5Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/64ea94eabc85484c8160e626db67fe8b2200/7c/82e4a4d3/02000002pdb1Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/6a9392b9fc5243ddaa2d3b34ebe354762a00/82/9cf09cc7/02000004pdb3Low.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/6a9392b9fc5243ddaa2d3b34ebe354762a00/f0/54aadde7/02000007pdb6Low.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/6fbf26ce0b604a2e9fc694fff9040d256000/4a/c9fe040f/02000027pdb7Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/732283658900435ca3dd91f0f73964927000/6a/b2cbfdd6/02000007pdb22Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/7c7b93c989be491a8a9863abf8fc010d21e00/02/dec87ab2/02000023Low.cs" root0="FORCE_HIGHLIGHTING" />
@@ -194,12 +199,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/812292a117494b6e82812f8776a7dac47400/48/452de084/02000007pdb22Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/81beead3490d4a44925a5fa1a2a80e3a2200/7b/71e6ad4e/02000006pdb5High.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/81beead3490d4a44925a5fa1a2a80e3a2200/7b/71e6ad4e/02000006pdb5Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/85fb90e1375140beb5c18ce50fd116482a00/4a/ea612a88/02000004pdb3Low.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/90f23e27ab5145b78edfd14486c62cba3e00/34/bc74e721/02000006pdb10Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/992a7aa5eb384b63a73fc3bfcfd5e6ac7400/24/59f15e53/02000034pdb20Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/9981afd0c8e04ba9abc38eb197d84b601a00/88/f4c62919/0200000Apdb9Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/a076897a804b406b80c6871abbc45c3e2200/f7/f85f462d/02000006pdb5Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/a312004959f24d64867f632c5579924d3e00/38/68739a6e/02000006pdb18Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/a4a99cfb153b494290689aa8de42a0f22a00/3f/fbcf8499/02000008pdb7Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ae76bd9c466e4e2d92b90bddcc589f1c3a00/4e/e4b68ada/02000003pdb25Low.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/b992b8c75be24f88abdaf7658ddc17c42800/15/95b3dbd0/02000005pdb4Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/bba9d4a607814b6681e78bcc5fe0760c3e00/30/d6783d25/0200000Cpdb1Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/c8aa371627b04fc78fd891ba8914fd8b7800/40/066b2be9/02000026Low.cs" root0="FORCE_HIGHLIGHTING" />
@@ -222,6 +229,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e263c89ba76c4c568315a34b3433cc403e00/d2/3cdedae4/0200000Cpdb1Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e28ecf8e66c3453da7d5959871735a561400/b5/86ff347c/02000005pdb4Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e7a34cf42fbc48ef87f387f8f059ab677400/16/063c0b9e/02000034pdb20Low.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e8a43427fbc14abf8f264293b79d5db03c00/0b/cf0805cc/02000003pdb25Low.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/e90bba86d6784bfe9690bd9de76e51c44a00/c5/d84dbcc6/02000006pdb10Low.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ee3fbba3b6b34faba429904d2abda6627600/35/8457da72/02000033pdb19Low.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/ee3fbba3b6b34faba429904d2abda6627600/69/d41f0cf9/0200002Cpdb12Low.cs" root0="SKIP_HIGHLIGHTING" />
@@ -347,34 +355,33 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/547a38f24bb8121129659addfbf55121737577923627c68fded1d2458ada/BenchmarkRunnerDirty.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/92d169639f55f4b148979a961cf278547d9d9b432b748d9d84dece71252f68/MemoryDiagnoserAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ee803b43334273aa749e336ada25b3b942fb14996db550551458d5ede847cd/Graphics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://Command.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://Command.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/Command.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/DownCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/DownCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/Interfaces/Command.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/Interfaces/Command.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/LeftCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/LeftCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/LeftCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/LeftCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/LeftCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/LeftCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/SkillCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/SkillCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Application/Commands/SkillCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Maze/MazeElement/Room/FireRoom.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Naming/INaming.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Player/Interface/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Player/Interface/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Player/Interface/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Player/Interface/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Player/Interface/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Player/Roles/Tracer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/Domain/Player/Skill/BerserkerSkill.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Artist/ConsoleGameArtist.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/ConsoleGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/IGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Artist/IGameArtist.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/GameInitializer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/GameInitializer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/GameInitializer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/GameInitializer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Infrastructure/Extensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Infrastructure/Extensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Infrastructure/Extensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UI/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://H:/Учёба/4/ПП/Game/UI/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -537,6 +544,7 @@
       <workItem from="1730045277680" duration="9107000" />
       <workItem from="1730125073861" duration="45000" />
       <workItem from="1730125132367" duration="16684000" />
+      <workItem from="1730236798039" duration="1633000" />
     </task>
     <task id="LOCAL-00001" summary="refactor swex">
       <option name="closed" value="true" />

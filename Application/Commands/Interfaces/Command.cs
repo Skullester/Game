@@ -9,19 +9,11 @@ public abstract class Command : INaming
     public IReadOnlySet<ConsoleKey> KeyMap => keyMap;
     public char Symbol { get; }
     public abstract string Name { get; }
-    protected readonly IMaze maze;
     protected readonly HashSet<ConsoleKey> keyMap = new HashSet<ConsoleKey>();
-    protected Point Location => player.Location;
-    protected readonly IGameManager manager;
-    protected readonly Player player;
 
-
-    protected Command(IMaze maze, char symbol, IGameManager manager, Player player, bool shouldGameBeUpdated)
+    protected Command(char symbol, bool shouldGameBeUpdated)
     {
-        this.maze = maze;
         Symbol = symbol;
-        this.manager = manager;
-        this.player = player;
         ShouldGameBeUpdated = shouldGameBeUpdated;
         InitializeSymbols();
     }

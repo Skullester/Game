@@ -5,13 +5,14 @@ namespace Game;
 
 public class SkillCommand : Command
 {
+    private readonly Player player;
     public override string Name => "Умение";
 
     private readonly Stopwatch cdWatch = new Stopwatch();
 
-    public SkillCommand(IMaze maze, IGameManager gameManager, Player player) : base(maze, 'E', gameManager, player,
-        true)
+    public SkillCommand(Player player) : base('E', true)
     {
+        this.player = player;
     }
 
     protected override void InitializeSymbols()

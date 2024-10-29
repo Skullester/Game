@@ -1,10 +1,10 @@
 ﻿namespace Game;
 
-public class DownCommand : MoveCommand
+public class DownCommand : DirectionCommand
 {
     public override string Name => "Вниз";
 
-    public DownCommand(IMaze maze, IGameManager gameManager, Player player) : base(maze, '\u2193', gameManager, player)
+    public DownCommand(MoveCommand moveCommand) : base('\u2193', moveCommand)
     {
     }
 

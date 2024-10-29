@@ -2,11 +2,13 @@
 
 public class RestartCommand : Command
 {
+    private readonly IGameManager manager;
     public override string Name => "Перезапуск";
 
-    public RestartCommand(IMaze maze, IGameManager gameManager, Player player) : base(maze, 'R', gameManager, player,
-        true)
+    public RestartCommand(IGameManager manager) : base('R', true)
+
     {
+        this.manager = manager;
     }
 
     protected override void InitializeSymbols()

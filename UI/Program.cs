@@ -42,6 +42,9 @@ public class Program
         kernel.Bind<MazeWriter>()
             .To<ConsoleMazeWriter>()
             .InSingletonScope();
+        kernel.Bind<MoveCommand>()
+            .ToSelf()
+            .InSingletonScope();
         return kernel;
     }
 }
