@@ -2,7 +2,7 @@ namespace Game;
 
 public abstract class DirectionCommand : Command
 {
-    private MoveCommand command;
+    private readonly MoveCommand command;
 
     protected DirectionCommand(char symbol, MoveCommand command) : base(symbol, true)
     {
