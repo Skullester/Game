@@ -6,7 +6,6 @@ namespace Game;
 
 public sealed class GameManager : IGameManager
 {
-    // private static GameManager? instance;
     public GameState State { get; set; }
     public Player Player { get; }
     public IMaze Maze { get; private set; } = null!;
@@ -25,9 +24,6 @@ public sealed class GameManager : IGameManager
         Builder.GenerateMaze();
         Maze = Builder.Maze;
     }
-
-    // public static GameManager GetManager(Player player, MazeBuilder mazeBuilder) =>
-    //     instance ??= new GameManager(player, mazeBuilder);
 
     public bool Execute(Command? command)
     {

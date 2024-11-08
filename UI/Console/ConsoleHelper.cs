@@ -50,7 +50,7 @@ public static class ConsoleHelper
     public static T FindNamingElementByInput<T>(IEnumerable<T> collection, string errorMessage)
         where T : INaming
     {
-        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.ForegroundColor = ConsoleColor.Green;
         T? element;
         bool isError;
         do
