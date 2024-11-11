@@ -1,27 +1,37 @@
 ﻿namespace Game;
 
-public class MoveCommand
+public class MoveCommand : Command, ICommandWithDirection, IUpdatableCommand
 {
-    private IMaze maze => manager.Maze;
-    private readonly IGameManager manager;
-    private Point Location => player.Location;
-    private Player player => manager.Player;
+    public event Action? Updated;
+    public Point Direction { get; set; }
 
-    public MoveCommand(IGameManager manager)
+    private readonly IGameManager gm;
+    private IMaze maze => gm.Maze;
+
+    private Point Location => PlayerRole.Location;
+
+    private PlayerRole PlayerRole => gm.PlayerRole;
+
+    public MoveCommand(IGameManager gm)
     {
-        this.manager = manager;
+        this.gm = gm;
     }
 
-    public void Execute(Point point)
+    public void Interact() => Execute();
+
+    public void Execute()
     {
-        if (!CheckBounds(point)) return;
-        player.Move(point);
+        if (Direction == Point.Empty) return;
+        var dir = Direction;
+        if (!CheckBounds(dir)) return;
+        PlayerRole.Move(dir);
         var loc = Location;
         if (maze[loc.X, loc.Y] is ExitRoom)
         {
-            maze[loc.X, loc.Y] = new Room();
-            manager.State = GameState.Victory;
+            gm.SetVictory();
         }
+
+        Updated?.Invoke();
     }
 
     private bool CheckBounds(Point point)
@@ -32,7 +42,7 @@ public class MoveCommand
         {
             inBounds = false;
             if (maze.WallType.Effect == State.Death)
-                manager.State = GameState.Defeat;
+                gm.SetDefeat();
         }
 
         return inBounds;

@@ -1,4 +1,5 @@
 ﻿using Infrastructure;
+using Models;
 
 namespace UI.Displaying;
 
@@ -6,38 +7,39 @@ public abstract class MazeWriter : INaming
 {
     public abstract string Name { get; }
     protected readonly TextWriter writer;
-    private readonly IEnumerable<char> mazeChars;
+    private readonly IEnumerable<(char sym, IMazeElement el)> mazeCharsColors;
     private readonly IMaze maze;
     public int Delay { get; }
 
-    protected MazeWriter(IEnumerable<char> mazeChars, TextWriter writer, IMaze maze, int delay)
+    protected MazeWriter(IEnumerable<(char sym, IMazeElement el)> mazeCharsColors, TextWriter writer, IMaze maze,
+        int delay)
     {
-        this.mazeChars = mazeChars;
+        this.mazeCharsColors = mazeCharsColors;
         this.maze = maze;
         this.writer = writer;
         Delay = delay;
     }
 
     protected MazeWriter(IMaze maze, TextWriter writer, MazeFormatter mazeFormatter, int delay) : this(
-        maze.ParseToChar(mazeFormatter), writer, maze, delay)
+        maze.ParseToCharColor(mazeFormatter), writer, maze, delay)
     {
     }
 
     public void Write()
     {
         var counter = 0;
-        foreach (var item in mazeChars)
+        foreach (var (sym, el) in mazeCharsColors)
         {
-            Write(item);
+            Write(sym, el);
             Thread.Sleep(Delay);
             if (++counter % maze.Width == 0)
-                Write('\n');
+                Write('\n', el);
         }
 
         writer.Close();
     }
 
-    protected virtual void Write(char sym)
+    protected virtual void Write(char sym, IMazeElement el)
     {
         writer.Write(sym);
     }

@@ -1,13 +1,14 @@
-﻿using Models.Fabric;
-
-namespace Game;
+﻿namespace Game;
 
 public interface IGameManager
 {
-    GameState State { get; set; }
-    Player Player { get; }
+    GameState State { get; }
+    PlayerRole PlayerRole { get; }
     IMaze Maze { get; }
-    MazeBuilder Builder { get; }
-    bool Execute(Command? command);
+    bool IsGameFinished { get; }
+    void Execute(Command? command);
     void Initialize();
+    void ResetGame();
+    void SetVictory();
+    void SetDefeat();
 }

@@ -1,17 +1,23 @@
 ﻿namespace Models.Player;
 
-public class MageSkill : Skill
+public class MageSkill : ISkill
 {
-    public MageSkill(Player player, double ratio, int constValue) : base(player, ratio, constValue)
+    public IEnumerable<Point> View => Enumerable.Empty<Point>();
+    public PlayerRole PlayerRole { get; }
+    public readonly int MaxValue;
+
+    public MageSkill(PlayerRole playerRole, double ratio, int constValue)
     {
+        MaxValue = (int)(ratio * constValue);
+        PlayerRole = playerRole;
     }
 
-    public override void Use()
+    public void Use()
     {
         throw new NotImplementedException();
     }
 
-    public override void ResetValues()
+    public void ResetValues()
     {
         throw new NotImplementedException();
     }

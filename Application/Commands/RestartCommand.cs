@@ -1,14 +1,15 @@
 ﻿namespace Game;
 
-public class RestartCommand : Command
+[Show("Рестарт", 'R', Priority = 5)]
+public class RestartCommand : Command, IExecutableCommand, IUpdatableCommand
 {
-    private readonly IGameManager manager;
-    public override string Name => "Перезапуск";
+    public event Action? Updated;
+    private readonly IGameManager gm;
 
-    public RestartCommand(IGameManager manager) : base('R', true)
 
+    public RestartCommand(IGameManager gm)
     {
-        this.manager = manager;
+        this.gm = gm;
     }
 
     protected override void InitializeSymbols()
@@ -16,8 +17,9 @@ public class RestartCommand : Command
         keyMap.Add(ConsoleKey.R);
     }
 
-    public override void Execute()
+    public void Execute()
     {
-        manager.State = GameState.Reset;
+        gm.ResetGame();
+        Updated?.Invoke();
     }
 }

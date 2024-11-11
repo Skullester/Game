@@ -2,7 +2,7 @@
 
 namespace Models.Player;
 
-public class Mage : Player
+public class Mage : PlayerRole
 {
     private const int hintsConst = 5;
     public const int HintLength = 10;

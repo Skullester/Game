@@ -1,22 +1,33 @@
 ﻿namespace Models.Player;
 
-public class TracerSkill : Skill
+public class TracerSkill : ISkill
 {
+    public PlayerRole PlayerRole { get; }
+    public IEnumerable<Point> View => tracesQueue;
+    public readonly int MaxValue;
+    private const int multiplier = 50;
     private Queue<Point> tracesQueue = null!;
-    private HashSet<Point> map = null!;
-    // private LinkedList<Point> linkedList = null!;
 
-    public TracerSkill(double ratio, Player player) : base(player, ratio, 50)
+    private HashSet<Point> map = null!;
+
+
+    // private LinkedList<Point> linkedList = null!;
+    private Point Location => PlayerRole.Location;
+
+
+    public TracerSkill(double ratio, PlayerRole playerRole)
     {
+        MaxValue = (int)(ratio * multiplier);
+        PlayerRole = playerRole;
     }
 
-    public override void ResetValues()
+    public void ResetValues()
     {
         tracesQueue = new Queue<Point>();
         map = new HashSet<Point>();
     }
 
-    public override void Use()
+    public void Use()
     {
         if (!map.Add(Location))
             return;

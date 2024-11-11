@@ -3,16 +3,34 @@ using Game.Extensions;
 
 namespace Game;
 
-public class SkillCommand : Command
+[Show("Умение", 'E', Priority = 4)]
+public class SkillCommand : Command, IInteractableCommand, IDrawingCommand
 {
-    private readonly Player player;
-    public override string Name => "Умение";
+    public event Action<IEnumerable<Point>>? Drawing;
+    private PlayerRole PlayerRole => gm.PlayerRole;
+    private readonly IGameManager gm;
 
     private readonly Stopwatch cdWatch = new Stopwatch();
 
-    public SkillCommand(Player player) : base('E', true)
+    public SkillCommand(IGameManager gm)
     {
-        this.player = player;
+        this.gm = gm;
+    }
+
+    public void Interact() => Execute();
+
+    public void Execute()
+    {
+        if (!VerifySkillCoolDown()) return;
+        /*
+        if (PlayerRole is IComplexRole skillPlayer)
+        {
+            skillPlayer.ComplexSkill.Direction = Direction;
+        }
+        */
+
+        PlayerRole.UseSkill();
+        Drawing?.Invoke(PlayerRole.Skill.View);
     }
 
     protected override void InitializeSymbols()
@@ -20,12 +38,5 @@ public class SkillCommand : Command
         keyMap.Add(ConsoleKey.E);
     }
 
-    public override void Execute()
-    {
-        if (!VerifySkillCoolDown()) return;
-        // OnPerfomed(player.GetSkillPoints());
-    }
-
-    private bool VerifySkillCoolDown() =>
-        cdWatch.VerifyCondition(cdWatch.Elapsed >= player.CoolDownTime);
+    private bool VerifySkillCoolDown() => cdWatch.VerifyCondition(cdWatch.Elapsed >= PlayerRole.CoolDownTime);
 }

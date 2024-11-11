@@ -9,7 +9,5 @@ public interface IMaze : IEnumerable<IMazeElement>
     Point ExitPoint { get; }
     IRoom Room { get; }
     IMazeElement this[int x, int y] { get; set; }
-
     void Generate();
-    // List<Point> GetPathList();
 }

@@ -28,7 +28,7 @@ public static class ConsoleHelper
         PrintWithColor(text + Environment.NewLine, newColor, saveOldColor);
     }
 
-    public static void PrintWithColor(string text, ConsoleColor newColor, bool saveOldColor = true)
+    public static void PrintWithColor(char text, ConsoleColor newColor, bool saveOldColor = true)
     {
         var color = Console.ForegroundColor;
         SetColor(newColor);
@@ -37,12 +37,21 @@ public static class ConsoleHelper
             SetColor(color);
     }
 
-    public static void PrintLine(string text)
+    public static void PrintWithColor<T>(T text, ConsoleColor newColor, bool saveOldColor = true)
+    {
+        var color = Console.ForegroundColor;
+        SetColor(newColor);
+        Print(text);
+        if (saveOldColor)
+            SetColor(color);
+    }
+
+    public static void PrintLine<T>(T text)
     {
         Print(text + Environment.NewLine);
     }
 
-    private static void Print(string text)
+    private static void Print<T>(T text)
     {
         Console.Write(text);
     }

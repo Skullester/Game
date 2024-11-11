@@ -2,18 +2,15 @@
 
 namespace Models.Player;
 
-public class Berserker : Player
+public class Berserker : PlayerRole, IComplexRole
 {
     public override string Name => "Берсерк";
+
+    public IComplexSkill ComplexSkill => (Skill as IComplexSkill)!;
 
     public Berserker(IMaze maze, double ratio, TimeSpan coolDown) : base(maze,
         ConsoleColor.Magenta, coolDown)
     {
-        skill = new BerserkerSkill(ratio, maze, this);
+        Skill = new BerserkerSkill(ratio, maze, this);
     }
-
-    /*public override IEnumerable<Point> GetSkillPoints()
-    {
-        return null;
-    }*/
 }

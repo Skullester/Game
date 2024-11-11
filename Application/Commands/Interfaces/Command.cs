@@ -2,27 +2,17 @@
 
 namespace Game;
 
-public abstract class Command : INaming
+public abstract class Command
 {
-    public event Action<IEnumerable<Point>>? Perfomed;
-    public bool ShouldGameBeUpdated { get; }
     public IReadOnlySet<ConsoleKey> KeyMap => keyMap;
-    public char Symbol { get; }
-    public abstract string Name { get; }
     protected readonly HashSet<ConsoleKey> keyMap = new HashSet<ConsoleKey>();
 
-    protected Command(char symbol, bool shouldGameBeUpdated)
+    protected Command()
     {
-        Symbol = symbol;
-        ShouldGameBeUpdated = shouldGameBeUpdated;
         InitializeSymbols();
     }
 
-    protected abstract void InitializeSymbols();
-    public abstract void Execute();
-
-    protected virtual void OnPerfomed(IEnumerable<Point> obj)
+    protected virtual void InitializeSymbols()
     {
-        Perfomed?.Invoke(obj);
     }
 }

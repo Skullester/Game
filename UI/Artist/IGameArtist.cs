@@ -2,7 +2,6 @@
 
 public interface IGameArtist
 {
-    IGameManager GameManager { get; }
-    IEnumerable<Command> Commands { get; }
+    IGameManager GM { get; }
     void Initialize();
 }

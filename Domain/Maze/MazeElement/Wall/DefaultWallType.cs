@@ -2,7 +2,7 @@
 
 public class DefaultWallType : WallType
 {
-    public DefaultWallType(ConsoleColor color) : base(State.None, color)
+    public DefaultWallType(ConsoleColor color) : base(State.None,ConsoleColor.DarkCyan)
     {
     }
 }

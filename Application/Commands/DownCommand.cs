@@ -1,18 +1,13 @@
 ﻿namespace Game;
 
-public class DownCommand : DirectionCommand
+[Show("Вниз", '\u2193', Priority = 1)]
+public class DownCommand : Command, IDirection
 {
-    public override string Name => "Вниз";
-
-    public DownCommand(MoveCommand moveCommand) : base('\u2193', moveCommand)
-    {
-    }
+    public Point Direction => new Point(1, 0);
 
     protected override void InitializeSymbols()
     {
         keyMap.Add(ConsoleKey.S);
         keyMap.Add(ConsoleKey.DownArrow);
     }
-
-    protected override Point GetDirection() => new Point(1, 0);
 }

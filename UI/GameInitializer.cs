@@ -2,7 +2,6 @@
 using Models.Fabric;
 using Models.Player;
 using Ninject;
-using Ninject.Extensions.Conventions;
 
 // ReSharper disable PossibleMultipleEnumeration
 
@@ -40,7 +39,7 @@ public class GameInitializer
         Kernel.Bind<IMaze>()
             .ToConstant(Kernel.Get<MazeBuilder>().Maze);
         BindPlayers();
-        var players = Kernel.GetAll<Player>();
+        var players = Kernel.GetAll<PlayerRole>();
         var player = PrintAndGetElement(players, "Выберите персонажа:", "Выберите персонажа из списка выше");
         Kernel.RebindToConstant(player);
         ConsoleHelper.PrintOffer("Выберите способ вывода лабиринта: ");
@@ -77,7 +76,7 @@ public class GameInitializer
     {
         var ratio = Kernel.Get<Difficulty>().SkillRatio;
         var maze = Kernel.Get<IMaze>();
-        Kernel.BindToConstant<Player>(
+        Kernel.BindToConstant<PlayerRole>(
             new Berserker(maze, ratio, TimeSpan.FromSeconds(1)),
             new Tracer(maze, ratio, TimeSpan.FromSeconds(2)),
             new Mage(maze, ratio, TimeSpan.FromSeconds(2))

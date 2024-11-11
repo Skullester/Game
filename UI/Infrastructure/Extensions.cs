@@ -7,9 +7,10 @@ namespace Infrastructure;
 
 public static class MazeExtensions
 {
-    public static IEnumerable<char> ParseToChar(this IEnumerable<IMazeElement> elements, MazeFormatter formatter)
+    public static IEnumerable<(char sym, IMazeElement el)> ParseToCharColor(this IEnumerable<IMazeElement> elements,
+        MazeFormatter formatter)
     {
-        return elements.Select(formatter.Format);
+        return elements.Select(x => (formatter.Format(x), x));
     }
 }
 

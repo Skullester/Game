@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Reflection;
 using System.Text;
 using Models.Player;
 using static Game.ConsoleHelper;
@@ -10,29 +11,37 @@ namespace UI.Artist;
 public class ConsoleGameArtist : IGameArtist
 {
     public MazeWriter Writer { get; }
-    public IGameManager GameManager { get; }
+    public IGameManager GM { get; }
     public IEnumerable<Command> Commands { get; }
-    private ConsoleColor playerColor => player.Color;
-    private IMaze maze => GameManager.Maze;
-    private Player player => GameManager.Player;
+    private ConsoleColor playerColor => PlayerRole.Color;
+    private IMaze maze => GM.Maze;
+    private PlayerRole PlayerRole => GM.PlayerRole;
     private string playerCharInStr = null!;
     private const int gameResultTimeout = 1000;
+    private const ConsoleColor instructionColor = ConsoleColor.Yellow;
+    private const ConsoleColor victoryColor = ConsoleColor.Green;
+    private const ConsoleColor defeatColor = ConsoleColor.White;
 
     public ConsoleGameArtist(IGameManager manager, MazeWriter writer, IEnumerable<Command> commands)
     {
         Writer = writer;
         Commands = commands;
-        GameManager = manager;
+        GM = manager;
     }
 
     public void Initialize()
     {
         Console.OutputEncoding = Encoding.Unicode;
         Console.CursorVisible = false;
-        playerCharInStr = player.Name[0].ToString();
-        foreach (var command in Commands)
+        playerCharInStr = PlayerRole.Name[0].ToString();
+        foreach (var command in Commands.OfType<IDrawingCommand>())
         {
-            command.Perfomed += DrawSkillPoints;
+            command.Drawing += Draw;
+        }
+
+        foreach (var command in Commands.OfType<IUpdatableCommand>())
+        {
+            command.Updated += UpdateGameState;
         }
 
         StartGame();
@@ -40,10 +49,9 @@ public class ConsoleGameArtist : IGameArtist
 
     private void StartGame()
     {
-        GameManager.Initialize();
-        SetColor(maze.WallType.Color);
+        GM.Initialize();
         UpdateGameState();
-        while (GameManager.State == GameState.Play)
+        while (!GM.IsGameFinished)
         {
             while (Console.KeyAvailable)
             {
@@ -51,21 +59,18 @@ public class ConsoleGameArtist : IGameArtist
             }
 
             var cki = Console.ReadKey(true);
-
             var cmd = Commands.FirstOrDefault(x => x.KeyMap.Contains(cki.Key));
-
-            if (GameManager.Execute(cmd) && cmd!.ShouldGameBeUpdated)
-            {
-                UpdateGameState();
-            }
+            GM.Execute(cmd);
         }
 
         CheckState();
     }
 
+    private static Point GetDirection(Command? cmd) => (cmd as IDirection)!.Direction;
+
     public void CheckState()
     {
-        switch (GameManager.State)
+        switch (GM.State)
         {
             case GameState.Reset:
                 StartGame();
@@ -84,13 +89,17 @@ public class ConsoleGameArtist : IGameArtist
     {
         CursorPositionContainer.Save();
         var foregroundColor = Console.ForegroundColor;
-        SetColor(ConsoleColor.Yellow);
+        SetColor(instructionColor);
+        var shownCommands = Commands.Select(x => x.GetType().GetCustomAttribute<ShowAttribute>())
+            .Where(x => x != null)
+            .Select(x => x!)
+            .OrderBy(y => y.Priority);
         var i = 0;
         const int offset = 2;
-        foreach (var cmd in Commands)
+        foreach (var attribute in shownCommands)
         {
             Console.SetCursorPosition(maze.Width + offset, i++);
-            PrintLine(($"\"{cmd.Symbol}\" - {cmd.Name}"));
+            PrintLine($"\"{attribute.Symbol}\" - {attribute.Name}");
         }
 
         CursorPositionContainer.Set();
@@ -100,7 +109,7 @@ public class ConsoleGameArtist : IGameArtist
     private void DrawPlayer()
     {
         CursorPositionContainer.Save();
-        DrawPoint(player.Location, playerCharInStr, playerColor);
+        DrawPoint(PlayerRole.Location, playerCharInStr, playerColor);
         CursorPositionContainer.Set();
     }
 
@@ -114,12 +123,12 @@ public class ConsoleGameArtist : IGameArtist
 
     private void DrawVictory()
     {
-        DrawGameResult("Победа!", ConsoleColor.Green);
+        DrawGameResult("Победа!", victoryColor);
     }
 
     private void DrawDefeat()
     {
-        DrawGameResult("Поражение!", ConsoleColor.White);
+        DrawGameResult("Поражение!", defeatColor);
     }
 
     private void DrawGameResult(string name, ConsoleColor color)
@@ -128,11 +137,11 @@ public class ConsoleGameArtist : IGameArtist
         Thread.Sleep(gameResultTimeout);
     }
 
-    private void DrawSkillPoints(IEnumerable<Point> points)
+    private void Draw(IEnumerable<Point> points)
     {
-        foreach (var point in points.Where(p => p != player.Location))
+        foreach (var point in points)
         {
-            DrawPoint(point, "x", player.Color);
+            DrawPoint(point, "x", PlayerRole.Color);
             Thread.Sleep(1);
         }
     }

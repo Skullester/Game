@@ -1,18 +1,13 @@
 ﻿namespace Game;
 
-public class RightCommand : DirectionCommand
+[Show("Вправо", '\u2192', Priority = 3)]
+public class RightCommand : Command, IDirection
 {
-    public override string Name => "Вправо";
-
-    public RightCommand(MoveCommand moveCommand) : base('\u2192', moveCommand)
-    {
-    }
+    public Point Direction => new Point(0, 1);
 
     protected override void InitializeSymbols()
     {
         keyMap.Add(ConsoleKey.D);
         keyMap.Add(ConsoleKey.RightArrow);
     }
-
-    protected override Point GetDirection() => new Point(0, 1);
 }
