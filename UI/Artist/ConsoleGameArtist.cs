@@ -20,7 +20,7 @@ public class ConsoleGameArtist : IGameArtist
     private const int gameResultTimeout = 1000;
     private const ConsoleColor instructionColor = ConsoleColor.Yellow;
     private const ConsoleColor victoryColor = ConsoleColor.Green;
-    private const ConsoleColor defeatColor = ConsoleColor.White;
+    private const ConsoleColor defeatColor = ConsoleColor.Red;
 
     public ConsoleGameArtist(IGameManager manager, MazeWriter writer, IEnumerable<Command> commands)
     {
