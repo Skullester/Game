@@ -17,8 +17,6 @@ public class MoveCommand : Command, ICommandWithDirection, IUpdatableCommand
         this.gm = gm;
     }
 
-    public void Interact() => Execute();
-
     public void Execute()
     {
         if (Direction == Point.Empty) return;
@@ -41,8 +39,10 @@ public class MoveCommand : Command, ICommandWithDirection, IUpdatableCommand
         if (maze[newPoint.X, newPoint.Y] is IWall)
         {
             inBounds = false;
-            if (maze.WallType.Effect == State.Death)
-                gm.SetDefeat();
+            if (maze[newPoint.X, newPoint.Y] is InternalWall)
+            {
+                gm.CheckEffect(maze.WallType.Effect);
+            }
         }
 
         return inBounds;

@@ -21,12 +21,13 @@ public abstract class MazeWriter : INaming
     }
 
     protected MazeWriter(IMaze maze, TextWriter writer, MazeFormatter mazeFormatter, int delay) : this(
-        maze.ParseToCharColor(mazeFormatter), writer, maze, delay)
+        maze.ParseToTuple(mazeFormatter), writer, maze, delay)
     {
     }
 
     public void Write()
     {
+        using var disposingWriter = this.writer;
         var counter = 0;
         foreach (var (sym, el) in mazeCharsColors)
         {
@@ -35,8 +36,6 @@ public abstract class MazeWriter : INaming
             if (++counter % maze.Width == 0)
                 Write('\n', el);
         }
-
-        writer.Close();
     }
 
     protected virtual void Write(char sym, IMazeElement el)

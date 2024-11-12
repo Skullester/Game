@@ -13,6 +13,7 @@ public class Program
         public override void Load()
         {
             Kernel.BindAllBaseClassesFromTo<Difficulty, Difficulty>();
+            Kernel.BindAllInterfacesFromTo<IController, IController>();
             Kernel.BindAllBaseClassesTo<MazeFormatter>();
             Kernel.BindAllBaseClassesFromTo<MazeFactory, MazeFactory>();
             Kernel.BindAllBaseClassesFromTo<Command, Command>();
@@ -42,9 +43,7 @@ public class Program
         kernel.Bind<MazeWriter>()
             .To<ConsoleMazeWriter>()
             .InSingletonScope();
-        kernel.Bind<MoveCommand>()
-            .ToSelf()
-            .InSingletonScope();
+        kernel.Bind<IInteractableCommand>().ToConstant(kernel.GetAll<Command>().OfType<MoveCommand>().First());
         return kernel;
     }
 }

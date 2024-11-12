@@ -7,7 +7,7 @@ public abstract class PlayerRole : INaming
 {
     public ISkill Skill { get; init; } = null!;
     public ConsoleColor Color { get; }
-    public TimeSpan CoolDownTime { get; }
+    public TimeSpan SkillCooldown { get; }
 
     public abstract string Name { get; }
 
@@ -16,11 +16,11 @@ public abstract class PlayerRole : INaming
     protected readonly IMaze maze;
 
 
-    protected PlayerRole(IMaze maze, ConsoleColor color, TimeSpan coolDownTime)
+    protected PlayerRole(IMaze maze, ConsoleColor color, TimeSpan skillCooldown)
     {
         this.maze = maze;
         Color = color;
-        CoolDownTime = coolDownTime;
+        SkillCooldown = skillCooldown;
     }
 
     public virtual void Move(Point point)

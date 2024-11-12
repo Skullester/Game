@@ -8,7 +8,7 @@ public class BerserkerSkill : IComplexSkill
     public IEnumerable<Point> View => points;
     public PlayerRole PlayerRole { get; }
     public readonly int MaxValue;
-    private const int MaxHitLength = 3;
+    private const int maxHitLength = 3;
     private const double multiplier = 10;
     private List<Point> points = null!;
     private Random random = null!;
@@ -35,7 +35,7 @@ public class BerserkerSkill : IComplexSkill
         if (value == 0 || Direction == Point.Empty) return;
         points.Clear();
         var hitStart = Location + new Size(Direction);
-        var hitLength = random.Next(1, MaxHitLength + 1);
+        var hitLength = random.Next(1, maxHitLength + 1);
         for (var i = 0; i < hitLength; i++)
         {
             var x = hitStart.X;

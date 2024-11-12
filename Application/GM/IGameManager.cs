@@ -11,4 +11,5 @@ public interface IGameManager
     void ResetGame();
     void SetVictory();
     void SetDefeat();
+    void CheckEffect(Effect wallTypeEffect);
 }

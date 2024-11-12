@@ -1,6 +1,6 @@
 ﻿namespace Models.Maze;
 
-public enum State
+public enum Effect
 {
     None,
     Freeze,

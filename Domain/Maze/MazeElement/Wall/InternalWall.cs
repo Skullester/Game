@@ -3,7 +3,7 @@
 public class InternalWall : IWall
 {
     public WallType Type { get; }
-    public ConsoleColor Color => ConsoleColor.White;
+    public ConsoleColor Color => Type.Color;
 
     public InternalWall(WallType type)
     {

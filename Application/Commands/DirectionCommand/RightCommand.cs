@@ -1,6 +1,6 @@
 ﻿namespace Game;
 
-[Show("Вправо", '\u2192', Priority = 3)]
+[Show("Вправо", '\u2192', OrderPriority = 3)]
 public class RightCommand : Command, IDirection
 {
     public Point Direction => new Point(0, 1);

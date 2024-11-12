@@ -1,6 +1,6 @@
 ﻿namespace Game;
 
-[Show("Вверх", '\u2191', Priority = 0)]
+[Show("Вверх", '\u2191', OrderPriority = 0)]
 public class UpCommand : Command, IDirection
 {
     public Point Direction => new Point(-1, 0);

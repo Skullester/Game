@@ -2,11 +2,11 @@
 
 public abstract class WallType
 {
-    public State Effect { get; }
+    public Effect Effect { get; }
 
     public ConsoleColor Color { get; }
 
-    protected WallType(State effect, ConsoleColor color)
+    protected WallType(Effect effect, ConsoleColor color)
     {
         Effect = effect;
         Color = color;

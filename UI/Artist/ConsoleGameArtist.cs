@@ -25,7 +25,7 @@ public class ConsoleGameArtist : IGameArtist
     public ConsoleGameArtist(IGameManager manager, MazeWriter writer, IEnumerable<Command> commands)
     {
         Writer = writer;
-        Commands = commands;
+        Commands = commands.ToArray();
         GM = manager;
     }
 
@@ -93,7 +93,7 @@ public class ConsoleGameArtist : IGameArtist
         var shownCommands = Commands.Select(x => x.GetType().GetCustomAttribute<ShowAttribute>())
             .Where(x => x != null)
             .Select(x => x!)
-            .OrderBy(y => y.Priority);
+            .OrderBy(y => y.OrderPriority);
         var i = 0;
         const int offset = 2;
         foreach (var attribute in shownCommands)
@@ -139,7 +139,7 @@ public class ConsoleGameArtist : IGameArtist
 
     private void Draw(IEnumerable<Point> points)
     {
-        foreach (var point in points)
+        foreach (var point in points.Where(x => x != PlayerRole.Location))
         {
             DrawPoint(point, "x", PlayerRole.Color);
             Thread.Sleep(1);

@@ -2,7 +2,7 @@
 
 namespace Game.Extensions;
 
-public static class SWExtensions
+public static class StopwatchEx
 {
     public static bool VerifyCondition(this Stopwatch sw, bool condition)
     {

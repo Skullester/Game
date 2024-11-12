@@ -2,5 +2,4 @@
 
 public interface IInteractableCommand : IExecutableCommand
 {
-    void Interact();
 }

@@ -130,49 +130,6 @@ public class RectangularMaze : IMaze
         this[point.X, point.Y] = Room.Clone();
         return point;
     }
-
-    /*public List<Point> GetPathList()
-    {
-        var resultList = new List<Point>();
-        var stack = new Stack<Point>();
-        var visitedMap = new HashSet<Point>();
-        var startPoint = StartPoint;
-        stack.Push(startPoint);
-        do
-        {
-            var point = stack.Pop();
-            var x = point.X;
-            var y = point.Y;
-            if (!visitedMap.Add(point))
-            {
-                resultList.Remove(point);
-                continue;
-            }
-
-            resultList.Add(point);
-            if (point == ExitPoint)
-            {
-                return resultList;
-            }
-
-            var neighbours = new List<Point>();
-            if (x > 0 && Elements[x - 1, y] is not IWall) neighbours.Add(new Point(x - 1, y));
-            if (x < Height - 1 && Elements[x + 1, y] is not IWall) neighbours.Add(new Point(x + 1, y));
-            if (y > 0 && Elements[x, y - 1] is not IWall) neighbours.Add(new Point(x, y - 1));
-            if (y < Width - 1 && Elements[x, y + 1] is not IWall) neighbours.Add(new Point(x, y + 1));
-            foreach (var neighbour in neighbours)
-            {
-                if (!visitedMap.Contains(neighbour))
-                {
-                    stack.Push(neighbour);
-                }
-            }
-        } while (stack.Count > 0);
-
-        return [];
-    }
-*/
-
     private List<Point> GetNeighbours(Point point, bool[,] isVisited)
     {
         var neighbours = new List<Point>();
@@ -188,10 +145,6 @@ public class RectangularMaze : IMaze
         //012
         //Если ломаем 2, 1 автоматом становится комнатой
     }
-
-    /*public List<Point> GetPathList()
-    {
-    }*/
 
     public IMazeElement this[int x, int y]
     {

@@ -5,7 +5,7 @@ public class ShowAttribute : Attribute
 {
     public string Name { get; }
     public char Symbol { get; }
-    public uint Priority { get; set; }
+    public uint OrderPriority { get; set; }
 
     public ShowAttribute(string name, char symbol)
     {

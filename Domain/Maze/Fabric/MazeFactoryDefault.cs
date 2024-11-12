@@ -13,6 +13,6 @@ public class MazeFactoryDefault : MazeFactory
 
     public override WallType GetWallType()
     {
-        return new DefaultWallType(ConsoleColor.DarkCyan);
+        return new DefaultWallType(ConsoleColor.Yellow);
     }
 }

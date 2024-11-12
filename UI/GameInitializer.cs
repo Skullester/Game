@@ -21,11 +21,6 @@ public class GameInitializer
 
     public void Start()
     {
-        SetGameOptions();
-    }
-
-    private void SetGameOptions()
-    {
         var difficulties = Kernel.GetAll<Difficulty>();
         var factories = Kernel.GetAll<MazeFactory>();
         var difficulty = PrintAndGetElement(difficulties, "Выберите уровень сложности:",
@@ -48,12 +43,12 @@ public class GameInitializer
         Kernel.RebindToConstant(formatter);
     }
 
-    private static T PrintAndGetElement<T>(IEnumerable<T> collection, string offerMsg, string errorMsg)
+    private static T PrintAndGetElement<T>(IEnumerable<T> collection, string offerMsg, string errorMessage)
         where T : INaming
     {
         ConsoleHelper.PrintOffer(offerMsg);
         ConsoleHelper.Print(collection);
-        return GetElement(collection, errorMsg);
+        return GetElement(collection, errorMessage);
     }
 
     private MazeBuilder GetMazeBuilder(IEnumerable<MazeBuilder> builders) =>
@@ -78,8 +73,7 @@ public class GameInitializer
         var maze = Kernel.Get<IMaze>();
         Kernel.BindToConstant<PlayerRole>(
             new Berserker(maze, ratio, TimeSpan.FromSeconds(1)),
-            new Tracer(maze, ratio, TimeSpan.FromSeconds(2)),
-            new Mage(maze, ratio, TimeSpan.FromSeconds(2))
+            new Tracer(maze, ratio, TimeSpan.FromSeconds(2))
         );
     }
 }
