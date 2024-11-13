@@ -66,7 +66,7 @@ public class GameInitializer
     }
 
     private static T GetElement<T>(IEnumerable<T> collection, string errorMsg) =>
-        ConsoleHelper.FindNamingElementByInput(collection, errorMsg, inputColor);
+        ConsoleHelper.FindShownElementByInput(collection, errorMsg, inputColor);
 
     private static string GetFormatterInfo(ShowAttribute attribute)
     {

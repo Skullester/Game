@@ -155,6 +155,7 @@
       "packagesPath": "C:\\Users\\mrsam\\.nuget\\packages\\",
       "outputPath": "H:\\Учёба\\4\\ПП\\Game\\Domain\\obj\\",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
         "C:\\Users\\mrsam\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],

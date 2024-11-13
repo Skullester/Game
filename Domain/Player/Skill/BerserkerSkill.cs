@@ -34,19 +34,19 @@ public class BerserkerSkill : IComplexSkill
     {
         if (RemainingUses == 0 || Direction == Point.Empty) return false;
         points.Clear();
-        var hitStart = Location + new Size(Direction);
+        var hitStartPoint = Location + new Size(Direction);
         var hitLength = random.Next(1, maxHitLength + 1);
         for (var i = 0; i < hitLength; i++)
         {
-            var x = hitStart.X;
-            var y = hitStart.Y;
+            var x = hitStartPoint.X;
+            var y = hitStartPoint.Y;
             if (maze[x, y] is InternalWall)
             {
                 points.Add(new Point(x, y));
                 maze[x, y] = maze.Room.Clone();
             }
 
-            hitStart += new Size(Direction);
+            hitStartPoint += new Size(Direction);
         }
 
         return true;

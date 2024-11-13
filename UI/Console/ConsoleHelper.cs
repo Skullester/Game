@@ -4,6 +4,8 @@ namespace Game;
 
 public static class ConsoleHelper
 {
+    private const string lackOfShowAttributeMessage = """Атрибут "Show" отсутствует""";
+
     public static class CursorPositionContainer
     {
         private static int left;
@@ -49,8 +51,9 @@ public static class ConsoleHelper
         Console.Write(text);
     }
 
-    public static T FindNamingElementByInput<T>(IEnumerable<T> collection, string errorMessage, ConsoleColor inputColor)
+    public static T FindShownElementByInput<T>(IEnumerable<T> collection, string errorMessage, ConsoleColor inputColor)
     {
+        VerifyShowAttribute<T>();
         Console.ForegroundColor = inputColor;
         var valueAttributeTuple = collection.Select(x => (Value: x, Attribute: x.GetShowAttribute()!));
         T element;
@@ -66,6 +69,12 @@ public static class ConsoleHelper
         } while (isError);
 
         return element;
+    }
+
+    private static void VerifyShowAttribute<T>()
+    {
+        if (!AttributeEx.HasShowAttribute<T>())
+            throw new ArgumentException(lackOfShowAttributeMessage);
     }
 
     public static void PrintOffer(string message, ConsoleColor offerColor)

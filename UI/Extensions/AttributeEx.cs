@@ -18,4 +18,6 @@ public static class AttributeEx
 
     public static TAttribute? GetAttribute<TValue, TAttribute>(this TValue value) where TAttribute : Attribute =>
         value.GetType().GetCustomAttribute<TAttribute>();
+
+    public static bool HasShowAttribute<TValue>() => typeof(TValue).GetShowAttribute() is not null;
 }
