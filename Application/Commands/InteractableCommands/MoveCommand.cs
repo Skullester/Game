@@ -20,9 +20,9 @@ public class MoveCommand : Command, ICommandWithDirection, IUpdatableCommand
     public void Execute()
     {
         if (Direction == Point.Empty) return;
-        var dir = Direction;
-        if (!CheckBounds(dir)) return;
-        PlayerRole.Move(dir);
+        var newPoint = Location + new Size(Direction);
+        if (!CheckBoundsIn(newPoint)) return;
+        PlayerRole.MoveTo(newPoint);
         var loc = Location;
         if (maze[loc.X, loc.Y] is ExitRoom)
         {
@@ -32,16 +32,15 @@ public class MoveCommand : Command, ICommandWithDirection, IUpdatableCommand
         Updated?.Invoke();
     }
 
-    private bool CheckBounds(Point point)
+    private bool CheckBoundsIn(Point point)
     {
-        var newPoint = Location + new Size(point);
         var inBounds = true;
-        if (maze[newPoint.X, newPoint.Y] is IWall)
+        if (maze[point.X, point.Y] is IWall)
         {
             inBounds = false;
-            if (maze[newPoint.X, newPoint.Y] is InternalWall)
+            if (maze[point.X, point.Y] is InternalWall)
             {
-                gm.CheckEffect(maze.WallType.Effect);
+                gm.CheckWallEffect(maze.WallType.Effect);
             }
         }
 

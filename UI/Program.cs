@@ -8,6 +8,8 @@ namespace UI;
 
 public class Program
 {
+    private const int GameTries = 5;
+
     private class GameModule : NinjectModule
     {
         public override void Load()
@@ -43,6 +45,7 @@ public class Program
         kernel.Bind<MazeWriter>()
             .To<ConsoleMazeWriter>()
             .InSingletonScope();
+        kernel.Bind<int>().ToConstant(GameTries).WhenInjectedInto<IGameManager>();
         kernel.Bind<IInteractableCommand>().ToConstant(kernel.GetAll<Command>().OfType<MoveCommand>().First());
         return kernel;
     }

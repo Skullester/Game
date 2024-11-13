@@ -1,4 +1,4 @@
-﻿namespace Infrastucture.Attributes.Visualize;
+﻿namespace Infrastructure.Attributes.Visualize;
 
 [AttributeUsage(AttributeTargets.Class)]
 public class ShowAttribute : Attribute
