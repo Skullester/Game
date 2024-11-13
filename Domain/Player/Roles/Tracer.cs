@@ -2,10 +2,9 @@
 
 namespace Models.Player;
 
+[Show("Трейсер")]
 public class Tracer : PlayerRole
 {
-    public override string Name => "Трейсер";
-
     public Tracer(IMaze maze, double ratio, TimeSpan coolDown) : base(maze, ConsoleColor.Magenta,
         coolDown)
     {

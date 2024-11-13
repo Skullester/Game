@@ -1,11 +1,10 @@
-﻿using Infrastructure;
+﻿using Extensions;
 using Models;
 
 namespace UI.Displaying;
 
-public abstract class MazeWriter : INaming
+public abstract class MazeWriter
 {
-    public abstract string Name { get; }
     protected readonly TextWriter writer;
     private readonly IEnumerable<(char sym, IMazeElement el)> mazeCharsColors;
     private readonly IMaze maze;

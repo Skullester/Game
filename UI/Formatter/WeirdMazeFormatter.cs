@@ -1,9 +1,8 @@
 ﻿namespace UI.Displaying;
 
+[Show("Нестандартный", Symbols = ['~', '$', '%', '@'])]
 public class WeirdMazeFormatter : MazeFormatter
 {
-    public override string Name => "Нестандартный";
-
     protected override void InitializeCharMap()
     {
         charMap = new Dictionary<Type, char>

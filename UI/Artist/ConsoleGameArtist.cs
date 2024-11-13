@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Reflection;
 using System.Text;
+using Extensions;
 using Models.Player;
 using static Game.ConsoleHelper;
 
@@ -33,7 +34,7 @@ public class ConsoleGameArtist : IGameArtist
     {
         Console.OutputEncoding = Encoding.Unicode;
         Console.CursorVisible = false;
-        playerCharInStr = PlayerRole.Name[0].ToString();
+        InitializePlayerChar();
         foreach (var command in Commands.OfType<IDrawingCommand>())
         {
             command.Drawing += Draw;
@@ -45,6 +46,12 @@ public class ConsoleGameArtist : IGameArtist
         }
 
         StartGame();
+    }
+
+    private void InitializePlayerChar()
+    {
+        var showAttribute = PlayerRole.GetShowAttribute();
+        playerCharInStr = showAttribute.Name[0].ToString();
     }
 
     private void StartGame()
@@ -90,16 +97,14 @@ public class ConsoleGameArtist : IGameArtist
         CursorPositionContainer.Save();
         var foregroundColor = Console.ForegroundColor;
         SetColor(instructionColor);
-        var shownCommands = Commands.Select(x => x.GetType().GetCustomAttribute<ShowAttribute>())
-            .Where(x => x != null)
-            .Select(x => x!)
-            .OrderBy(y => y.OrderPriority);
+
+        var shownCommands = Commands.GetShowAttributeElementsFrom(true);
         var i = 0;
         const int offset = 2;
         foreach (var attribute in shownCommands)
         {
             Console.SetCursorPosition(maze.Width + offset, i++);
-            PrintLine($"\"{attribute.Symbol}\" - {attribute.Name}");
+            PrintLine($"\"{attribute.Symbols!.First()}\" - {attribute.Name}");
         }
 
         CursorPositionContainer.Set();

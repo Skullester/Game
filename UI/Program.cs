@@ -1,4 +1,4 @@
-﻿using Infrastructure;
+﻿using Extensions;
 using Models.Fabric;
 using Ninject;
 using Ninject.Modules;

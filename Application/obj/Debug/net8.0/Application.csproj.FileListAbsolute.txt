@@ -14,3 +14,5 @@ H:\Учёба\4\ПП\Game\Application\obj\Debug\net8.0\Application.dll
 H:\Учёба\4\ПП\Game\Application\obj\Debug\net8.0\refint\Application.dll
 H:\Учёба\4\ПП\Game\Application\obj\Debug\net8.0\Application.pdb
 H:\Учёба\4\ПП\Game\Application\obj\Debug\net8.0\ref\Application.dll
+H:\Учёба\4\ПП\Game\Application\bin\Debug\net8.0\Infrastructure.dll
+H:\Учёба\4\ПП\Game\Application\bin\Debug\net8.0\Infrastructure.pdb

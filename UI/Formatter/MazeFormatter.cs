@@ -4,9 +4,8 @@
 
 namespace UI.Displaying;
 
-public abstract class MazeFormatter : INaming
+public abstract class MazeFormatter
 {
-    public abstract string Name { get; }
     public IReadOnlyDictionary<Type, char> Symbols => charMap.AsReadOnly();
 
     protected Dictionary<Type, char> charMap = null!;

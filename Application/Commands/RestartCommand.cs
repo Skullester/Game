@@ -1,6 +1,6 @@
 ﻿namespace Game;
 
-[Show("Перезапуск", 'R', OrderPriority = 5)]
+[Show("Перезапуск", Symbols = ['R'], OrderPriority = 5)]
 public class RestartCommand : Command, IExecutableCommand, IUpdatableCommand
 {
     public event Action? Updated;

@@ -3,7 +3,7 @@ using Game.Extensions;
 
 namespace Game;
 
-[Show("Умение", 'E', OrderPriority = 4)]
+[Show("Умение", Symbols = ['E'], OrderPriority = 4)]
 public class SkillCommand : Command, ICommandWithDirection, IDrawingCommand
 {
     public event Action<IEnumerable<Point>>? Drawing;

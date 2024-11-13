@@ -2,10 +2,9 @@
 
 namespace Models.Fabric;
 
+[Show("Обычный")]
 public class MazeFactoryDefault : MazeFactory
 {
-    public override string Name => "Обычный";
-
     public override IRoom GetRoom()
     {
         return new Room();

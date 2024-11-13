@@ -47,6 +47,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Infrastructure": "1.0.0",
           "System.Drawing.Common": "8.0.5"
         },
         "compile": {
@@ -54,6 +55,16 @@
         },
         "runtime": {
           "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
         }
       }
     }
@@ -138,11 +149,17 @@
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Domain >= 1.0.0"
+      "Domain >= 1.0.0",
+      "Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -172,6 +189,9 @@
           "projectReferences": {
             "H:\\Учёба\\4\\ПП\\Game\\Domain\\Domain.csproj": {
               "projectPath": "H:\\Учёба\\4\\ПП\\Game\\Domain\\Domain.csproj"
+            },
+            "H:\\Учёба\\4\\ПП\\Game\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "H:\\Учёба\\4\\ПП\\Game\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -201,12 +221,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.11, 8.0.11]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.11, 8.0.11]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.11, 8.0.11]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

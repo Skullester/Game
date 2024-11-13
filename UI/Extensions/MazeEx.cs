@@ -1,6 +1,6 @@
 ﻿using Models;
 
-namespace Infrastructure;
+namespace Extensions;
 
 public static class MazeEx
 {

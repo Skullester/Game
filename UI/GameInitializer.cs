@@ -1,4 +1,4 @@
-﻿using Infrastructure;
+﻿using Extensions;
 using Models.Fabric;
 using Models.Player;
 using Ninject;
@@ -9,6 +9,9 @@ namespace UI;
 
 public class GameInitializer
 {
+    private const ConsoleColor inputColor = ConsoleColor.Green;
+    private const ConsoleColor offerColor = ConsoleColor.White;
+    private const ConsoleColor optionsColor = ConsoleColor.Yellow;
     public IKernel Kernel { get; }
     private static GameInitializer? instance;
 
@@ -23,10 +26,11 @@ public class GameInitializer
     {
         var difficulties = Kernel.GetAll<Difficulty>();
         var factories = Kernel.GetAll<MazeFactory>();
-        var difficulty = PrintAndGetElement(difficulties, "Выберите уровень сложности:",
+        var difficulty = PrintAndGetElement(difficulties, GetNamingElementInfo, "Выберите уровень сложности:",
             "Выберите сложность из списка выше");
         Kernel.RebindToConstant(difficulty);
-        var factory = PrintAndGetElement(factories, "Выберите тип лабиринта:", "Выберите тип лабиринта из списка выше");
+        var factory = PrintAndGetElement(factories, GetNamingElementInfo, "Выберите тип лабиринта:",
+            "Выберите тип лабиринта из списка выше");
         Kernel.RebindToConstant(factory);
         Kernel.BindAllBaseClassesFromTo<MazeBuilder, MazeBuilder>();
         var mazeBuilder = GetMazeBuilder(Kernel.GetAll<MazeBuilder>());
@@ -35,43 +39,45 @@ public class GameInitializer
             .ToConstant(Kernel.Get<MazeBuilder>().Maze);
         BindPlayers();
         var players = Kernel.GetAll<PlayerRole>();
-        var player = PrintAndGetElement(players, "Выберите персонажа:", "Выберите персонажа из списка выше");
+        var player = PrintAndGetElement(players, GetNamingElementInfo, "Выберите персонажа:",
+            "Выберите персонажа из списка выше");
         Kernel.RebindToConstant(player);
-        ConsoleHelper.PrintOffer("Выберите способ вывода лабиринта: ");
-        PrintFormatters();
-        var formatter = GetElement(Kernel.GetAll<MazeFormatter>(), "Выберите способ вывода из списка выше");
+        ConsoleHelper.PrintOffer("Выберите способ вывода лабиринта:", offerColor);
+        var mazeFormatters = Kernel.GetAll<MazeFormatter>();
+        ConsoleHelper.PrintOptionsSeparately(mazeFormatters, optionsColor, GetFormatterInfo);
+        var formatter = GetElement(mazeFormatters, "Выберите способ вывода из списка выше");
         Kernel.RebindToConstant(formatter);
     }
 
-    private static T PrintAndGetElement<T>(IEnumerable<T> collection, string offerMsg, string errorMessage)
-        where T : INaming
+    private static T PrintAndGetElement<T>(IEnumerable<T> options, Func<ShowAttribute, string> action,
+        string offerMsg,
+        string errorMessage)
     {
-        ConsoleHelper.PrintOffer(offerMsg);
-        ConsoleHelper.Print(collection);
-        return GetElement(collection, errorMessage);
+        ConsoleHelper.PrintOffer(offerMsg, offerColor);
+        ConsoleHelper.PrintOptionsInLine(options, optionsColor, action, " | ");
+        return GetElement(options, errorMessage);
     }
+
+    public static string GetNamingElementInfo(ShowAttribute attribute) => attribute.Name;
 
     private MazeBuilder GetMazeBuilder(IEnumerable<MazeBuilder> builders) =>
         builders.FirstOrDefault(x => x.Name == Kernel.Get<Difficulty>().Name)!;
 
-    private static T GetElement<T>(IEnumerable<T> collection, string errorMsg) where T : INaming =>
-        ConsoleHelper.FindNamingElementByInput(collection, errorMsg);
+    private static T GetElement<T>(IEnumerable<T> collection, string errorMsg) =>
+        ConsoleHelper.FindNamingElementByInput(collection, errorMsg, inputColor);
 
-    private void PrintFormatters()
+    private static string GetFormatterInfo(ShowAttribute attribute)
     {
-        foreach (var format in Kernel.GetAll<MazeFormatter>())
-        {
-            var newSymbols = format.Symbols.Select(x => $"'{x.Value}'");
-            var symbols = string.Join(" | ", newSymbols);
-            ConsoleHelper.PrintLine($"{format.Name}: {symbols}");
-        }
+        var symbolView = attribute.Symbols!.Select(x => $"'{x}'");
+        return $"{attribute.Name}: {string.Join(" | ", symbolView)}";
     }
 
     private void BindPlayers()
     {
         var ratio = Kernel.Get<Difficulty>().SkillRatio;
         var maze = Kernel.Get<IMaze>();
-        Kernel.BindToConstant<PlayerRole>(
+        Kernel.BindToConstant<PlayerRole>
+        (
             new Berserker(maze, ratio, TimeSpan.FromSeconds(1)),
             new Tracer(maze, ratio, TimeSpan.FromSeconds(2))
         );

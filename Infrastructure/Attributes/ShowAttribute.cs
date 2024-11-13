@@ -1,15 +1,14 @@
-﻿namespace Game;
+﻿namespace Infrastucture.Attributes.Visualize;
 
 [AttributeUsage(AttributeTargets.Class)]
 public class ShowAttribute : Attribute
 {
     public string Name { get; }
-    public char Symbol { get; }
     public uint OrderPriority { get; set; }
+    public char[]? Symbols { get; set; }
 
-    public ShowAttribute(string name, char symbol)
+    public ShowAttribute(string name)
     {
         Name = name;
-        Symbol = symbol;
     }
 }

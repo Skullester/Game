@@ -2,10 +2,9 @@
 
 namespace UI.Displaying;
 
+[Show("Стандартный", Symbols = [' ', 'Q', '#', '*'])]
 public class DefaultMazeFormatter : MazeFormatter
 {
-    public override string Name => "Стандартный";
-
     protected override void InitializeCharMap()
     {
         charMap = new Dictionary<Type, char>

@@ -1,4 +1,6 @@
-﻿namespace Game;
+﻿using Extensions;
+
+namespace Game;
 
 public static class ConsoleHelper
 {
@@ -28,15 +30,6 @@ public static class ConsoleHelper
         PrintWithColor(text + Environment.NewLine, newColor, saveOldColor);
     }
 
-    public static void PrintWithColor(char text, ConsoleColor newColor, bool saveOldColor = true)
-    {
-        var color = Console.ForegroundColor;
-        SetColor(newColor);
-        Print(text);
-        if (saveOldColor)
-            SetColor(color);
-    }
-
     public static void PrintWithColor<T>(T text, ConsoleColor newColor, bool saveOldColor = true)
     {
         var color = Console.ForegroundColor;
@@ -56,41 +49,56 @@ public static class ConsoleHelper
         Console.Write(text);
     }
 
-    public static T FindNamingElementByInput<T>(IEnumerable<T> collection, string errorMessage)
-        where T : INaming
+    public static T FindNamingElementByInput<T>(IEnumerable<T> collection, string errorMessage, ConsoleColor inputColor)
     {
-        Console.ForegroundColor = ConsoleColor.Green;
-        T? element;
+        Console.ForegroundColor = inputColor;
+        var valueAttributeTuple = collection.Select(x => (Value: x, Attribute: x.GetShowAttribute()!));
+        T element;
         bool isError;
         do
         {
             var input = Console.ReadLine()!;
             // ReSharper disable once PossibleMultipleEnumeration
-            element = collection
-                .FirstOrDefault(x => x.Name.StartsWith(input, StringComparison.OrdinalIgnoreCase));
-            isError = element is null || string.IsNullOrWhiteSpace(input);
-        } while (CheckError(isError, errorMessage));
+            element = valueAttributeTuple
+                .FirstOrDefault(x => x.Attribute.Name.StartsWith(input, StringComparison.OrdinalIgnoreCase)).Value;
+            isError = element is null || string.IsNullOrEmpty(input);
+            if (isError) PrintError(errorMessage);
+        } while (isError);
 
-        return element!;
+        return element;
     }
 
-    public static bool CheckError(bool condition, string errorMessage)
+    public static void PrintOffer(string message, ConsoleColor offerColor)
     {
-        if (condition) PrintError(errorMessage);
-        return condition;
-    }
-
-    public static void PrintOffer(string message)
-    {
-        PrintLineWithColor(message, ConsoleColor.White);
-        SetColor(ConsoleColor.Yellow);
-    }
-
-    public static void Print<T>(IEnumerable<T> collection) where T : INaming
-    {
-        var names = collection.Select(x => x.Name);
-        PrintLine(string.Join(" | ", names));
+        PrintLineWithColor(message, offerColor);
     }
 
     public static void PrintError(string text) => PrintLineWithColor(text, ConsoleColor.Red);
+
+    public static void PrintOptionsInLine<T>(IEnumerable<T> options, ConsoleColor optionsColor,
+        Func<ShowAttribute, string> action,
+        string separator)
+    {
+        var strings = GetOptionsString(options, optionsColor, action);
+        var join = string.Join(separator, strings);
+        PrintLine(join);
+    }
+
+    private static IEnumerable<string> GetOptionsString<T>(IEnumerable<T> options, ConsoleColor optionsColor,
+        Func<ShowAttribute, string> action)
+    {
+        SetColor(optionsColor);
+        var showAttributes = options.GetShowAttributeElementsFrom(true);
+        return showAttributes.Select(action);
+    }
+
+    public static void PrintOptionsSeparately<T>(IEnumerable<T> options, ConsoleColor optionsColor,
+        Func<ShowAttribute, string> action)
+    {
+        var strings = GetOptionsString(options, optionsColor, action);
+        foreach (var se in strings)
+        {
+            PrintLine(se);
+        }
+    }
 }

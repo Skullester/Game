@@ -130,6 +130,7 @@ public class RectangularMaze : IMaze
         this[point.X, point.Y] = Room.Clone();
         return point;
     }
+
     private List<Point> GetNeighbours(Point point, bool[,] isVisited)
     {
         var neighbours = new List<Point>();

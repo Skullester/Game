@@ -11,3 +11,6 @@ H:\Учёба\4\ПП\Game\Domain\obj\Debug\net8.0\Domain.dll
 H:\Учёба\4\ПП\Game\Domain\obj\Debug\net8.0\refint\Domain.dll
 H:\Учёба\4\ПП\Game\Domain\obj\Debug\net8.0\Domain.pdb
 H:\Учёба\4\ПП\Game\Domain\obj\Debug\net8.0\ref\Domain.dll
+H:\Учёба\4\ПП\Game\Domain\bin\Debug\net8.0\Infrastructure.dll
+H:\Учёба\4\ПП\Game\Domain\bin\Debug\net8.0\Infrastructure.pdb
+H:\Учёба\4\ПП\Game\Domain\obj\Debug\net8.0\Domain.csproj.Up2Date

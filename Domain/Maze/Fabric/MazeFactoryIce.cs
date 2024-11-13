@@ -2,10 +2,9 @@
 
 namespace Models.Fabric;
 
+[Show("Лед")]
 public class MazeFactoryIce : MazeFactory
 {
-    public override string Name => "Лед";
-
     public override IRoom GetRoom()
     {
         return new IceRoom();

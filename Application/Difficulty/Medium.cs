@@ -1,5 +1,6 @@
 ﻿namespace Game;
 
+[Show("Средний", OrderPriority = 1)]
 public class Medium : Difficulty
 {
     public override string Name => "Средний";

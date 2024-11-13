@@ -1,6 +1,6 @@
 ﻿namespace Game;
 
-[Show("Влево", '\u2190', OrderPriority = 2)]
+[Show("Влево", Symbols = ['\u2190'], OrderPriority = 2)]
 public class LeftCommand : Command, IDirection
 {
     public Point Direction => new Point(0, -1);

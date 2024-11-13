@@ -2,7 +2,7 @@
 using Ninject.Extensions.Conventions;
 using Ninject.Extensions.Conventions.Syntax;
 
-namespace Infrastructure;
+namespace Extensions;
 
 public static class KernelEx
 {

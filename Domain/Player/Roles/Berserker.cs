@@ -2,9 +2,9 @@
 
 namespace Models.Player;
 
+[Show("Берсерк")]
 public class Berserker : PlayerRole, IComplexRole
 {
-    public override string Name => "Берсерк";
 
     public IComplexSkill ComplexSkill => (Skill as IComplexSkill)!;
 

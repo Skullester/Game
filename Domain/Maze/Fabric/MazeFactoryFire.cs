@@ -2,10 +2,9 @@
 
 namespace Models.Fabric;
 
+[Show("Огненный")]
 public class MazeFactoryFire : MazeFactory
 {
-    public override string Name => "Огненный";
-
     public override IRoom GetRoom()
     {
         return new FireRoom();
