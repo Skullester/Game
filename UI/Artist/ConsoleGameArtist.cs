@@ -100,13 +100,15 @@ public class ConsoleGameArtist : IGameArtist
         CursorPositionContainer.Save();
         var foregroundColor = Console.ForegroundColor;
         SetColor(instructionColor);
-
         var shownCommands = Commands.GetShowAttributeElementsFrom(true);
         var i = 0;
         const int offset = 2;
+        var leftOffset = maze.Width + offset;
+        Console.SetCursorPosition(leftOffset, i++);
+        PrintLine("Количество попыток: " + GM.Tries);
         foreach (var attribute in shownCommands)
         {
-            Console.SetCursorPosition(maze.Width + offset, i++);
+            Console.SetCursorPosition(leftOffset, i++);
             var text = $"\"{attribute.Symbols!.First()}\" - {attribute.Name}";
             if (attribute.Name == "Умение")
             {
