@@ -5,17 +5,22 @@ namespace Models.Player;
 [Show("Трейсер")]
 public class Tracer : PlayerRole
 {
-    public Tracer(IMaze maze, double ratio, TimeSpan coolDown) : base(maze, ConsoleColor.Magenta,
+    public Tracer(IMaze maze, double ratio, TimeSpan coolDown, int uses) : base(maze, ConsoleColor.Magenta,
         coolDown)
     {
-        Skill = new TracerSkill(ratio, this);
+        Skill = new TracerSkill(ratio, this, uses);
     }
 
-    public override void Move(Point point)
+    public override void MoveTo(Point newPoint)
     {
         Skill.Use();
-        base.Move(point);
+        base.MoveTo(newPoint);
     }
 
+    public override void MoveBy(Point offset)
+    {
+        Skill.Use();
+        base.MoveBy(offset);
+    }
     // public override IEnumerable<Point> GetSkillPoints() => tracesQueue;
 }

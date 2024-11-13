@@ -20,9 +20,22 @@ public abstract class PlayerRole
         SkillCooldown = skillCooldown;
     }
 
-    public virtual void Move(Point point)
+    /// <summary>
+    /// Moving player
+    /// </summary>
+    /// <param name="newPoint">Moving player to newPoint</param>
+    public virtual void MoveTo(Point newPoint)
     {
-        Location += new Size(point);
+        Location = newPoint;
+    }
+
+    /// <summary>
+    /// Moving player
+    /// </summary>
+    /// <param name="offset">Moving player by offset </param>
+    public virtual void MoveBy(Point offset)
+    {
+        Location += new Size(offset);
     }
 
     public virtual void Initialize()
@@ -33,5 +46,5 @@ public abstract class PlayerRole
 
     protected virtual void SetDefaultValues() => Skill.ResetValues();
 
-    public void UseSkill() => Skill.Use();
+    public bool UseSkill() => Skill.Use();
 }

@@ -4,21 +4,21 @@ namespace Models.Player;
 
 public class BerserkerSkill : IComplexSkill
 {
-    public Point Direction { get; set; }
-    public IEnumerable<Point> View => points;
+    public readonly int MaxHits;
+    public int RemainingUses { get; private set; }
     public PlayerRole PlayerRole { get; }
-    public readonly int MaxValue;
+    public Point Direction { get; set; }
+    public IEnumerable<Point> View => RemainingUses-- == 0 ? Enumerable.Empty<Point>() : points;
     private const int maxHitLength = 3;
     private const double multiplier = 10;
     private List<Point> points = null!;
     private Random random = null!;
     private readonly IMaze maze;
-    private int value;
     private Point Location => PlayerRole.Location;
 
     public BerserkerSkill(double ratio, IMaze maze, PlayerRole playerRole)
     {
-        MaxValue = (int)(ratio * multiplier);
+        MaxHits = (int)(ratio * multiplier);
         this.maze = maze;
         PlayerRole = playerRole;
     }
@@ -27,12 +27,12 @@ public class BerserkerSkill : IComplexSkill
     {
         random = new Random();
         points = new List<Point>();
-        value = MaxValue;
+        RemainingUses = MaxHits;
     }
 
-    public void Use()
+    public bool Use()
     {
-        if (value == 0 || Direction == Point.Empty) return;
+        if (RemainingUses == 0 || Direction == Point.Empty) return false;
         points.Clear();
         var hitStart = Location + new Size(Direction);
         var hitLength = random.Next(1, maxHitLength + 1);
@@ -49,6 +49,6 @@ public class BerserkerSkill : IComplexSkill
             hitStart += new Size(Direction);
         }
 
-        value--;
+        return true;
     }
 }

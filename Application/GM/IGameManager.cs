@@ -2,6 +2,7 @@
 
 public interface IGameManager
 {
+    int Tries { get; }
     GameState State { get; }
     PlayerRole PlayerRole { get; }
     IMaze Maze { get; }
@@ -11,5 +12,5 @@ public interface IGameManager
     void ResetGame();
     void SetVictory();
     void SetDefeat();
-    void CheckEffect(Effect wallTypeEffect);
+    void CheckWallEffect(Effect wallTypeEffect);
 }

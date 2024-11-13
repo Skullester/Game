@@ -4,6 +4,7 @@ public enum GameState
 {
     Play,
     Defeat,
+    FullDefeat,
     Victory,
     Reset
 }

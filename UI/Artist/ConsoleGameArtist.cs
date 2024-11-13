@@ -50,7 +50,7 @@ public class ConsoleGameArtist : IGameArtist
 
     private void InitializePlayerChar()
     {
-        var showAttribute = PlayerRole.GetShowAttribute();
+        var showAttribute = PlayerRole.GetShowAttribute()!;
         playerCharInStr = showAttribute.Name[0].ToString();
     }
 
@@ -86,6 +86,9 @@ public class ConsoleGameArtist : IGameArtist
                 DrawDefeat();
                 StartGame();
                 break;
+            case GameState.FullDefeat:
+                DrawFullDefeat();
+                break;
             case GameState.Victory:
                 DrawVictory();
                 break;
@@ -104,7 +107,13 @@ public class ConsoleGameArtist : IGameArtist
         foreach (var attribute in shownCommands)
         {
             Console.SetCursorPosition(maze.Width + offset, i++);
-            PrintLine($"\"{attribute.Symbols!.First()}\" - {attribute.Name}");
+            var text = $"\"{attribute.Symbols!.First()}\" - {attribute.Name}";
+            if (attribute.Name == "Умение")
+            {
+                text += $"({PlayerRole.Skill.RemainingUses})";
+            }
+
+            PrintLine(text);
         }
 
         CursorPositionContainer.Set();
@@ -124,6 +133,11 @@ public class ConsoleGameArtist : IGameArtist
         Writer.Write();
         DrawInstructions();
         DrawPlayer();
+    }
+
+    private void DrawFullDefeat()
+    {
+        DrawGameResult("Полное поражение!", defeatColor);
     }
 
     private void DrawVictory()

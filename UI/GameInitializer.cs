@@ -60,8 +60,10 @@ public class GameInitializer
 
     public static string GetNamingElementInfo(ShowAttribute attribute) => attribute.Name;
 
-    private MazeBuilder GetMazeBuilder(IEnumerable<MazeBuilder> builders) =>
-        builders.FirstOrDefault(x => x.Name == Kernel.Get<Difficulty>().Name)!;
+    private MazeBuilder GetMazeBuilder(IEnumerable<MazeBuilder> builders)
+    {
+        return builders.FirstOrDefault(x => x.Name == Kernel.Get<Difficulty>().GetShowAttribute()!.Name)!;
+    }
 
     private static T GetElement<T>(IEnumerable<T> collection, string errorMsg) =>
         ConsoleHelper.FindNamingElementByInput(collection, errorMsg, inputColor);
@@ -79,7 +81,7 @@ public class GameInitializer
         Kernel.BindToConstant<PlayerRole>
         (
             new Berserker(maze, ratio, TimeSpan.FromSeconds(1)),
-            new Tracer(maze, ratio, TimeSpan.FromSeconds(2))
+            new Tracer(maze, ratio, TimeSpan.FromSeconds(2), 10)
         );
     }
 }

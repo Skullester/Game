@@ -26,7 +26,7 @@ public abstract class MazeWriter
 
     public void Write()
     {
-        using var disposingWriter = this.writer;
+        using var disposingWriter = writer;
         var counter = 0;
         foreach (var (sym, el) in mazeCharsColors)
         {

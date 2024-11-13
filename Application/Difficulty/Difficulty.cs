@@ -2,7 +2,6 @@
 
 public abstract class Difficulty
 {
-    public abstract string Name { get; }
     public double SkillRatio { get; }
 
 

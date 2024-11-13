@@ -37,8 +37,8 @@ public class SkillCommand : Command, ICommandWithDirection, IDrawingCommand
             return;
         }
 
-        PlayerRole.UseSkill();
-        Drawing?.Invoke(PlayerRole.Skill.View);
+        if (PlayerRole.UseSkill())
+            Drawing?.Invoke(PlayerRole.Skill.View);
         ResetState();
     }
 

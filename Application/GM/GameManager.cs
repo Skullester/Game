@@ -6,6 +6,7 @@ namespace Game;
 
 public sealed class GameManager : IGameManager
 {
+    public int Tries { get; private set; }
     public GameState State { get; private set; }
     public PlayerRole PlayerRole { get; }
     public IMaze Maze { get; private set; } = null!;
@@ -15,11 +16,12 @@ public sealed class GameManager : IGameManager
     private IController controller => lazyController.Value;
     private readonly Lazy<IController> lazyController;
 
-    public GameManager(PlayerRole playerRole, MazeBuilder builder, Lazy<IController> controller)
+    public GameManager(PlayerRole playerRole, MazeBuilder builder, Lazy<IController> controller, int tries)
     {
         lazyController = controller;
         PlayerRole = playerRole;
         Builder = builder;
+        Tries = tries;
     }
 
     private void CreateMaze()
@@ -45,7 +47,7 @@ public sealed class GameManager : IGameManager
         stopwatch = new Stopwatch();
     }
 
-    public void CheckEffect(Effect wallTypeEffect)
+    public void CheckWallEffect(Effect wallTypeEffect)
     {
         switch (wallTypeEffect)
         {
@@ -71,7 +73,10 @@ public sealed class GameManager : IGameManager
 
     public void SetVictory() => SetState(GameState.Victory);
 
-    public void SetDefeat() => SetState(GameState.Defeat);
+    public void SetDefeat()
+    {
+        SetState(--Tries == 0 ? GameState.FullDefeat : GameState.Defeat);
+    }
 
     private void SetState(GameState state) => State = state;
 
