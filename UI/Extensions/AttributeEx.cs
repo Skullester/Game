@@ -7,7 +7,7 @@ public static class AttributeEx
     public static IEnumerable<ShowAttribute> GetShowAttributeElementsFrom<TValue>(
         this IEnumerable<TValue> collection, bool order = false)
     {
-        var showAttributes = collection.Select(x => x.GetType().GetCustomAttribute<ShowAttribute>())
+        var showAttributes = collection.Select(x => x!.GetType().GetCustomAttribute<ShowAttribute>())
             .Where(x => x != null)
             .Select(x => x!);
         return order ? showAttributes.OrderBy(x => x.OrderPriority) : showAttributes;
@@ -17,7 +17,7 @@ public static class AttributeEx
         value.GetAttribute<TValue, ShowAttribute>();
 
     public static TAttribute? GetAttribute<TValue, TAttribute>(this TValue value) where TAttribute : Attribute =>
-        value.GetType().GetCustomAttribute<TAttribute>();
+        value!.GetType().GetCustomAttribute<TAttribute>();
 
-    public static bool HasShowAttribute<TValue>() => typeof(TValue).GetShowAttribute() is not null;
+    public static bool HasShowAttribute<TValue>(TValue value) => value.GetShowAttribute() is not null;
 }

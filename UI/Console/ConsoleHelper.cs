@@ -1,5 +1,7 @@
 ﻿using Extensions;
 
+// ReSharper disable PossibleMultipleEnumeration
+
 namespace Game;
 
 public static class ConsoleHelper
@@ -53,7 +55,7 @@ public static class ConsoleHelper
 
     public static T FindShownElementByInput<T>(IEnumerable<T> collection, string errorMessage, ConsoleColor inputColor)
     {
-        VerifyShowAttribute<T>();
+        VerifyShowAttribute(collection.First());
         Console.ForegroundColor = inputColor;
         var valueAttributeTuple = collection.Select(x => (Value: x, Attribute: x.GetShowAttribute()!));
         T element;
@@ -71,9 +73,9 @@ public static class ConsoleHelper
         return element;
     }
 
-    private static void VerifyShowAttribute<T>()
+    private static void VerifyShowAttribute<T>(T value)
     {
-        if (!AttributeEx.HasShowAttribute<T>())
+        if (!AttributeEx.HasShowAttribute<T>(value))
             throw new ArgumentException(lackOfShowAttributeMessage);
     }
 
