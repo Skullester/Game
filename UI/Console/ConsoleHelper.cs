@@ -90,6 +90,7 @@ public static class ConsoleHelper
         Func<ShowAttribute, string> action,
         string separator)
     {
+        VerifyShowAttribute(options.First());
         var strings = GetOptionsString(options, optionsColor, action);
         var join = string.Join(separator, strings);
         PrintLine(join);
@@ -106,6 +107,7 @@ public static class ConsoleHelper
     public static void PrintOptionsSeparately<T>(IEnumerable<T> options, ConsoleColor optionsColor,
         Func<ShowAttribute, string> action)
     {
+        VerifyShowAttribute(options.First());
         var strings = GetOptionsString(options, optionsColor, action);
         foreach (var se in strings)
         {

@@ -5,6 +5,11 @@ public class CommandController : IController
     public IInteractableCommand? CurrentInteractableCmd { get; set; }
     public IInteractableCommand? CachedInteractableCmd { get; set; }
 
+    public CommandController(IInteractableCommand cached)
+    {
+        CurrentInteractableCmd = CachedInteractableCmd = cached;
+    }
+
     public IExecutableCommand Parse(Command? cmd)
     {
         switch (cmd)
@@ -20,11 +25,6 @@ public class CommandController : IController
         }
 
         return this;
-    }
-
-    public CommandController(IInteractableCommand cached)
-    {
-        CurrentInteractableCmd = CachedInteractableCmd = cached;
     }
 
     public void Execute()
