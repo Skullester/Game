@@ -12,7 +12,7 @@ public class ConsoleGameArtist : IGameArtist
 {
     public MazeWriter Writer { get; }
     public IGameManager GM { get; }
-    public ICommand[] Commands { get; }
+    public IEnumerable<ICommand> Commands { get; }
     private ConsoleColor playerColor => PlayerRole.Color;
     private IMaze maze => GM.Maze;
     private PlayerRole PlayerRole => GM.PlayerRole;
