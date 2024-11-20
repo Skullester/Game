@@ -18,7 +18,8 @@ public class Program
             Kernel.BindAllInterfacesFromTo<IController, IController>();
             Kernel.BindAllBaseClassesTo<MazeFormatter>();
             Kernel.BindAllBaseClassesFromTo<MazeFactory, MazeFactory>();
-            Kernel.BindAllBaseClassesFromTo<Command, Command>();
+            Kernel.BindAllBaseClassesFromTo<KeyCommand, KeyCommand>();
+            Kernel.BindAllInterfacesFromTo<ICommand, ICommand>();
             Kernel!.Bind<GameInitializer>()
                 .ToConstant(GameInitializer.GetInstance(Kernel));
         }
@@ -46,7 +47,7 @@ public class Program
             .To<ConsoleMazeWriter>()
             .InSingletonScope();
         kernel.Bind<int>().ToConstant(GameTries).WhenInjectedInto<IGameManager>();
-        kernel.Bind<IInteractableCommand>().ToConstant(kernel.GetAll<Command>().OfType<MoveCommand>().First());
+        kernel.Rebind<IInteractablePlayerCommand>().ToConstant(kernel.GetAll<ICommand>().OfType<MoveCommand>().First());
         return kernel;
     }
 }

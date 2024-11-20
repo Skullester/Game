@@ -7,7 +7,7 @@ public interface IGameManager
     PlayerRole PlayerRole { get; }
     IMaze Maze { get; }
     bool IsGameFinished { get; }
-    void Execute(Command? command);
+    void Execute(KeyCommand? command);
     void Initialize();
     void ResetGame();
     void SetVictory();

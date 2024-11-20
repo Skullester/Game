@@ -4,7 +4,7 @@ using Game.Extensions;
 namespace Game;
 
 [Show("Умение", Symbols = ['E'], OrderPriority = 4)]
-public class SkillCommand : Command, ICommandWithDirection, IDrawingCommand
+public class SkillCommand : KeyCommand, ICommandWithDirection, IDrawingCommand
 {
     public event Action<IEnumerable<Point>>? Drawing;
     private PlayerRole PlayerRole => gm.PlayerRole;
@@ -15,12 +15,11 @@ public class SkillCommand : Command, ICommandWithDirection, IDrawingCommand
 
     public IController? Controller { get; }
 
-    public SkillCommand(IGameManager gm, IController controller)
+    public SkillCommand(IGameManager gm, IController controller) : base(ConsoleKey.E)
     {
         this.gm = gm;
         Controller = controller;
     }
-
 
     public void Execute()
     {
@@ -46,11 +45,6 @@ public class SkillCommand : Command, ICommandWithDirection, IDrawingCommand
     {
         Direction = Point.Empty;
         Controller!.CurrentInteractableCmd = Controller.CachedInteractableCmd;
-    }
-
-    protected override void InitializeSymbols()
-    {
-        keyMap.Add(ConsoleKey.E);
     }
 
     private bool VerifySkillCoolDown() => cdWatch.VerifyCondition(cdWatch.Elapsed >= PlayerRole.SkillCooldown);

@@ -2,15 +2,15 @@
 
 public class CommandController : IController
 {
-    public IInteractableCommand? CurrentInteractableCmd { get; set; }
-    public IInteractableCommand? CachedInteractableCmd { get; set; }
+    public IInteractablePlayerCommand? CurrentInteractableCmd { get; set; }
+    public IInteractablePlayerCommand? CachedInteractableCmd { get; set; }
 
-    public CommandController(IInteractableCommand cached)
+    public CommandController(IInteractablePlayerCommand cached)
     {
         CurrentInteractableCmd = CachedInteractableCmd = cached;
     }
 
-    public IExecutableCommand Parse(Command? cmd)
+    public IExecutableCommand Parse(KeyCommand? cmd)
     {
         switch (cmd)
         {
@@ -24,11 +24,6 @@ public class CommandController : IController
                 return (cmd as IExecutableCommand)!;
         }
 
-        return this;
-    }
-
-    public void Execute()
-    {
-        CurrentInteractableCmd!.Execute();
+        return CurrentInteractableCmd;
     }
 }

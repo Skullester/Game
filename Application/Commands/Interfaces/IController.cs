@@ -1,8 +1,8 @@
 ﻿namespace Game;
 
-public interface IController : IExecutableCommand
+public interface IController
 {
-    IInteractableCommand? CurrentInteractableCmd { get; set; }
-    IInteractableCommand? CachedInteractableCmd { get; set; }
-    IExecutableCommand Parse(Command? cmd);
+    IInteractablePlayerCommand? CurrentInteractableCmd { get; set; }
+    IInteractablePlayerCommand? CachedInteractableCmd { get; set; }
+    IExecutableCommand Parse(KeyCommand? cmd);
 }

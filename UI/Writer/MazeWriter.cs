@@ -3,7 +3,7 @@ using Models;
 
 namespace UI.Displaying;
 
-public abstract class MazeWriter
+public abstract class MazeWriter : IDisposable
 {
     protected readonly TextWriter writer;
     private readonly IEnumerable<(char sym, IMazeElement el)> mazeCharsColors;
@@ -40,5 +40,10 @@ public abstract class MazeWriter
     protected virtual void Write(char sym, IMazeElement el)
     {
         writer.Write(sym);
+    }
+
+    void IDisposable.Dispose()
+    {
+        writer.Dispose();
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Game;
 
-public interface IUpdatableCommand
+public interface IMapUpdatableCommand : ICommand
 {
     public event Action Updated;
 }

@@ -1,6 +1,6 @@
 ﻿namespace Game;
 
-public interface ICommandWithDirection : IInteractableCommand
+public interface ICommandWithDirection : IInteractablePlayerCommand
 {
     public Point Direction { get; set; }
 }

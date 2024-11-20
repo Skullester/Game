@@ -1,6 +1,6 @@
 ﻿namespace Game;
 
-public class MoveCommand : Command, ICommandWithDirection, IUpdatableCommand
+public class MoveCommand : ICommandWithDirection, IMapUpdatableCommand
 {
     public event Action? Updated;
     public Point Direction { get; set; }

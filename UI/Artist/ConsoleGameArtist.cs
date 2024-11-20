@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.Reflection;
 using System.Text;
 using Extensions;
 using Models.Player;
@@ -13,7 +12,7 @@ public class ConsoleGameArtist : IGameArtist
 {
     public MazeWriter Writer { get; }
     public IGameManager GM { get; }
-    public IEnumerable<Command> Commands { get; }
+    public ICommand[] Commands { get; }
     private ConsoleColor playerColor => PlayerRole.Color;
     private IMaze maze => GM.Maze;
     private PlayerRole PlayerRole => GM.PlayerRole;
@@ -23,7 +22,7 @@ public class ConsoleGameArtist : IGameArtist
     private const ConsoleColor victoryColor = ConsoleColor.Green;
     private const ConsoleColor defeatColor = ConsoleColor.Red;
 
-    public ConsoleGameArtist(IGameManager manager, MazeWriter writer, IEnumerable<Command> commands)
+    public ConsoleGameArtist(IGameManager manager, MazeWriter writer, IEnumerable<ICommand> commands)
     {
         Writer = writer;
         Commands = commands.ToArray();
@@ -40,7 +39,7 @@ public class ConsoleGameArtist : IGameArtist
             command.Drawing += Draw;
         }
 
-        foreach (var command in Commands.OfType<IUpdatableCommand>())
+        foreach (var command in Commands.OfType<IMapUpdatableCommand>())
         {
             command.Updated += UpdateGameState;
         }
@@ -66,14 +65,15 @@ public class ConsoleGameArtist : IGameArtist
             }
 
             var cki = Console.ReadKey(true);
-            var cmd = Commands.FirstOrDefault(x => x.KeyMap.Contains(cki.Key));
+            var cmd = Commands.OfType<KeyCommand>()
+                .FirstOrDefault(x => x.KeyMap.Contains(cki.Key));
             GM.Execute(cmd);
         }
 
         CheckState();
     }
 
-    private static Point GetDirection(Command? cmd) => (cmd as IDirection)!.Direction;
+    private static Point GetDirection(KeyCommand? cmd) => (cmd as IDirection)!.Direction;
 
     public void CheckState()
     {
@@ -131,8 +131,7 @@ public class ConsoleGameArtist : IGameArtist
 
     private void UpdateGameState()
     {
-        Console.Clear();
-        Writer.Write();
+        WriteMap();
         DrawInstructions();
         DrawPlayer();
     }
@@ -140,10 +139,17 @@ public class ConsoleGameArtist : IGameArtist
     private void DrawFullDefeat()
     {
         DrawGameResult("Полное поражение!", defeatColor);
+        Dispose();
+    }
+
+    private void Dispose()
+    {
+        (Writer as IDisposable).Dispose();
     }
 
     private void DrawVictory()
     {
+        Dispose();
         DrawGameResult("Победа!", victoryColor);
     }
 
@@ -154,8 +160,15 @@ public class ConsoleGameArtist : IGameArtist
 
     private void DrawGameResult(string name, ConsoleColor color)
     {
+        UpdateGameState();
         PrintWithColor(name, color);
         Thread.Sleep(gameResultTimeout);
+    }
+
+    private void WriteMap()
+    {
+        Console.Clear();
+        Writer.Write();
     }
 
     private void Draw(IEnumerable<Point> points)

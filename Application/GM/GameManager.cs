@@ -31,7 +31,7 @@ public sealed class GameManager : IGameManager
         Maze = Builder.Maze;
     }
 
-    public void Execute(Command? cmd)
+    public void Execute(KeyCommand? cmd)
     {
         var isVerified = cmd != null && VerifyTimePenalty();
         if (!isVerified) return;

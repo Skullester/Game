@@ -1,6 +1,6 @@
 ﻿namespace Game;
 
-public interface IExecutableCommand
+public interface IExecutableCommand : ICommand
 {
     void Execute();
 }

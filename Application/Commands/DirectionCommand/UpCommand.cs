@@ -1,13 +1,11 @@
 ﻿namespace Game;
 
 [Show("Вверх", Symbols = ['\u2191'], OrderPriority = 0)]
-public class UpCommand : Command, IDirection
+public class UpCommand : KeyCommand, IDirection
 {
     public Point Direction => new Point(-1, 0);
 
-    protected override void InitializeSymbols()
+    public UpCommand() : base(ConsoleKey.W, ConsoleKey.UpArrow)
     {
-        keyMap.Add(ConsoleKey.W);
-        keyMap.Add(ConsoleKey.UpArrow);
     }
 }

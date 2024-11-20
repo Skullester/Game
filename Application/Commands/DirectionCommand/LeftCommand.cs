@@ -1,13 +1,11 @@
 ﻿namespace Game;
 
 [Show("Влево", Symbols = ['\u2190'], OrderPriority = 2)]
-public class LeftCommand : Command, IDirection
+public class LeftCommand : KeyCommand, IDirection
 {
     public Point Direction => new Point(0, -1);
 
-    protected override void InitializeSymbols()
+    public LeftCommand() : base(ConsoleKey.A, ConsoleKey.LeftArrow)
     {
-        keyMap.Add(ConsoleKey.A);
-        keyMap.Add(ConsoleKey.LeftArrow);
     }
 }
