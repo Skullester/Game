@@ -75,7 +75,7 @@ public static class ConsoleHelper
 
     private static void VerifyShowAttribute<T>(T value)
     {
-        if (!AttributeEx.HasShowAttribute(value))
+        if (!AttributeEx.TryGetShowAttribute(value, out _))
             throw new ArgumentException(lackOfShowAttributeMessage);
     }
 

@@ -84,7 +84,7 @@ public sealed class GameManager : IGameManager
     {
         var isVerified = stopwatch.VerifyCondition(stopwatch.Elapsed <= Maze.Room.StayTime);
         if (!isVerified)
-            State = GameState.Defeat;
+            SetDefeat();
         return isVerified;
     }
 }

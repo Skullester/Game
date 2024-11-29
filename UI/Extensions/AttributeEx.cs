@@ -19,5 +19,9 @@ public static class AttributeEx
     public static TAttribute? GetAttribute<TValue, TAttribute>(this TValue value) where TAttribute : Attribute =>
         value!.GetType().GetCustomAttribute<TAttribute>();
 
-    public static bool HasShowAttribute<TValue>(TValue value) => value.GetShowAttribute() is not null;
+    public static bool TryGetShowAttribute<TValue>(TValue value, out ShowAttribute? showAttribute)
+    {
+        showAttribute = value.GetShowAttribute();
+        return showAttribute != null;
+    }
 }

@@ -46,8 +46,13 @@ public class Program
         kernel.Bind<MazeWriter>()
             .To<ConsoleMazeWriter>()
             .InSingletonScope();
-        kernel.Bind<int>().ToConstant(GameTries).WhenInjectedInto<IGameManager>();
-        kernel.Rebind<IInteractablePlayerCommand>().ToConstant(kernel.GetAll<ICommand>().OfType<MoveCommand>().First());
+        kernel.Bind<int>()
+            .ToConstant(GameTries)
+            .WhenInjectedInto<IGameManager>();
+        kernel.Rebind<IInteractablePlayerCommand>()
+            .ToConstant(kernel.GetAll<ICommand>()
+                .OfType<MoveCommand>()
+                .First());
         return kernel;
     }
 }
