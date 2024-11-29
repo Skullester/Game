@@ -8,7 +8,7 @@ public class BerserkerSkill : IComplexSkill
     public int RemainingUses { get; private set; }
     public PlayerRole PlayerRole { get; }
     public Point Direction { get; set; }
-    public IEnumerable<Point> View => RemainingUses-- == 0 ? Enumerable.Empty<Point>() : points;
+    public IEnumerable<Point> View => points;
     private const int maxHitLength = 3;
     private const double multiplier = 10;
     private List<Point> points = null!;
@@ -34,21 +34,25 @@ public class BerserkerSkill : IComplexSkill
     {
         if (RemainingUses == 0 || Direction == Point.Empty) return false;
         points.Clear();
-        var hitStartPoint = Location + new Size(Direction);
+        RemainingUses--;
+        var hitPoint = Location + new Size(Direction);
         var hitLength = random.Next(1, maxHitLength + 1);
         for (var i = 0; i < hitLength; i++)
         {
-            var x = hitStartPoint.X;
-            var y = hitStartPoint.Y;
+            if (!InBounds()) break;
+            var x = hitPoint.X;
+            var y = hitPoint.Y;
             if (maze[x, y] is InternalWall)
             {
                 points.Add(new Point(x, y));
                 maze[x, y] = maze.Room.Clone();
             }
 
-            hitStartPoint += new Size(Direction);
+            hitPoint += new Size(Direction);
         }
 
         return true;
+
+        bool InBounds() => hitPoint.X > 0 && hitPoint.X < maze.Height && hitPoint.Y > 0 && hitPoint.Y < maze.Width;
     }
 }
