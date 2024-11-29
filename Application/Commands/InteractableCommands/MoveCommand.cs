@@ -35,13 +35,10 @@ public class MoveCommand : ICommandWithDirection, IMapUpdatableCommand
     private bool CheckBoundsIn(Point point)
     {
         var inBounds = true;
-        if (maze[point.X, point.Y] is IWall)
+        if (maze[point.X, point.Y] is IWall wall)
         {
             inBounds = false;
-            if (maze[point.X, point.Y] is InternalWall)
-            {
-                gm.CheckWallEffect(maze.WallType.Effect);
-            }
+            gm.CheckWallEffect(wall.Type.Effect);
         }
 
         return inBounds;

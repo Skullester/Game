@@ -2,7 +2,6 @@
 
 public interface IMaze : IEnumerable<IMazeElement>
 {
-    WallType WallType { get; }
     int Height { get; set; }
     int Width { get; set; }
     Point StartPoint { get; }

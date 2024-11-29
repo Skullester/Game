@@ -2,7 +2,7 @@
 
 public class FireWallType : WallType
 {
-    public FireWallType() : base(Effect.Death, ConsoleColor.Red)
+    public FireWallType(Effect effect, ConsoleColor color) : base(effect, color)
     {
     }
 }

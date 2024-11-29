@@ -7,15 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
 using System.Reflection;
 
-[assembly: AssemblyCompany("Infrastructure")]
-[assembly: AssemblyConfiguration("Debug")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: AssemblyInformationalVersion("1.0.0+8a1abe8d3d952e4b801ccb8caf0f46af93aec5ac")]
-[assembly: AssemblyProduct("Infrastructure")]
-[assembly: AssemblyTitle("Infrastructure")]
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Infrastructure")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+437f80d8efd7dfcee7fb7d14bd9d2c0f47767688")]
+[assembly: System.Reflection.AssemblyProductAttribute("Infrastructure")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Infrastructure")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.
 

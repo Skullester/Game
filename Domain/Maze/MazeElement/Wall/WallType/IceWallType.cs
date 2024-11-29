@@ -4,7 +4,7 @@ namespace Models.Fabric;
 
 public class IceWallType : WallType
 {
-    public IceWallType() : base(Effect.Freeze, ConsoleColor.Cyan)
+    public IceWallType(Effect effect, ConsoleColor color) : base(effect, color)
     {
     }
 }

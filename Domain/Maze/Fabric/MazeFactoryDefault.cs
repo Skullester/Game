@@ -10,7 +10,12 @@ public class MazeFactoryDefault : MazeFactory
         return new Room();
     }
 
-    public override WallType GetWallType()
+    public override WallType GetExWallType()
+    {
+        return new DefaultWallType(ConsoleColor.White);
+    }
+
+    public override WallType GetInWallType()
     {
         return new DefaultWallType(ConsoleColor.Yellow);
     }

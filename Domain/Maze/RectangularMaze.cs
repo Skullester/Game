@@ -11,7 +11,8 @@ public class RectangularMaze : IMaze
 
     public IRoom Room { get; }
 
-    public WallType WallType { get; }
+    private readonly WallType inWallType;
+    private readonly WallType exWallType;
 
     public IMazeElement[,] Elements { get; private set; } = null!;
 
@@ -20,7 +21,8 @@ public class RectangularMaze : IMaze
     public RectangularMaze(MazeFactory factory)
     {
         Room = factory.GetRoom();
-        WallType = factory.GetWallType();
+        exWallType = factory.GetExWallType();
+        inWallType = factory.GetInWallType();
     }
 
     public void Generate()
@@ -63,8 +65,8 @@ public class RectangularMaze : IMaze
     private void InitializeWalls()
     {
         Elements = new IMazeElement[Height, Width];
-        var exWall = new ExternalWall(WallType);
-        var inWall = new InternalWall(WallType);
+        var exWall = new ExternalWall(exWallType);
+        var inWall = new InternalWall(inWallType);
         for (var i = 0; i < Height; i++)
         {
             for (var j = 0; j < Width; j++)
