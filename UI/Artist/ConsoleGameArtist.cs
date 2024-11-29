@@ -149,8 +149,8 @@ public class ConsoleGameArtist : IGameArtist
 
     private void DrawVictory()
     {
-        Dispose();
         DrawGameResult("Победа!", victoryColor);
+        Dispose();
     }
 
     private void DrawDefeat()
