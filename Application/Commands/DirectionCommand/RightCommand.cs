@@ -1,6 +1,6 @@
 ﻿namespace Game;
 
-[Show("Вправо", Symbols = ['\u2192'], OrderPriority = 3)]
+[Show("Вправо", Symbols = ['\u2192', 'D'], OrderPriority = 3)]
 public class RightCommand : KeyCommand, IDirection
 {
     public Point Direction => new Point(0, 1);

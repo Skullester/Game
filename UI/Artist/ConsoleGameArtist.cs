@@ -13,6 +13,8 @@ public class ConsoleGameArtist : IGameArtist
     public MazeWriter Writer { get; }
     public IGameManager GM { get; }
     public IEnumerable<ICommand> Commands { get; }
+    private readonly KeyCommand[] keyCommands;
+    private readonly ShowAttribute[] showAttributeCommands;
     private ConsoleColor playerColor => PlayerRole.Color;
     private IMaze maze => GM.Maze;
     private PlayerRole PlayerRole => GM.PlayerRole;
@@ -27,6 +29,10 @@ public class ConsoleGameArtist : IGameArtist
         Writer = writer;
         Commands = commands.ToArray();
         GM = manager;
+        keyCommands = Commands.OfType<KeyCommand>()
+            .ToArray();
+        showAttributeCommands = Commands.GetShowAttributes(true)
+            .ToArray();
     }
 
     public void Initialize()
@@ -65,8 +71,7 @@ public class ConsoleGameArtist : IGameArtist
             }
 
             var cki = Console.ReadKey(true);
-            var cmd = Commands.OfType<KeyCommand>()
-                .FirstOrDefault(x => x.KeyMap.Contains(cki.Key));
+            var cmd = keyCommands.FirstOrDefault(x => x.KeyMap.Contains(cki.Key));
             GM.Execute(cmd);
         }
 
@@ -98,16 +103,15 @@ public class ConsoleGameArtist : IGameArtist
         CursorPositionContainer.Save();
         var foregroundColor = Console.ForegroundColor;
         SetColor(instructionColor);
-        var shownCommands = Commands.GetShowAttributeElementsFrom(true);
         var i = 0;
         const int offset = 2;
         var leftOffset = maze.Width + offset;
         Console.SetCursorPosition(leftOffset, i++);
         PrintLine("Количество попыток: " + GM.Tries);
-        foreach (var attribute in shownCommands)
+        foreach (var attribute in showAttributeCommands)
         {
             Console.SetCursorPosition(leftOffset, i++);
-            var text = $"\"{attribute.Symbols!.First()}\" - {attribute.Name}";
+            var text = $"\"{string.Join('|', attribute.Symbols!)}\" - {attribute.Name}";
             if (attribute.Name == "Умение")
             {
                 text += $"({PlayerRole.Skill.RemainingUses})";

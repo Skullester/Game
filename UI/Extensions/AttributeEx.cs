@@ -4,7 +4,7 @@ namespace Extensions;
 
 public static class AttributeEx
 {
-    public static IEnumerable<ShowAttribute> GetShowAttributeElementsFrom<TValue>(
+    public static IEnumerable<ShowAttribute> GetShowAttributes<TValue>(
         this IEnumerable<TValue> collection, bool order = false)
     {
         var showAttributes = collection.Select(x => x!.GetType().GetCustomAttribute<ShowAttribute>())

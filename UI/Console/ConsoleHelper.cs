@@ -100,7 +100,7 @@ public static class ConsoleHelper
         Func<ShowAttribute, string> action)
     {
         SetColor(optionsColor);
-        var showAttributes = options.GetShowAttributeElementsFrom(true);
+        var showAttributes = options.GetShowAttributes(true);
         return showAttributes.Select(action);
     }
 
