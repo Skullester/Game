@@ -10,7 +10,7 @@ public sealed class GameManager : IGameManager
     public GameState State { get; private set; }
     public PlayerRole PlayerRole { get; }
     public IMaze Maze { get; private set; } = null!;
-    public bool IsGameFinished => State != GameState.Play;
+    public bool IsGamePlaying => State == GameState.Play;
     public MazeBuilder Builder { get; }
     private Stopwatch stopwatch = null!;
     private IController controller => lazyController.Value;

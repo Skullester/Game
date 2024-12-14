@@ -6,7 +6,7 @@ public interface IGameManager
     GameState State { get; }
     PlayerRole PlayerRole { get; }
     IMaze Maze { get; }
-    bool IsGameFinished { get; }
+    bool IsGamePlaying { get; }
     void Execute(KeyCommand? command);
     void Initialize();
     void ResetGame();
