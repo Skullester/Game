@@ -73,8 +73,6 @@ public class ConsoleGameArtist : IGameArtist
         CheckState();
     }
 
-    private static Point GetDirection(KeyCommand? cmd) => (cmd as IDirection)!.Direction;
-
     public void CheckState()
     {
         switch (GM.State)

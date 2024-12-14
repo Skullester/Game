@@ -20,8 +20,8 @@ public class Program
             Kernel.BindAllBaseClassesFromTo<MazeFactory, MazeFactory>();
             Kernel.BindAllBaseClassesFromTo<KeyCommand, KeyCommand>();
             Kernel.BindAllInterfacesFromTo<ICommand, ICommand>();
-            Kernel!.Bind<GameInitializer>()
-                .ToConstant(GameInitializer.GetInstance(Kernel));
+            Bind<GameInitializer>()
+                .ToConstant(GameInitializer.GetInstance(Kernel!));
         }
     }
 
