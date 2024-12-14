@@ -63,7 +63,7 @@ public class ConsoleGameArtist : IGameArtist
     {
         GM.Initialize();
         UpdateGameState();
-        while (!GM.IsGameFinished)
+        while (GM.IsGamePlaying)
         {
             while (Console.KeyAvailable)
             {
