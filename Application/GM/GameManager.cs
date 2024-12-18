@@ -26,8 +26,8 @@ public sealed class GameManager : IGameManager
 
     private void CreateMaze()
     {
-        Builder.SetSize();
-        Builder.GenerateMaze();
+        Builder.SetSize()
+            .GenerateMaze();
         Maze = Builder.Maze;
     }
 

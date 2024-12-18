@@ -12,7 +12,6 @@ public abstract class PlayerRole
 
     protected readonly IMaze maze;
 
-
     protected PlayerRole(IMaze maze, ConsoleColor color, TimeSpan skillCooldown)
     {
         this.maze = maze;

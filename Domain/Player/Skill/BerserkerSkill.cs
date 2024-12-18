@@ -53,6 +53,7 @@ public class BerserkerSkill : IComplexSkill
 
         return true;
 
-        bool InBounds() => hitPoint.X > 0 && hitPoint.X < maze.Height && hitPoint.Y > 0 && hitPoint.Y < maze.Width;
+        bool InBounds() => hitPoint.X > 0 && hitPoint.X < maze.Height - 1 && hitPoint.Y > 0 &&
+                           hitPoint.Y < maze.Width - 1;
     }
 }
