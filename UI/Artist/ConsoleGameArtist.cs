@@ -56,7 +56,8 @@ public class ConsoleGameArtist : IGameArtist
     private void InitializePlayerChar()
     {
         var showAttribute = PlayerRole.GetShowAttribute()!;
-        playerCharInStr = showAttribute.Name[0].ToString();
+        playerCharInStr = showAttribute.Name[0]
+            .ToString();
     }
 
     private void StartGame()
@@ -106,8 +107,13 @@ public class ConsoleGameArtist : IGameArtist
         var i = 0;
         const int offset = 2;
         var leftOffset = maze.Width + offset;
-        Console.SetCursorPosition(leftOffset, i++);
-        PrintLine("Количество попыток: " + GM.Tries);
+        Console.SetCursorPosition(leftOffset, i);
+        if (GM.Maze.Room.StayTime != TimeSpan.MaxValue)
+        {
+            PrintLine("Количество попыток: " + GM.Tries);
+            i++;
+        }
+
         foreach (var attribute in showAttributeCommands)
         {
             Console.SetCursorPosition(leftOffset, i++);
