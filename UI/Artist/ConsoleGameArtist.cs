@@ -71,7 +71,7 @@ public class ConsoleGameArtist : IGameArtist
             }
 
             var cki = Console.ReadKey(true);
-            var cmd = keyCommands.FirstOrDefault(x => x.KeyMap.Contains(cki.Key));
+            var cmd = keyCommands.FirstOrDefault(x => x.Keys.Contains(cki.Key));
             GM.Execute(cmd);
         }
 

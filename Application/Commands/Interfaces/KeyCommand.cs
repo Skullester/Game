@@ -2,13 +2,8 @@
 
 namespace Game;
 
-public abstract class KeyCommand : ICommand
+public abstract class KeyCommand(params ConsoleKey[] keys) : ICommand
 {
-    public IReadOnlySet<ConsoleKey> KeyMap => keyMap;
-    protected readonly HashSet<ConsoleKey> keyMap;
-
-    protected KeyCommand(params ConsoleKey[] keys)
-    {
-        keyMap = new HashSet<ConsoleKey>(keys);
-    }
+    public IReadOnlyList<ConsoleKey> Keys => keys;
+    protected readonly List<ConsoleKey> keys = keys.ToList();
 }
